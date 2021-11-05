@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+
+$BgColor: azure;
+$fontColor: #fa81aa;
+$FontSize: 5vh;
+* {
+  font-family: "Reem Kufi", sans-serif;
+}
+body {
+  /*   background-color: $BgColor; */
+  overflow-y: hidden;
+}
+header {
+  background-color: #b3ebe4;
+  width: 100%;
+  min-height: 17vh;
+  display: flex;
+  align-items: center;
+  font-size: $FontSize;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+
+  img {
+    align-items: flex-start;
+    height: 15vh;
+    width: 15vh;
+    animation: spin 5s infinite;
+    filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  }
+  section {
+    display: flex;
+    max-height: 15vh;
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: $FontSize;
+      color: purple;
+      filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+    }
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .Usuarios {
+    margin-top: 5vh;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    img {
+      height: 15vh;
+      width: 15vh;
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+    }
+    img:hover{
+     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+    }
+  }
+  form {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    
+
+  
+    align-items: center;
+    width: 60%;
+    font-size: 100%;
+    .MuiInputAdornment-positionEnd
+input{
+  border: 2px solid purple;
+  outline-color: purple;
+ 
+}
+    #Login {
+      background-color: purple;
+      width: 90%;
+      border: 2px solid black;
+      border-radius: 10px;
+      box-shadow: 0 3px 5px 2px grey;
+      color: white;
+      font-size: 3vh;
+      font-weight: 700;
+      height: 8vh;
+      padding: 0 30px;
+      margin-top: 4vh;
+      filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+    }
+    #Login:hover {
+      background-color:$fontColor ;
+      color: purple;
+      border: 2px solid purple;
+      animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+      transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+    }
+    
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 2px, 0) rotate(-1deg)
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 4px, 0) rotate(3deg);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 8px, 0) rotate(8deg);
+  }
+}
