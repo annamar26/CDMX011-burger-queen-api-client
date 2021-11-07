@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 25px;
+}
+
+body {
+  background-color: azure;
+}
+
+header {
+  height: 100px;
+  background-color: #b3ebe4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header img {
+  width: 90px;
+  height: 90px;
+  margin-left: 10px;
+  -webkit-animation: spin 5s infinite;
+          animation: spin 5s infinite;
+}
+
+header section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.images {
+  width: 70%;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.images img {
+  width: 90px;
+  height: 90px;
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+}
+
+form {
+  width: 60%;
+}
+
+form .login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+::-ms-input-placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+::placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+            transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 4px, 0) rotate(3deg);
+            transform: translate3d(2px, 4px, 0) rotate(3deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+            transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 8px, 0) rotate(8deg);
+            transform: translate3d(4px, 8px, 0) rotate(8deg);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+            transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+  }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 4px, 0) rotate(3deg);
+            transform: translate3d(2px, 4px, 0) rotate(3deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+            transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+  }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 8px, 0) rotate(8deg);
+            transform: translate3d(4px, 8px, 0) rotate(8deg);
+  }
+}
+/*# sourceMappingURL=App.css.map */
