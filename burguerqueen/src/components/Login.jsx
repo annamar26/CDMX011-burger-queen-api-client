@@ -114,3 +114,4 @@ function Login() {
     </Fragment>
   );
 }
+export default Login
