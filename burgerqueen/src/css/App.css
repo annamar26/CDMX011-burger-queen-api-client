@@ -1,0 +1,181 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Reem Kufi", sans-serif;
+  font-size: 25px;
+}
+
+body {
+  background-color: azure;
+}
+
+header {
+  height: 100px;
+  background-color: #b3ebe4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header img {
+  width: 90px;
+  height: 90px;
+  margin-left: 10px;
+  -webkit-animation: spin 5s infinite;
+          animation: spin 5s infinite;
+}
+
+header section {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.images {
+  width: 70%;
+  padding: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.images img {
+  width: 90px;
+  height: 90px;
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+}
+
+#float-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 350px;
+  position: relative;
+}
+
+#float-label input {
+  width: 100%;
+  height: 56px;
+  padding: 14px 16px 0 10px;
+  outline: 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#float-label label {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 12px;
+  color: #999;
+  position: absolute;
+  pointer-events: none;
+  -webkit-transform: translate(0, 26px) scale(1);
+          transform: translate(0, 26px) scale(1);
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+#float-label:focus-within label {
+  -webkit-transform: translate(0, 12px) scale(0.75);
+          transform: translate(0, 12px) scale(0.75);
+}
+
+#float-label .Active {
+  -webkit-transform: translate(0, 12px) scale(0.75);
+          transform: translate(0, 12px) scale(0.75);
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+:-ms-input-placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+::-ms-input-placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+::placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.24);
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  to {
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
+  }
+}
+/*# sourceMappingURL=App.css.map */
