@@ -8,15 +8,19 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+ const [visible, setVisible]= useState(false)
   const enviarDatos = (event) => {
     event.preventDefault();
     console.log(email, password);
   };
- 
+  const toggleVisibility = ()=>{
+    setVisible(!visible)
+  }
+
   return (
     <Fragment>
       <header>
@@ -24,6 +28,8 @@ function Login() {
         <section>
           <h1>Inicia sesión</h1>
         </section>
+
+       
       </header>
       <main>
         <div className="Usuarios">
@@ -43,10 +49,9 @@ function Login() {
             label="Correo electrónico"
             onChange={(e) => setEmail(e.target.value)}
             required
-       
             InputProps={{
               endAdornment: (
-                <InputAdornment >
+                <InputAdornment position='end'>
                   <svg
                     width="25"
                     height="24"
@@ -69,22 +74,21 @@ function Login() {
             margin="normal"
             variant="outlined"
             name="password"
-            type="password"
+            type={visible ? 'text' : 'password'}
             label="Contraseña"
             onChange={(e) => setPassword(e.target.value)}
             required
-         
             InputProps={{
               endAdornment: (
-                <InputAdornment >
-                
+                <InputAdornment position='end'>
                   <svg
-                  endAdornment
+                    endAdornment
                     width="25"
                     height="24"
                     viewBox="0 0 25 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    onClick={toggleVisibility}
                   >
                     <path
                       d="M2.87012 17H22.8701V19H2.87012V17ZM4.02012 12.95L4.87012 11.47L5.72012 12.95L7.02012 12.2L6.17012 10.72H7.87012V9.22H6.17012L7.02012 7.75L5.72012 7L4.87012 8.47L4.02012 7L2.72012 7.75L3.57012 9.22H1.87012V10.72H3.57012L2.72012 12.2L4.02012 12.95V12.95ZM10.7201 12.2L12.0201 12.95L12.8701 11.47L13.7201 12.95L15.0201 12.2L14.1701 10.72H15.8701V9.22H14.1701L15.0201 7.75L13.7201 7L12.8701 8.47L12.0201 7L10.7201 7.75L11.5701 9.22H9.87012V10.72H11.5701L10.7201 12.2V12.2ZM23.8701 9.22H22.1701L23.0201 7.75L21.7201 7L20.8701 8.47L20.0201 7L18.7201 7.75L19.5701 9.22H17.8701V10.72H19.5701L18.7201 12.2L20.0201 12.95L20.8701 11.47L21.7201 12.95L23.0201 12.2L22.1701 10.72H23.8701V9.22Z"
@@ -110,5 +114,3 @@ function Login() {
     </Fragment>
   );
 }
-
-export default Login;
