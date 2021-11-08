@@ -50,13 +50,52 @@ main {
     
   }
 }
-form {
-  width: 60%;
-  .login {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+#float-label {
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  min-width: 350px;
+  position: relative;
+  input {
+    width: 100%;
+    height: 56px;
+    padding: 14px 16px 0 10px;
+    outline: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
   }
+  label {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 12px;
+    color: #999;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(0, 26px) scale(1);
+    transform-origin: top left;
+    transition: all 0.2s ease-out;
+  }
+}
+
+#float-label:focus-within label {
+  transform: translate(0, 12px) scale(0.75);
+}
+#float-label .Active {
+  transform: translate(0, 12px) scale(0.75);
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
 }
 ::placeholder {
   text-align: center;
@@ -66,22 +105,5 @@ form {
 @keyframes spin {
     from {transform:rotateY(0deg);}
     to {transform:rotateY(360deg);}
-  }
-  @keyframes shake {
-    10%, 90% {
-      transform: translate3d(-1px, 2px, 0) rotate(-1deg)
-    }
-    
-    20%, 80% {
-      transform: translate3d(2px, 4px, 0) rotate(3deg);
-    }
-  
-    30%, 50%, 70% {
-      transform: translate3d(-4px, 6px, 0) rotate(-5deg);
-    }
-  
-    40%, 60% {
-      transform: translate3d(4px, 8px, 0) rotate(8deg);
-    }
   }
   
