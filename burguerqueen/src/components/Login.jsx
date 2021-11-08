@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
+import { signInWithEmailAndPassword, auth } from "../lib/firebaseConfig";
 
 
 function Login() {
@@ -16,6 +17,18 @@ function Login() {
   const enviarDatos = (event) => {
     event.preventDefault();
     console.log(email, password);
+    signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    alert(user)
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    alert(errorCode, errorMessage)
+  });
   };
   const toggleVisibility = ()=>{
     setVisible(!visible)
