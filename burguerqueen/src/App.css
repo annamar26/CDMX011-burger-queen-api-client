@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
 * {
   font-family: "Reem Kufi", sans-serif;
+  margin: 0;
 }
 
 body {
@@ -10,51 +11,50 @@ body {
 
 header {
   background-color: #b3ebe4;
-  width: 100%;
+  width: 100VW;
   min-height: 17vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-size: 5vh;
   -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
           filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
 
 header img {
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  margin-left: 5%;
   height: 15vh;
-  width: 15vh;
+  width: 15%;
   -webkit-animation: spin 5s infinite;
           animation: spin 5s infinite;
   -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
           filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
 
-header section {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-height: 15vh;
-  width: 100%;
-  position: absolute;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-header section h1 {
+header h1 {
   font-size: 5vh;
   color: purple;
   -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
           filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  text-align: center;
+  width: auto;
+}
+
+header p {
+  margin-right: 5%;
+  width: 15%;
+  font-size: 3vw;
+  text-align: justify;
 }
 
 main {

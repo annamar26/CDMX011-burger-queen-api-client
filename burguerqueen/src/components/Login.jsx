@@ -1,4 +1,3 @@
-import Logo from "./images/Logo.png";
 import cocinero from "./images/cocinero.png";
 import guardaespaldas from "./images/guardaespaldas.png";
 import camarera from "./images/camarera.png";
@@ -10,40 +9,39 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { signInWithEmailAndPassword, auth } from "../lib/firebaseConfig";
 
 
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- const [visible, setVisible]= useState(false)
+  const [visible, setVisible] = useState(false);
+  
+ 
   const enviarDatos = (event) => {
     event.preventDefault();
     console.log(email, password);
     signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    alert(user)
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorCode, errorMessage)
-  });
+      .then((userCredential) => {
+        // Signed in
+  const user = userCredential.user; 
+        console.log(user.uid);
+      window.location.href='/menu'
+         
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
+   
+      });
   };
-  const toggleVisibility = ()=>{
-    setVisible(!visible)
-  }
+  const toggleVisibility = () => {
+    setVisible(!visible);
+  };
 
   return (
     <Fragment>
-      <header>
-        <img src={Logo} alt=""></img>
-        <section>
-          <h1>Inicia sesión</h1>
-        </section>
-
-       
-      </header>
       <main>
         <div className="Usuarios">
           <img src={guardaespaldas} alt=""></img>
@@ -51,6 +49,7 @@ function Login() {
           <img src={cocinero} alt=""></img>
         </div>
         <form onSubmit={enviarDatos}>
+          <h1>Inicia Sesión</h1>
           <TextField
             fullWidth
             autoFocus
@@ -64,7 +63,7 @@ function Login() {
             required
             InputProps={{
               endAdornment: (
-                <InputAdornment position='end'>
+                <InputAdornment position="end">
                   <svg
                     width="25"
                     height="24"
@@ -87,13 +86,13 @@ function Login() {
             margin="normal"
             variant="outlined"
             name="password"
-            type={visible ? 'text' : 'password'}
+            type={visible ? "text" : "password"}
             label="Contraseña"
             onChange={(e) => setPassword(e.target.value)}
             required
             InputProps={{
               endAdornment: (
-                <InputAdornment position='end'>
+                <InputAdornment position="end">
                   <svg
                     endAdornment
                     width="25"
@@ -127,4 +126,4 @@ function Login() {
     </Fragment>
   );
 }
-export default Login
+export default Login;
