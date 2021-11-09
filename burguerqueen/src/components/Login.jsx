@@ -8,36 +8,103 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { signInWithEmailAndPassword, auth } from "../lib/firebaseConfig";
 
-
-
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
-  
- 
+  const toggleVisibility = () => {
+    setVisible(!visible);
+  };
+  const iconoPassword = (
+    <svg
+      width="23"
+      height="16"
+      viewBox="0 0 23 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={toggleVisibility}
+    >
+      <path
+        d="M20.868 6.962C21.342 7.582 21.342 8.419 20.868 9.038C19.375 10.987 15.793 15 11.611 15C7.42897 15 3.84697 10.987 2.35397 9.038C2.12336 8.74113 1.99817 8.37592 1.99817 8C1.99817 7.62408 2.12336 7.25887 2.35397 6.962C3.84697 5.013 7.42897 1 11.611 1C15.793 1 19.375 5.013 20.868 6.962V6.962Z"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.611 11C13.2678 11 14.611 9.65685 14.611 8C14.611 6.34315 13.2678 5 11.611 5C9.95411 5 8.61096 6.34315 8.61096 8C8.61096 9.65685 9.95411 11 11.611 11Z"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  const iconoNotPassword = (
+    <svg
+      width="23"
+      height="9"
+      viewBox="0 0 23 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      onClick={toggleVisibility}
+    >
+      <path
+        d="M1.87012 1C1.87012 1 5.37012 5 11.8701 5C18.3701 5 21.8701 1 21.8701 1"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.87012 2.645L1.87012 5"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21.87 5L19.874 2.64799"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M8.78412 4.67999L7.87012 7.49999"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.9331 4.688L15.8701 7.5"
+        stroke="#A3A3A3"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
   const enviarDatos = (event) => {
     event.preventDefault();
     console.log(email, password);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
-  const user = userCredential.user; 
+        const user = userCredential.user;
         console.log(user.uid);
-      window.location.href='/menu'
-         
+        window.location.href = "/menu";
 
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-   
+        console.log(errorCode, errorMessage);
       });
-  };
-  const toggleVisibility = () => {
-    setVisible(!visible);
   };
 
   return (
@@ -93,20 +160,7 @@ function Login() {
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <svg
-                    endAdornment
-                    width="25"
-                    height="24"
-                    viewBox="0 0 25 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    onClick={toggleVisibility}
-                  >
-                    <path
-                      d="M2.87012 17H22.8701V19H2.87012V17ZM4.02012 12.95L4.87012 11.47L5.72012 12.95L7.02012 12.2L6.17012 10.72H7.87012V9.22H6.17012L7.02012 7.75L5.72012 7L4.87012 8.47L4.02012 7L2.72012 7.75L3.57012 9.22H1.87012V10.72H3.57012L2.72012 12.2L4.02012 12.95V12.95ZM10.7201 12.2L12.0201 12.95L12.8701 11.47L13.7201 12.95L15.0201 12.2L14.1701 10.72H15.8701V9.22H14.1701L15.0201 7.75L13.7201 7L12.8701 8.47L12.0201 7L10.7201 7.75L11.5701 9.22H9.87012V10.72H11.5701L10.7201 12.2V12.2ZM23.8701 9.22H22.1701L23.0201 7.75L21.7201 7L20.8701 8.47L20.0201 7L18.7201 7.75L19.5701 9.22H17.8701V10.72H19.5701L18.7201 12.2L20.0201 12.95L20.8701 11.47L21.7201 12.95L23.0201 12.2L22.1701 10.72H23.8701V9.22Z"
-                      fill="#A3A3A3"
-                    />
-                  </svg>
+                  {visible ? iconoPassword : iconoNotPassword}
                 </InputAdornment>
               ),
             }}
