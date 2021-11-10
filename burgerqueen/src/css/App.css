@@ -40,6 +40,21 @@ header section {
           justify-content: center;
 }
 
+header section #time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: -10px;
+  margin-right: 10px;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,35 +88,57 @@ main {
           filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
 }
 
-#float-label {
+form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+form #float-father {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-width: 350px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+form #float-father #float-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
   position: relative;
 }
 
-#float-label input {
-  width: 100%;
+form #float-father #float-label input {
+  text-align: center;
+  width: 95%;
   height: 56px;
   padding: 14px 16px 0 10px;
   outline: 0;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #dab5e1;
+  border-radius: 10px;
 }
 
-#float-label label {
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 0 12px;
+form #float-father #float-label label {
+  font-size: 20px;
   color: #999;
   position: absolute;
   pointer-events: none;
@@ -113,28 +150,25 @@ main {
   transition: all 0.2s ease-out;
 }
 
-#float-label:focus-within label {
+form #float-father #float-label:focus-within label {
   -webkit-transform: translate(0, 12px) scale(0.75);
           transform: translate(0, 12px) scale(0.75);
 }
 
-#float-label .Active {
+form #float-father #float-label .Active {
   -webkit-transform: translate(0, 12px) scale(0.75);
           transform: translate(0, 12px) scale(0.75);
 }
 
-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+form #float-father button {
+  width: 50%;
+  background-color: #dab5e1;
+  padding: 5px;
+  border-style: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-box-shadow: 5px 10px 10px #0000002f;
+          box-shadow: 5px 10px 10px #0000002f;
 }
 
 ::-webkit-input-placeholder {
@@ -155,6 +189,32 @@ form {
 ::placeholder {
   text-align: center;
   color: rgba(0, 0, 0, 0.24);
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 40px;
+}
+
+.menu button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 10px;
+  background-color: #dab5e1;
+  padding: 5px;
+  border-style: none;
+  border-radius: 10px;
+  outline: none;
+  -webkit-box-shadow: 5px 10px 10px #0000002f;
+          box-shadow: 5px 10px 10px #0000002f;
 }
 
 @-webkit-keyframes spin {
