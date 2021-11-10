@@ -7,6 +7,8 @@ import Login from './components/Login';
 import Menu from './components/Menu'
 import Logo from './components/images/Logo.png'
 import moment from 'moment';
+import ButtonsDesayuno from './components/ButtonsDesayuno';
+import ButtonsComida from './components/ButtonsComida';
 
 
 
@@ -34,6 +36,8 @@ useEffect(() => {
   <Routes>
   <Route exact path='/' element={<Login />} />
   <Route exact path='/menu' element={<Menu />} />
+  <Route exact path='/desayuno' element={<ButtonsDesayuno />} />
+  <Route exact path='/comida' element={<ButtonsComida />} />
    </Routes>
  
     </BrowserRouter>

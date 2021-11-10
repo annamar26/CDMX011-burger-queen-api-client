@@ -11,7 +11,7 @@ body {
 
 header {
   background-color: #b3ebe4;
-  width: 100VW;
+  width: 100vw;
   min-height: 17vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,8 +125,7 @@ main form {
   font-size: 100%;
 }
 
-main form .MuiInputAdornment-positionEnd
-input {
+main form .MuiInputAdornment-positionEnd input {
   border: 2px solid purple;
   outline-color: purple;
 }
@@ -162,6 +161,71 @@ main form #Login:hover {
           perspective: 1000px;
 }
 
+#desayunoButttons {
+  margin-top: 10vh;
+  width: 50%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+#desayunoButttons Button {
+  margin-bottom: 5vh;
+  margin-left: 5vh;
+  height: 8vh;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 700;
+  background-color: #dab5e1;
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+}
+
+#regresarMenu {
+  margin-top: 5vh;
+  margin-left: 5vh;
+  height: 8vh;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: 700;
+  width: 20vh;
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+}
+
+.container {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 10vh;
+  width: 70%;
+  height: 40vh;
+}
+
+.container Button {
+  background-color: #dab5e1;
+  width: 45%;
+  height: 10vh;
+  color: white;
+  font-size: 3.5vh;
+  font-weight: 700;
+}
+
+#MenuH1 {
+  margin-top: 2vh;
+  font-size: 250%;
+  text-align: center;
+  width: auto;
+}
+
 @-webkit-keyframes spin {
   from {
     -webkit-transform: rotateY(0deg);
@@ -185,38 +249,48 @@ main form #Login:hover {
 }
 
 @-webkit-keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     -webkit-transform: translate3d(-1px, 2px, 0) rotate(-1deg);
             transform: translate3d(-1px, 2px, 0) rotate(-1deg);
   }
-  20%, 80% {
+  20%,
+  80% {
     -webkit-transform: translate3d(2px, 4px, 0) rotate(3deg);
             transform: translate3d(2px, 4px, 0) rotate(3deg);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     -webkit-transform: translate3d(-4px, 6px, 0) rotate(-5deg);
             transform: translate3d(-4px, 6px, 0) rotate(-5deg);
   }
-  40%, 60% {
+  40%,
+  60% {
     -webkit-transform: translate3d(4px, 8px, 0) rotate(8deg);
             transform: translate3d(4px, 8px, 0) rotate(8deg);
   }
 }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     -webkit-transform: translate3d(-1px, 2px, 0) rotate(-1deg);
             transform: translate3d(-1px, 2px, 0) rotate(-1deg);
   }
-  20%, 80% {
+  20%,
+  80% {
     -webkit-transform: translate3d(2px, 4px, 0) rotate(3deg);
             transform: translate3d(2px, 4px, 0) rotate(3deg);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     -webkit-transform: translate3d(-4px, 6px, 0) rotate(-5deg);
             transform: translate3d(-4px, 6px, 0) rotate(-5deg);
   }
-  40%, 60% {
+  40%,
+  60% {
     -webkit-transform: translate3d(4px, 8px, 0) rotate(8deg);
             transform: translate3d(4px, 8px, 0) rotate(8deg);
   }
