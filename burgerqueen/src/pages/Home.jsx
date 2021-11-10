@@ -1,30 +1,29 @@
-import Cookies from "universal-cookie";
-
-const cookies = new Cookies();
+import { Fragment, useState } from "react";
+import axios from "axios";
 
 function Home() {
-  console.log("id: " + cookies.get("id"));
-  console.log("name: " + cookies.get("name"));
-  console.log("email: " + cookies.get("email"));
+const [showResults, setShowResults] = useState(false);
 
-  if (!cookies.get("email")) {
-    window.location.href = "./";
-  }
-  const logOut = (e) => {
-    e.preventDefault();
-    cookies.remove("id", { path: "/" });
-    cookies.remove("name", { path: "/" });
-    cookies.remove("email", { path: "/" });
-    window.location.href = "./";
-  };
+  function Breakfast() {
+  axios.get('http://localhost:3001/products')
+  .then(response=>{
+    console.log(response.data)
+  })
+  .catch(err=>console.log(err))
+}
+
+function desyunos(e) {
+  e.preventDefault();
+  window.location.href = "./breakfast";
+
+}
 
   return (
-    <div>
-      Holi crayoli soy el Home
-      <form onSubmit={logOut}>
-        <button type="submit">Pínchame</button>
-      </form>
-    </div>
+    <div className="menu">
+      <button onClick={desyunos}>Desayunos</button>
+     </div>
+      
   );
 }
+
 export default Home;
