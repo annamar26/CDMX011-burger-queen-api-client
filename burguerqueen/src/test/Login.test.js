@@ -26,7 +26,7 @@ test('<Renders the menu page with the correct data', () => {
   expect(email.value).toBe('correo@ejemplo.com')
   expect(password.value).toBe('123456')
   expect(render(<Menu />)).toMatchSnapshot()
-  expect(render(<Menu />).container.textContent).toBe("Menu");
+  expect(render(<Menu />).container.textContent).toBe("Menu DesayunoAlmuerzo y CenaSalir");
  
 
 

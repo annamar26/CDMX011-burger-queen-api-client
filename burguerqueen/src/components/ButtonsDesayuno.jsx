@@ -1,45 +1,44 @@
 import { Button } from "@mui/material";
-import { spacing } from "@mui/system";
-import axios from "axios";
-
-import React, { Fragment } from "react";
-
+import React, { Fragment, useState, useEffect } from "react";
+import Comanda from './Comanda'
+import Axios from "axios";
 function ButtonsDesayuno() {
-  /*  async function axiosValidate(url) {
-        await axios.get(url)
-            .then((response) => {  product.push(response.product) }
-             
-          )
-            .catch((error) => {
-              product.push(error.response.code) 
-                
-            });
-       return product } */
-const regresar= ()=>{
-  window.location.href='/menu'
-}
-  return (
-    <div >
-      <section id="desayunoButttons">  <Button variant="contained" margin="normal" color="secondary">
-        Ejemplo
+  const regresar= ()=>{
+    window.location.href='/menu'
+  }
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+      Axios({
+        url: "http://localhost:4000/desayuno",
+      })
+        .then((response) => {
+          setProducts(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }, [setProducts]);
+  
+    return (
+    <div className='contenedorBotones'><Comanda  />
+        <section id="desayunoButttons">
+          {products.map((item) => (
+            <div key={item.id}>
+              <Button variant="contained" margin="normal" color="secondary">
+        {item.name} {'$'+ item.price}
       </Button>
-      <Button variant="contained" margin="large" color="secondary">
-        Ejemplo
-      </Button>
-      <Button variant="contained" margin="large" color="secondary">
-        Ejemplo
-      </Button>
-      <Button variant="contained" margin="large" color="secondary">
-        Ejemplo
-      </Button>
-     
+              
+            </div>
+          ))}
         </section>
         <Button  onClick={regresar}id='regresarMenu' variant="contained" margin="large" color="secondary">
           Regresar
         </Button>
-  
-    </div>
-  );
-}
+     </div>
+    );
+  }
+
+
+
 
 export default ButtonsDesayuno;

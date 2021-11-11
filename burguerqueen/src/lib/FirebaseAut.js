@@ -14,6 +14,6 @@ export const enviarDatos = (event, email, password) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+       alert(errorCode, errorMessage);
       });
   };

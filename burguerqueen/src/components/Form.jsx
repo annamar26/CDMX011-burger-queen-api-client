@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import { enviarDatos } from "../lib/FirebaseAut"
-import emailIco from './images/emailIco.png'
-import iconoPassword from './images/iconoPassword.png'
-import iconoNotPassword from './images/iconoNotPassword.png'
+import emailIco from '../images/emailIco.png'
+import iconoPassword from '../images/iconoPassword.png'
+import iconoNotPassword from '../images/iconoNotPassword.png'
 
 function Form() {
   const [email, setEmail] = useState("");
@@ -16,8 +16,7 @@ function Form() {
       setVisible(!visible);
     };
 
-  
-  
+   
       return (
       <form onSubmit={(e) => enviarDatos(e, email, password)} className='form' id='form' data-testid="form">
       <h1>Inicia Sesión</h1>

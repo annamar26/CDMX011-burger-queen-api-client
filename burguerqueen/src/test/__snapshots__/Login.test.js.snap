@@ -47,7 +47,8 @@ Object {
               id="show"
             >
               <img
-                src="./images/emailIcon.svg"
+                alt=""
+                src="emailIco.png"
               />
             </div>
             <fieldset
@@ -99,7 +100,8 @@ Object {
               id="unShow"
             >
               <img
-                src="./images/iconoNotPassword.svg"
+                alt=""
+                src="iconoNotPassword.png"
               />
             </div>
             <fieldset
@@ -133,15 +135,109 @@ Object {
       </form>
     </div>
     <div>
-      <h1>
+      <h1
+        id="MenuH1"
+      >
         Menu
       </h1>
+      <div>
+        <section
+          class="container"
+        >
+           
+          <button
+            class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-zcbmsk-MuiButtonBase-root-MuiButton-root"
+            data-testid="Desayuno"
+            id="Desayuno"
+            margin="large"
+            tabindex="0"
+            type="submit"
+          >
+            Desayuno
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+          <button
+            class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-zcbmsk-MuiButtonBase-root-MuiButton-root"
+            data-testid="Desayuno"
+            id="AlmuerzoCena"
+            margin="large"
+            tabindex="0"
+            type="submit"
+          >
+            Almuerzo y Cena
+            <span
+              class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+            />
+          </button>
+        </section>
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-zcbmsk-MuiButtonBase-root-MuiButton-root"
+          id="regresarMenu"
+          margin="large"
+          tabindex="0"
+          type="button"
+        >
+          Salir
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
     </div>
   </body>,
   "container": <div>
-    <h1>
+    <h1
+      id="MenuH1"
+    >
       Menu
     </h1>
+    <div>
+      <section
+        class="container"
+      >
+         
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-zcbmsk-MuiButtonBase-root-MuiButton-root"
+          data-testid="Desayuno"
+          id="Desayuno"
+          margin="large"
+          tabindex="0"
+          type="submit"
+        >
+          Desayuno
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+        <button
+          class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-zcbmsk-MuiButtonBase-root-MuiButton-root"
+          data-testid="Desayuno"
+          id="AlmuerzoCena"
+          margin="large"
+          tabindex="0"
+          type="submit"
+        >
+          Almuerzo y Cena
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </section>
+      <button
+        class="MuiButton-root MuiButton-contained MuiButton-containedSecondary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-zcbmsk-MuiButtonBase-root-MuiButton-root"
+        id="regresarMenu"
+        margin="large"
+        tabindex="0"
+        type="button"
+      >
+        Salir
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -244,7 +340,8 @@ Object {
               id="show"
             >
               <img
-                src="./images/emailIcon.svg"
+                alt=""
+                src="emailIco.png"
               />
             </div>
             <fieldset
@@ -296,7 +393,8 @@ Object {
               id="unShow"
             >
               <img
-                src="./images/iconoNotPassword.svg"
+                alt=""
+                src="iconoNotPassword.png"
               />
             </div>
             <fieldset
@@ -336,15 +434,15 @@ Object {
         >
           <img
             alt=""
-            src="./images/guardaespaldas.png"
+            src="guardaespaldas.png"
           />
           <img
             alt=""
-            src="./images/camarera.png"
+            src="camarera.png"
           />
           <img
             alt=""
-            src="./images/cocinero.png"
+            src="cocinero.png"
           />
         </div>
         <form
@@ -389,7 +487,8 @@ Object {
                 id="show"
               >
                 <img
-                  src="./images/emailIcon.svg"
+                  alt=""
+                  src="emailIco.png"
                 />
               </div>
               <fieldset
@@ -441,7 +540,8 @@ Object {
                 id="unShow"
               >
                 <img
-                  src="./images/iconoNotPassword.svg"
+                  alt=""
+                  src="iconoNotPassword.png"
                 />
               </div>
               <fieldset
@@ -483,15 +583,15 @@ Object {
       >
         <img
           alt=""
-          src="./images/guardaespaldas.png"
+          src="guardaespaldas.png"
         />
         <img
           alt=""
-          src="./images/camarera.png"
+          src="camarera.png"
         />
         <img
           alt=""
-          src="./images/cocinero.png"
+          src="cocinero.png"
         />
       </div>
       <form
@@ -536,7 +636,8 @@ Object {
               id="show"
             >
               <img
-                src="./images/emailIcon.svg"
+                alt=""
+                src="emailIco.png"
               />
             </div>
             <fieldset
@@ -588,7 +689,8 @@ Object {
               id="unShow"
             >
               <img
-                src="./images/iconoNotPassword.svg"
+                alt=""
+                src="iconoNotPassword.png"
               />
             </div>
             <fieldset

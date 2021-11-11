@@ -5,7 +5,7 @@ import { BrowserRouter,
 Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Menu from './components/Menu'
-import Logo from './components/images/Logo.png'
+import Logo from '../src/images/Logo.png'
 import moment from 'moment';
 import ButtonsDesayuno from './components/ButtonsDesayuno';
 import ButtonsComida from './components/ButtonsComida';
@@ -35,9 +35,9 @@ useEffect(() => {
       </header>
   <Routes>
   <Route exact path='/' element={<Login />} />
-  <Route exact path='/menu' element={<Menu />} />
-  <Route exact path='/desayuno' element={<ButtonsDesayuno />} />
-  <Route exact path='/comida' element={<ButtonsComida />} />
+  <Route exact path='/menu' element={<Menu name="Desayuno"/>} />
+  <Route exact path='/menu/desayuno' element={<ButtonsDesayuno />} />
+  <Route exact path='/menu/comida' element={<ButtonsComida />} />
    </Routes>
  
     </BrowserRouter>
