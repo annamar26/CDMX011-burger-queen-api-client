@@ -1,28 +1,14 @@
 import { Button } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Comanda from "./Comanda";
-import Axios from "axios";
+import { useProductsList } from "../hooks/useProductsList";
 
 function ButtonsComida() {
   const regresar = () => {
     window.location.href = "/menu";
   };
-  const llamar = (e, nombre, costo) =>{
-    e.preventDefault()
-    console.log(nombre, costo)
-  }
-  const [comida, setComida]= useState([]);
-  useEffect(() => {
-    Axios({
-      url: "http://localhost:4000/products",
-    })
-      .then((response) => {
-        setComida(response.data.comida);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [setComida]);
+ 
+  const {comida}= useProductsList()
 
   return (
     <div className="contenedorBotones">
@@ -30,7 +16,7 @@ function ButtonsComida() {
       <section id="desayunoButttons">
         {comida.map((item) => (
           <div key={item.id}>
-            <Button variant="contained" margin="large" color="secondary"  onClick={(e)=>{llamar(e, item.name, item.price)}}>
+            <Button variant="contained" margin="large" color="secondary" >
               {item.name} {"$" + item.price}
             </Button>
           </div>

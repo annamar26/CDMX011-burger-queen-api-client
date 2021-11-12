@@ -172,12 +172,12 @@ main form #Login:hover {
 }
 
 #desayunoButttons Button {
-  width: 20vw;
+  width: 22vw;
   margin-bottom: 3vh;
-  margin-left: 5vw;
+  margin-left: 2vw;
   height: 10vh;
   color: white;
-  font-size: 150%;
+  font-size: 120%;
   font-weight: 700;
   background-color: #dab5e1;
   -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));

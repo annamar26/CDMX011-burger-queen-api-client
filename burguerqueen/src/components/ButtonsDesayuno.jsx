@@ -1,23 +1,12 @@
 import { Button } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import Comanda from './Comanda'
-import Axios from "axios";
+import { useProductsList } from "../hooks/useProductsList";
 function ButtonsDesayuno() {
   const regresar= ()=>{
     window.location.href='/menu'
   }
-    const [desayuno, setDesayuno] = useState([]);
-    useEffect(() => {
-      Axios({
-        url: "http://localhost:4000/products",
-      })
-        .then((response) => {
-          setDesayuno(response.data.desayuno);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, [setDesayuno]);
+   const {desayuno}= useProductsList()
   
     return (
     <div className='contenedorBotones'><Comanda  />
