@@ -1,14 +1,10 @@
 import { Button } from "@mui/material";
-import React, { Component, Fragment, useState } from "react";
-import ReactDOM from "react-dom";
-import Menu from "./Menu";
-import axios from "axios";
+import React from "react";
 
 function MenusCointeiner() {
   const showDesayunoItems = () => {
     window.location.href = '/menu/desayuno'
   };
-  // the data
 
   const showComidaItems = () => {
     window.location.href = "/menu/comida";

@@ -162,7 +162,7 @@ main form #Login:hover {
 }
 
 #desayunoButttons {
-  margin-left: 45vw;
+  margin-left: 47vw;
   margin-top: 10vh;
   width: 50%;
   display: -ms-grid;
@@ -172,12 +172,12 @@ main form #Login:hover {
 }
 
 #desayunoButttons Button {
-  width: 30vh;
-  margin-bottom: 5vh;
-  margin-left: 5vh;
+  width: 20vw;
+  margin-bottom: 3vh;
+  margin-left: 5vw;
   height: 10vh;
   color: white;
-  font-size: 2.3vh;
+  font-size: 150%;
   font-weight: 700;
   background-color: #dab5e1;
   -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
@@ -186,24 +186,24 @@ main form #Login:hover {
 
 #regresarMenu {
   margin-top: 30vh;
-  margin-left: 5vh;
-  height: 8vh;
+  margin-left: 4vw;
+  height: 10vh;
   color: white;
-  font-size: 2.5vh;
+  font-size: 150%;
   font-weight: 700;
-  width: 20vh;
+  width: 20vw;
   -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
           filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
 }
 
 #regresarMenu2 {
-  /*  margin-top: 5vh; */
-  margin-left: 5vh;
-  height: 8vh;
+  margin-top: 2vh;
+  margin-left: 4vw;
+  height: 10vh;
   color: white;
-  font-size: 2.5vh;
+  font-size: 150%;
   font-weight: 700;
-  width: 20vh;
+  width: 20vw;
   -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
           filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
 }
@@ -243,9 +243,12 @@ main form #Login:hover {
 #Comanda {
   height: 50vh;
   width: 40%;
-  background-color: lightgreen;
+  background-color: #debef12f;
   position: absolute;
-  margin-left: 5vh;
+  margin-left: 4vw;
+  border: solid 6px #B3EBE4;
+  -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 @-webkit-keyframes spin {
