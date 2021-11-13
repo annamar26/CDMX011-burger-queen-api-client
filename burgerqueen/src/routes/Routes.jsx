@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 import Breakfast from '../pages/Breakfast';
+import Lunch from '../pages/Lunch';
 
 function RoutesPath() {//Enrutado
   const [time, setTime] = useState(Date.now());
@@ -36,7 +37,7 @@ function RoutesPath() {//Enrutado
       <Route exact path="/" element={<Login/>} />
       <Route exact path="/home" element={<Home/>} />
       <Route exact path="/breakfast" element={<Breakfast/>} />
-
+      <Route exact path="/lunch" element={<Lunch/>} />
     </Routes>
     </Router>
   );
