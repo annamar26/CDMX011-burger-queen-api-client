@@ -1,24 +1,31 @@
-import { Fragment } from "react"
+import React, { Fragment } from "react";
+import GoBack from "../components/GoBack";
+import { useProducts } from "../hooks/useProducts";
 
 function Breakfast() {
-    function regresar(e) {
-        e.preventDefault();
-        window.location.href = "./home";
-      }
-    return (
-        <Fragment>
-    <div className="menu">
-        <button>Example</button>
-        <button>Example</button>
-        <button>Example</button>
-        <button>Example</button>
-        <button>Example</button>
-      </div>
-      <div>
-          <button onClick={regresar}>Regresar</button>
-      </div>
-      </Fragment>
-      )
-    }
+  const { desayunos } = useProducts();
 
-export default Breakfast
+  return (
+    <Fragment>
+      <div className="menu-container">
+        <section>
+          {desayunos.map((product) => (
+            <button
+              key={product.id}
+              
+              onClick={(e) => {
+                e.preventDefault();
+                console.log(product.price);
+              }}
+            >
+              {product.name}
+            </button>
+          ))}
+        </section>
+      </div>
+      <button onClick={GoBack}>Regresar</button>
+    </Fragment>
+  );
+}
+
+export default Breakfast;

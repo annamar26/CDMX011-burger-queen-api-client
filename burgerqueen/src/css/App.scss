@@ -97,7 +97,6 @@ width: 100%;
       transform-origin: top left;
       transition: all 0.2s ease-out;
     }
-   
   }
   #float-label:focus-within label {
     transform: translate(0, 12px) scale(0.75);
@@ -105,7 +104,6 @@ width: 100%;
   #float-label .Active {
     transform: translate(0, 12px) scale(0.75);
   }
-
   button {
     width: 50%;
     background-color:$colorViolet;
@@ -119,28 +117,48 @@ width: 100%;
   }
 }
 }
-
 ::placeholder {
   text-align: center;
   color: rgba(0, 0, 0, 0.24);
 }
-.menu{
-  display: flex;
-  width: 50%;
-  flex-direction: column;
-  margin: 40px;
-  button{
-    width: fit-content;
-    margin: 10px;
-    background-color:$colorViolet;
-    padding: 5px;
-    border: {
-      style: none;
-      radius: 10px;
-    }
-    outline: none;
-    box-shadow: 5px 10px 10px #0000002f;
+button{
+  width: 200px;
+  height: 80px;
+  margin: 10px;
+  background-color:$colorViolet;
+  padding: 5px;
+  border: {
+    style: none;
+    radius: 10px;
   }
+  outline: none;
+  box-shadow: 5px 10px 10px #0000002f;
+}
+.menu-btns{
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.lunch-container{
+ display: flex;
+ justify-content: space-around;
+ .menu-container{
+  width: fit-content;
+  margin-right: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#comanda{
+  width: 40%;
+  background-color: white;
+  border: {
+    style: solid;
+    width: 4px;
+    color: $colorViolet;
+    radius: 10px;
+  }
+}
 }
 
 @keyframes spin {
