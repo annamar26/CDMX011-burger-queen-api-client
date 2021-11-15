@@ -1,27 +1,57 @@
-import React, { useState } from "react";
-import { Fragment } from "react";
-import { Card } from "@mui/material";
+import React from "react";
+
+import {Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 
 
 
-function Comanda() {
- const [contenido, setContenido] = useState([])
- const agregarComida = (e, producto, precio)=>{
-   e.preventDefault()
- console.log(producto, precio)
- }
+const Comanda = ({content, cuenta}) => {
   return (
-    <Fragment >
-         <Card  id='Comanda' variant='outlined' 
-         >
-             <CardContent>{contenido}
-             </CardContent>
-      
-      
-    </Card>
-    </Fragment>
-  );
+    <div>
+      <Card id='Comanda'>
+        <section id='cliente'>
+          <h2>Cliente:</h2>
+          <TextField size='small'
+          variant='outlined'>
+
+          </TextField>
+          
+        </section>
+        <CardContent>
+          <TableContainer>
+            <Table  pageSize={5}
+        rowsPerPageOptions={[5]} stickyHeader aria-label='sticky table'>
+              <TableHead>
+                <TableRow>
+                  <TableCell width='80' align='center'>Produto</TableCell>
+                  <TableCell width='20'align='center'>Precio</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+              {content.map((item, index) => (
+           <TableRow key={index+'a'}>
+             <TableCell width='80' align='center' key={index}>{item.product}</TableCell>
+             <TableCell width='20' align='center' key={item.id}>{"$"+item.precio}</TableCell>
+             </TableRow>
+              ))}
+            <TableRow id='Cuenta'>
+            <TableCell align='right'>Total: </TableCell>
+            <TableCell align='right'>$ {cuenta}</TableCell>
+            </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </CardContent>
+       
+      </Card>
+    </div>
+  )
 }
 
-export default Comanda;
+
+
+export default Comanda
+
+
+
+
