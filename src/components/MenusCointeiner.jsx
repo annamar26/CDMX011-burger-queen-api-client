@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React, {Fragment} from "react";
+import BackButton from "./BackButton";
 
 function MenusCointeiner() {
   const showDesayunoItems = () => {
@@ -9,9 +10,7 @@ function MenusCointeiner() {
   const showComidaItems = () => {
     window.location.href = "/menu/comida";
   };
-  const regresar = () => {
-    window.location.href = "/";
-  };
+
   return (
     <Fragment>
       <section id="menusContainer" className="container">
@@ -39,15 +38,7 @@ function MenusCointeiner() {
           Almuerzo y Cena
         </Button>
       </section>
-      <Button
-        onClick={regresar}
-        id="regresarMenu"
-        variant="contained"
-        margin="large"
-        color="secondary"
-      >
-        Salir
-      </Button>
+      <BackButton  content={'Salir'}/>
     </Fragment>
   );
 }

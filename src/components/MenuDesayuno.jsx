@@ -9,13 +9,13 @@ import useSetComanda from "../hooks/useSetComanda";
 import BackButton from "./BackButton";
 import useGetClient from "../hooks/useGetClient";
 import { TextField } from "@mui/material";
+import ButtonEnviarOrden from "./ButtonEnviarOrden";
 
 function MenuDesayuno() {
 
    const {order, addProduct}= useSetComanda()
   const {desayuno}= useGetProducts()
   const { suma, sumar } = useGetSuma()
-  const { orderToKitchen } = useSetOrder()
   const {cliente, obtenerNombre}= useGetClient();
   
  
@@ -50,8 +50,8 @@ function MenuDesayuno() {
             </div>
           ))}
         </section>
-        <BackButton />
-        <Button onClick={()=>{orderToKitchen(order, cliente); console.log(cliente)}}>Order</Button>
+        <BackButton  content={'Regresar'}/>
+        <ButtonEnviarOrden />
      </div>
     );
   }

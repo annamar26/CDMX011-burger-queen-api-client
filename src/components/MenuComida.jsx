@@ -5,6 +5,10 @@ import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
 import useGetSuma from "../hooks/useGetSuma";
 import BackButton from "./BackButton";
+import ButtonEnviarOrden from "./ButtonEnviarOrden";
+
+import { TextField } from "@mui/material";
+import useGetClient from "../hooks/useGetClient";
 
 function MenuComida() {
  
@@ -12,12 +16,26 @@ function MenuComida() {
 
   const { comida } = useGetProducts()
   const { suma, sumar } = useGetSuma()
+  const {cliente, obtenerNombre}= useGetClient()
  
 
 
   return (
     <div className="contenedorBotones">
-      <Comanda content={order} cuenta={suma} />
+      <section id='cliente'>
+          <h2>Cliente:</h2>
+          <TextField  id='clientName' size='small'
+          variant='outlined'
+          color='secondary'
+          onChange={(e) => obtenerNombre(e.target.value)}
+          
+      
+          >
+
+          </TextField>
+          
+        </section>
+      <Comanda content={order} cuenta={suma} cliente={cliente}/>
       <section id="desayunoButttons">
         {comida.map((item) => (
         
@@ -35,7 +53,8 @@ function MenuComida() {
         
         ))}
       </section>
-      <BackButton />
+      <ButtonEnviarOrden />
+      <BackButton content={'Regresar'} />
     </div>
   );
 }

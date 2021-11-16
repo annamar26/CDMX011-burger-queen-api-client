@@ -40,7 +40,7 @@ return (
         
         <CardContent>
           <TableContainer>
-            <Table stickyHeader aria-label='a dense table'>
+            <Table stickyHeader aria-label='sticky table"'>
               <TableHead color='primary' id='tableHeader'>
                 <TableRow>
                   <TableCell width='80' align='center'>Produto</TableCell>

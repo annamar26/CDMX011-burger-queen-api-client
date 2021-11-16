@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Button } from "@mui/material";
 
-function BackButton() {
+function BackButton({content}) {
     const regresar = () => {
         window.history.back();
       };
@@ -15,7 +15,7 @@ function BackButton() {
         color="secondary"
         size='small'
       >
-        Regresar
+        {content}
       </Button>
         </Fragment>
     )
