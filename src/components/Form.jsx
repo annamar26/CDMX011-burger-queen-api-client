@@ -3,10 +3,11 @@ import Button from "@mui/material/Button";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import { enviarDatos } from "../lib/FirebaseAut"
+import { enviarDatos, messageError } from "../lib/FirebaseAut"
 import emailIco from '../images/emailIco.png'
 import iconoPassword from '../images/iconoPassword.png'
 import iconoNotPassword from '../images/iconoNotPassword.png'
+import warning from '../images/warning.png'
 
 function Form() {
   const [email, setEmail] = useState("");
@@ -61,6 +62,7 @@ function Form() {
           ),
         }} 
       />
+      <p>{messageError === '' ? "":<img src={warning} alt=""></img>} {messageError}</p>
 
       <Button
         fullWidth

@@ -103,67 +103,167 @@
   },
   "orders": [
     {
-      "id": "hola",
+      "cliente": "carlos",
       "productos": [
-        "Café americano",
-        "Café con leche",
-        "Jugo de frutas natural"
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5
+        },
+        {
+          "id": "3",
+          "producto": "Sandwich de jamón y queso",
+          "precio": 10
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        }
       ],
-      "status": "En preparacion"
+      "total": 36,
+      "status": "En preparacion",
+      "hora": "13:21:50",
+      "id": 1
     },
     {
-      "id": "prueba'",
-      "productos": [],
-      "status": "Completado"
+      "cliente": "carlos1",
+      "productos": [
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5
+        },
+        {
+          "id": "3",
+          "producto": "Sandwich de jamón y queso",
+          "precio": 10
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        }
+      ],
+      "total": 36,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "13:23:25",
+      "id": 2
     },
     {
-      "id": "Guillermos",
+      "mesero": "",
+      "cliente": "jorege",
       "productos": [
-        "Café americano",
-        "Café con leche",
-        "Jugo de frutas natural",
-        "Sandwich de jamón y queso"
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5
+        },
+        {
+          "id": "3",
+          "producto": "Sandwich de jamón y queso",
+          "precio": 10
+        }
       ],
-      "status": "En preparacion"
+      "total": 15,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "13:33:49",
+      "id": 3
     },
     {
-      "id": "Nay",
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
       "productos": [
-        "Café americano",
-        "Café con leche",
-        "Jugo de frutas natural",
-        "Sandwich de jamón y queso",
-        "Sandwich de jamón y queso",
-        "Café con leche",
-        "Jugo de frutas natural"
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas artificial",
+          "precio": 7
+        },
+        {
+          "id": "2",
+          "producto": "Café con leche",
+          "precio": 7
+        }
       ],
-      "status": "En preparacion"
+      "total": 19,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "13:39:40",
+      "id": 4
     },
     {
-      "id": "Nayeli",
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
       "productos": [
-        "Café americano",
-        "Café con leche",
-        "Jugo de frutas natural",
-        "Sandwich de jamón y queso",
-        "Sandwich de jamón y queso",
-        "Café con leche",
-        "Jugo de frutas natural",
-        "Café americano",
-        "Café con leche",
-        "Jugo de frutas natural"
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5
+        },
+        {
+          "id": "2",
+          "producto": "Café con leche",
+          "precio": 7
+        },
+        {
+          "id": "3",
+          "producto": "Sandwich de jamón y queso",
+          "precio": 10
+        }
       ],
-      "status": "En preparacion"
+      "total": 22,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "13:41:37",
+      "id": 5
     },
     {
-      "id": "maria",
+      "mesero": "correo@ejemplo.com",
+      "cliente": "holi",
       "productos": [
-        "Café americano",
-        "Café con leche",
-        "Jugo de frutas natural",
-        "Sandwich de jamón y queso"
+        {
+          "id": "2",
+          "producto": "Café con leche",
+          "precio": 7
+        },
+        {
+          "id": "2",
+          "producto": "Café con leche",
+          "precio": 7
+        }
       ],
-      "status": "En preparacion"
+      "total": 14,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "14:41:47",
+      "id": 6
     }
   ]
 }

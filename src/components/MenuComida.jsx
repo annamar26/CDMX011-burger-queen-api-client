@@ -1,41 +1,25 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import Comanda from "./Comanda";
 import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
-import useGetSuma from "../hooks/useGetSuma";
-import BackButton from "./BackButton";
-import ButtonEnviarOrden from "./ButtonEnviarOrden";
 
-import { TextField } from "@mui/material";
-import useGetClient from "../hooks/useGetClient";
+import BackButton from "./BackButton";
+
 
 function MenuComida() {
  
-  const { order, addProduct } = useSetComanda()
+  const { order, addProduct, suma, sumar } = useSetComanda()
 
   const { comida } = useGetProducts()
-  const { suma, sumar } = useGetSuma()
-  const {cliente, obtenerNombre}= useGetClient()
+
  
 
 
   return (
     <div className="contenedorBotones">
-      <section id='cliente'>
-          <h2>Cliente:</h2>
-          <TextField  id='clientName' size='small'
-          variant='outlined'
-          color='secondary'
-          onChange={(e) => obtenerNombre(e.target.value)}
-          
       
-          >
-
-          </TextField>
-          
-        </section>
-      <Comanda content={order} cuenta={suma} cliente={cliente}/>
+      <Comanda order={order} cuenta={suma}/>
       <section id="desayunoButttons">
         {comida.map((item) => (
         
@@ -45,7 +29,7 @@ function MenuComida() {
               margin="large"
               color="secondary"
               onClick={()=>{
-                addProduct(item.name, item.price);
+                addProduct(item.id, item.name, item.price);
                 sumar(item.price)
             }}>
               {item.name} {"$" + item.price}
@@ -53,8 +37,8 @@ function MenuComida() {
         
         ))}
       </section>
-      <ButtonEnviarOrden />
-      <BackButton content={'Regresar'} />
+     
+      <BackButton content={'Regresar'}  />
     </div>
   );
 }
