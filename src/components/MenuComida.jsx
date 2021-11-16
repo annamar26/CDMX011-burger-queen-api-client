@@ -1,18 +1,18 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Comanda from "./Comanda";
 import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
 import useGetSuma from "../hooks/useGetSuma";
+import BackButton from "./BackButton";
 
 function MenuComida() {
-  const regresar = () => {
-    window.location.href = "/menu";
-  };
+ 
   const { order, addProduct } = useSetComanda()
 
   const { comida } = useGetProducts()
   const { suma, sumar } = useGetSuma()
+ 
 
 
   return (
@@ -35,15 +35,7 @@ function MenuComida() {
         
         ))}
       </section>
-      <Button
-        onClick={regresar}
-        id="regresarMenu2"
-        variant="contained"
-        margin="large"
-        color="secondary"
-      >
-        Regresar
-      </Button>
+      <BackButton />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import React from "react";
+import React, {Fragment} from "react";
 
 function MenusCointeiner() {
   const showDesayunoItems = () => {
@@ -13,7 +13,7 @@ function MenusCointeiner() {
     window.location.href = "/";
   };
   return (
-    <div>
+    <Fragment>
       <section id="menusContainer" className="container">
         {" "}
         <Button
@@ -48,7 +48,7 @@ function MenusCointeiner() {
       >
         Salir
       </Button>
-    </div>
+    </Fragment>
   );
 }
 

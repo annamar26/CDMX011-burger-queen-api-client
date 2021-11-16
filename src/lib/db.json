@@ -1,104 +1,169 @@
 {
-    "products": {
-        "desayuno": [
-            {
-                "id": "1",
-                "name": "Café americano",
-                "price": 5,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "2",
-                "name": "Café con leche",
-                "price": 7,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "3",
-                "name": "Sandwich de jamón y queso",
-                "price": 10,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "4",
-                "name": "Jugo de frutas natural",
-                "price": 7,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            }
-        ],
-        "comida": [
-            {
-                "id": "5",
-                "name": "Hamburguesa simple",
-                "price": 10,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "6",
-                "name": "Hamburguesa doble",
-                "price": 15,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "7",
-                "name": "Papas fritas",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "8",
-                "name": "Aros de cebolla",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "9",
-                "name": "Agua 500ml",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "10",
-                "name": "Agua 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "11",
-                "name": "Bebida/gaseosa 500ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "12",
-                "name": "Bebida/gaseosa 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            }
-        ]
+  "products": {
+    "desayuno": [
+      {
+        "id": "1",
+        "name": "Café americano",
+        "price": 5,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "2",
+        "name": "Café con leche",
+        "price": 7,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "3",
+        "name": "Sandwich de jamón y queso",
+        "price": 10,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "4",
+        "name": "Jugo de frutas natural",
+        "price": 7,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      }
+    ],
+    "comida": [
+      {
+        "id": "5",
+        "name": "Hamburguesa simple",
+        "price": 10,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "6",
+        "name": "Hamburguesa doble",
+        "price": 15,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "7",
+        "name": "Papas fritas",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "8",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "9",
+        "name": "Agua 500ml",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "10",
+        "name": "Agua 750ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "11",
+        "name": "Bebida/gaseosa 500ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "12",
+        "name": "Bebida/gaseosa 750ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      }
+    ]
+  },
+  "orders": [
+    {
+      "id": "hola",
+      "productos": [
+        "Café americano",
+        "Café con leche",
+        "Jugo de frutas natural"
+      ],
+      "status": "En preparacion"
+    },
+    {
+      "id": "prueba'",
+      "productos": [],
+      "status": "Completado"
+    },
+    {
+      "id": "Guillermos",
+      "productos": [
+        "Café americano",
+        "Café con leche",
+        "Jugo de frutas natural",
+        "Sandwich de jamón y queso"
+      ],
+      "status": "En preparacion"
+    },
+    {
+      "id": "Nay",
+      "productos": [
+        "Café americano",
+        "Café con leche",
+        "Jugo de frutas natural",
+        "Sandwich de jamón y queso",
+        "Sandwich de jamón y queso",
+        "Café con leche",
+        "Jugo de frutas natural"
+      ],
+      "status": "En preparacion"
+    },
+    {
+      "id": "Nayeli",
+      "productos": [
+        "Café americano",
+        "Café con leche",
+        "Jugo de frutas natural",
+        "Sandwich de jamón y queso",
+        "Sandwich de jamón y queso",
+        "Café con leche",
+        "Jugo de frutas natural",
+        "Café americano",
+        "Café con leche",
+        "Jugo de frutas natural"
+      ],
+      "status": "En preparacion"
+    },
+    {
+      "id": "maria",
+      "productos": [
+        "Café americano",
+        "Café con leche",
+        "Jugo de frutas natural",
+        "Sandwich de jamón y queso"
+      ],
+      "status": "En preparacion"
     }
+  ]
 }

@@ -1,27 +1,47 @@
-import React from "react";
-
-import {Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material";
+import React, { useState } from "react";
+import { TablePagination, Card, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
+import useGetClient from '../hooks/useGetClient'
+
+
 
 
 
 const Comanda = ({content, cuenta}) => {
-  return (
-    <div>
-      <Card id='Comanda'>
-        <section id='cliente'>
-          <h2>Cliente:</h2>
-          <TextField size='small'
-          variant='outlined'>
+  
 
-          </TextField>
-          
-        </section>
+
+
+ /*  const columns = [
+  { field: 'product', headerName: 'Producto', width: 130 },
+  { field: 'price', headerName: 'Precio', width: 70 },
+ 
+];
+const rows = [
+  content.map((item, index) => (
+  { id:index+'a', product: item.product, price: item.price }
+  ))
+];
+return (
+<div style={{ height: 400, width: '100%' }}>
+<DataGrid
+  rows={rows}
+  columns={columns}
+  pageSize={5}
+  rowsPerPageOptions={[5]}
+ 
+/>
+</div>
+); */
+
+
+    return( <div>
+      <Card id='Comanda'>
+        
         <CardContent>
           <TableContainer>
-            <Table  pageSize={5}
-        rowsPerPageOptions={[5]} stickyHeader aria-label='sticky table'>
-              <TableHead>
+            <Table stickyHeader aria-label='a dense table'>
+              <TableHead color='primary' id='tableHeader'>
                 <TableRow>
                   <TableCell width='80' align='center'>Produto</TableCell>
                   <TableCell width='20'align='center'>Precio</TableCell>
@@ -31,26 +51,33 @@ const Comanda = ({content, cuenta}) => {
               {content.map((item, index) => (
            <TableRow key={index+'a'}>
              <TableCell width='80' align='center' key={index}>{item.product}</TableCell>
+             {/* <TableCell width='10' align='center' key={index+2}><img alt='' src={iconoNotPassword}/></TableCell> */}
              <TableCell width='20' align='center' key={item.id}>{"$"+item.precio}</TableCell>
              </TableRow>
               ))}
-            <TableRow id='Cuenta'>
-            <TableCell align='right'>Total: </TableCell>
-            <TableCell align='right'>$ {cuenta}</TableCell>
-            </TableRow>
+           
               </TableBody>
             </Table>
+            
           </TableContainer>
+          
         </CardContent>
+      </Card><section id='Total'>
+          <h2>Total</h2>
+          <h3>$ {cuenta}
+
+          </h3>
+          
+        </section>
        
-      </Card>
-    </div>
-  )
+    </div>)
+
 }
 
 
 
 export default Comanda
+
 
 
 
