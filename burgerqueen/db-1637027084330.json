@@ -103,67 +103,18 @@
   },
   "orders": [
     {
-      "id": "pato",
+      "id": "prueba",
+      "products": [],
+      "status": "Completado"
+    },
+    {
+      "id": "Nay",
       "products": [],
       "status": "Pendiente"
     },
     {
-      "id": "nay",
-      "products": [
-        []
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "Gaby",
-      "products": [
-        "Hamburguesa simple",
-        "Hamburguesa doble",
-        "Aros de cebolla"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "Pepe",
-      "products": [
-        "Hamburguesa doble",
-        "Hamburguesa simple",
-        "Papas Fritas"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "Lola",
-      "products": [
-        "Hamburguesa doble",
-        "Hamburguesa simple"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "Example",
-      "products": [
-        "Hamburguesa simple",
-        "Papas Fritas",
-        "Aros de cebolla"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "Valeria",
-      "products": [
-        "Hamburguesa simple",
-        "Hamburguesa doble",
-        "Papas Fritas",
-        "Aros de cebolla"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "Xa_vRhT",
-      "products": [
-        "Hamburguesa simple"
-      ],
+      "id": "Emma",
+      "products": [],
       "status": "Pendiente"
     }
   ]
