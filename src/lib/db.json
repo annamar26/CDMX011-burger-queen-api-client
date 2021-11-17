@@ -264,6 +264,115 @@
       "fecha": "16/11/2021",
       "hora": "14:41:47",
       "id": 6
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "pruebacantidad",
+      "productos": [
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "15:13:54",
+      "id": 7
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "producto": "Hamburguesa simple",
+          "precio": 10,
+          "quantity": 1
+        },
+        {
+          "id": "5",
+          "producto": "Hamburguesa simple",
+          "precio": 10,
+          "quantity": 1
+        },
+        {
+          "id": "9",
+          "producto": "Agua 500ml",
+          "precio": 5,
+          "quantity": 1
+        },
+        {
+          "id": "9",
+          "producto": "Agua 500ml",
+          "precio": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 30,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "17:05:11",
+      "id": 8
+    },
+    {
+      "mesero": "",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5,
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "producto": "Sandwich de jamón y queso",
+          "precio": 10,
+          "quantity": 2
+        },
+        {
+          "id": "2",
+          "producto": "Café con leche",
+          "precio": 7,
+          "quantity": 2
+        },
+        {
+          "id": "4",
+          "producto": "Jugo de frutas natural",
+          "precio": 7,
+          "quantity": 2
+        }
+      ],
+      "total": 58,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "18:13:29",
+      "id": 9
+    },
+    {
+      "mesero": "",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5,
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "producto": "Café americano",
+          "precio": 5,
+          "quantity": 1
+        }
+      ],
+      "total": 10,
+      "status": "En preparacion",
+      "fecha": "16/11/2021",
+      "hora": "18:14:12",
+      "id": 10
     }
   ]
 }

@@ -6,23 +6,32 @@ import useSetComanda from "../hooks/useSetComanda";
 import BackButton from "./BackButton";
 
 function MenuDesayuno() {
-  const { order, addProduct, suma, sumar } = useSetComanda();
+  const { order, addProduct, sumar, suma, setOrder } = useSetComanda();
   const { desayuno } = useGetProducts();
 
   return (
     <div className="contenedorBotones">
       <Comanda order={order} cuenta={suma} />
       <section id="desayunoButttons">
-        {desayuno.map((item) => (
+        {desayuno.map((item, index) => (
           <div key={item.id}>
             <Button
               variant="contained"
               margin="normal"
               color="secondary"
               onClick={() => {
-                addProduct(item.id, item.name, item.price);
-                sumar(item.price);
-              }}
+          
+                if (!order.includes(item)) {
+                  addProduct(item.id, item.name, item.price, 1);
+                  sumar(item.price);
+                  console.log(order);
+                } else {
+                  item.quantity += 1;
+                  sumar(item.precio);
+                  console.log(order);
+                }
+                }
+              }
             >
               {item.name} {"$" + item.price}
             </Button>

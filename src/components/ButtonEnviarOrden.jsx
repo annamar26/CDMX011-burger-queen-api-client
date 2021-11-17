@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import Axios from "axios";
 
 
-function ButtonEnviarOrden({ cliente, orden, total, mesero }) {
+function ButtonEnviarOrden({ cliente, orden, total, mesero}) {
   const orderToKitchen = async (array, cliente, total, mesero) => {
   
     let res = await Axios.post("http://localhost:4000/orders", {

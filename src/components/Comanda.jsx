@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import useSetComanda from "../hooks/useSetComanda";
 import {
   Card,
+  Select,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableHead,
   TableRow,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  InputAdornment,
 } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import plus from "../images/plus.png";
@@ -17,8 +22,7 @@ import ButtonEnviarOrden from "./ButtonEnviarOrden";
 import { getUser } from "../lib/FirebaseAut";
 
 const Comanda = ({ order, cuenta }) => {
-  const { suma, sumar, obtenerNombre, cliente } = useSetComanda()
-
+  const { suma, sumar, obtenerNombre, cliente, addProduct } = useSetComanda();
 
   const { email } = getUser();
   return (
@@ -39,12 +43,15 @@ const Comanda = ({ order, cuenta }) => {
             <Table stickyHeader aria-label='sticky table"'>
               <TableHead color="primary" id="tableHeader">
                 <TableRow>
-                  <TableCell width="60" align="center">
+                <TableCell width="10" align="center">
+                    Cantidad
+                  </TableCell>
+                  <TableCell width="50" align="center">
                     Produto
                   </TableCell>
                   <TableCell width="20" align="center">
                     Añadir/Eliminar
-                                   </TableCell>
+                  </TableCell>
                   <TableCell width="20" align="center">
                     Precio
                   </TableCell>
@@ -53,10 +60,26 @@ const Comanda = ({ order, cuenta }) => {
               <TableBody>
                 {order.map((item, index) => (
                   <TableRow key={index + "a"}>
-                    <TableCell width="60" align="center" key={index + 'e'}>
-                      {item.producto}
+                    <TableCell width='10'align='center' key={index+'i'}>{item.quantity}</TableCell>
+                    <TableCell width="60" align="center" key={index + "e"}>
+                      {item.name}
                     </TableCell>
-                    <TableCell width="20" align="center" key={index + 'b'}>
+                    {/*<TableCell width="20" align="center" key={index + "d"}>
+                       <TextField
+                        width="10"
+                        size="small"
+                       placeholder='1'
+                        onChange={(e)=>{
+                         
+                          item.cantidad=(e.target.value)
+                          addProduct(item.id, item.producto, item.precio*item.cantidad, item.cantidad);
+                       sumar(item.precio*(item.cantidad-1))
+
+            
+                        }}
+                        inputProps={{ inputMode: "numeric", pattern: "[0-9]*" /* ,
+                        startAdornment: (
+                          <InputAdornment position="start" id='aumentar'>
                       <img
                         width="50"
                         alt=""
@@ -65,20 +88,48 @@ const Comanda = ({ order, cuenta }) => {
                           sumar(item.precio);
                         }}
                         src={plus}
+                      /> 
+                          
+                        
+                          </InputAdornment>
+                        ),}}/>
+                      
+                    </TableCell> */}
+                    <TableCell width="20" align="center" key={index + "b"}>
+                      <img
+                        width="50"
+                        alt=""
+                        onClick={() => {
+                          if (!order.includes(item)) {
+                            order.push(item);
+                            sumar(item.precio);
+                            console.log(order);
+                          } else {
+                            item.quantity += 1;
+                            sumar(item.precio);
+                            console.log(order);
+                          }
+                        }}
+                        src={plus}
                       />
-                    
+
                       <img
                         width="20"
                         alt=""
                         src={deleteIco}
                         onClick={() => {
-                          order.splice(index, 1);
-                          sumar(-item.precio);
+                          if (item.quantity === 1) {
+                            order.splice(index, 1);
+                            sumar(-item.price);
+                          } else {
+                            item.quantity -= 1;
+                            sumar(-item.price);
+                          }
                         }}
                       />
                     </TableCell>
                     <TableCell width="20" align="center" key={item.id}>
-                      {"$" + item.precio}
+                      {item.price}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -88,13 +139,13 @@ const Comanda = ({ order, cuenta }) => {
         </CardContent>
       </Card>
       <section id="Total">
-        <h2>Total</h2>
-        <h3>$ {cuenta +suma }</h3>
+        <h2>Total:</h2>
+        <h3>$ {suma + cuenta}</h3>
       </section>
       <ButtonEnviarOrden
         cliente={cliente}
         orden={order}
-        total={cuenta + suma}
+        total={suma + cuenta}
         mesero={email}
       />
     </div>
