@@ -5,32 +5,22 @@ import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
 
 import BackButton from "./BackButton";
-function contador (array) {
-   let objeto = {};
-    for (let i = 1; i < array.length; i++) {
-    objeto[array[i].name]= 0
-    }
-   return objeto;
-  };
+import ButtonNewOrder from "./ButtonNewOrder";
 
-function MenuComida() { 
+function MenuComida() {
   const { comida } = useGetProducts();
-  let count = contador(comida)
+
   const { sumar, suma } = useSetComanda();
 
-
-
   const [order, setOrder] = useState([]);
-  
+
   /* const remover = (id)=>{
   const newOrder = order.filter((element) => element.id !== id);
   setOrder(newOrder)
-} */ 
-  
- 
+} */
+
   const actualizar = (id, count) => {
     const newOrder = order.map((item) => {
-     
       if (item.id === id) {
         return { ...item, quantity: count };
       }
@@ -53,7 +43,6 @@ function MenuComida() {
             value={"false"}
             increment={1}
             onClick={(e) => {
-            
               if (e.target.value === "false") {
                 sumar(item.price);
 
@@ -66,14 +55,13 @@ function MenuComida() {
                 ]);
 
                 document.getElementById(item.id).value = "true";
-
               } else {
                 const elemToSetup = order.find(
                   (product) => product.id === item.id
                 );
                 console.log(elemToSetup);
                 sumar(item.price);
-                actualizar(item.id, elemToSetup.quantity+1);
+                actualizar(item.id, elemToSetup.quantity + 1);
               }
             }}
           >
@@ -81,7 +69,7 @@ function MenuComida() {
           </Button>
         ))}
       </section>
-
+      <ButtonNewOrder />
       <BackButton content={"Regresar"} />
     </div>
   );

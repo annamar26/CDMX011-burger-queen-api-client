@@ -10,28 +10,29 @@ $ButtonColor: #dab5e1;
 
 body {
     /*   background-color: $BgColor; */
-    overflow-y: hidden;
+    /*   overflow-y: hidden; */
 }
 
 header {
     background-color: #b3ebe4;
     width: 100vw;
-    min-height: 17vh;
+    height: 8vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     font-size: $FontSize;
+    margin-bottom: 2vh;
     filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
     img {
         margin-left: 5%;
-        height: 15vh;
-        width: 15%;
+        height: 7.5vh;
+        width: 10%;
         animation: spin 5s infinite;
         filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
     }
     h1 {
-        font-size: $FontSize;
+        font-size: 80%;
         color: purple;
         filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
         text-align: center;
@@ -39,8 +40,8 @@ header {
     }
     p {
         margin-right: 5%;
-        width: 15%;
-        font-size: 2.5vw;
+        width: 10%;
+        font-size: 40%;
         text-align: justify;
     }
 }
@@ -108,9 +109,9 @@ main {
 }
 
 #desayunoButttons {
-    margin-left: 50vw;
+    margin-left: 53vw;
     margin-top: 5vh;
-    width: 50%;
+    width: 0%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     Button {
@@ -118,7 +119,7 @@ main {
         color: white;
         margin-bottom: 3vh;
         margin-left: 2vw;
-        height: 10vh;
+        height: 9vh;
         font-size: 120%;
         font-weight: 1000;
         background-color: $ButtonColor;
@@ -148,12 +149,34 @@ main {
     border-radius: 1.5vw;
 }
 
-#enviarOrden {
+#nuevaOrden {
     top: 90vh;
     ;
     position: absolute;
     width: 16vw;
     height: 5vh;
+    left: 61vw;
+    color: white;
+    font-size: 120%;
+    font-weight: 700;
+    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+    border-radius: 1.5vw;
+}
+
+#comandaButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 1vw;
+}
+
+#enviarOrden {
+    top: 91.3vh;
+    ;
+    position: absolute;
+    width: 16vw;
+    height: 4vh;
     left: 5vw;
     color: white;
     font-size: 120%;
@@ -204,13 +227,14 @@ main {
 }
 
 #Comanda {
-    height: 65vh;
-    width: 40%;
+    height: 70vh;
+    width: 46vw;
     background-color: #debef12f;
     position: absolute;
     margin-left: 4vw;
     border: solid 6px #B3EBE4;
-    top: 26vh
+    border-top: none;
+    top: 24vh
 }
 
 #cliente {
@@ -219,8 +243,8 @@ main {
     justify-content: space-around;
     align-items: center;
     background-color: $ButtonColor;
-    height: 6vh;
-    width: 40%;
+    height: 4.35vh;
+    width: 46vw;
     margin-left: 4vw;
     top: 20vh;
     position: absolute;
@@ -237,14 +261,14 @@ main {
 
 #Total {
     position: absolute;
-    width: 40%;
+    width: 46vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     background-color: $ButtonColor;
-    height: 6vh;
-    top: 89vh;
+    height: 4.5vh;
+    top: 90.5vh;
     border: solid 6px #B3EBE4;
     h2 {
         width: 50%;
@@ -258,6 +282,29 @@ main {
         filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
     }
     margin-left: 4vw;
+}
+
+#orderContainer {
+    display: grid;
+    width: 95%;
+    height: 90vh;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 0.5vh;
+    column-gap: 1vw;
+}
+
+#orden {
+    #orderHeader {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    margin: auto 0;
+    width: 98%;
+    height: 40vh;
+    background-color: #e1ceec2f;
+    box-shadow: 0 3px 5px 2px grey;
 }
 
 @keyframes spin {

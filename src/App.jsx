@@ -9,6 +9,7 @@ import Logo from '../src/images/Logo.png'
 import moment from 'moment';
 import MenuDesayuno from './components/MenuDesayuno';
 import MenuComida from './components/MenuComida';
+import Cocina from './components/Cocina';
 
 
 
@@ -38,6 +39,7 @@ useEffect(() => {
   <Route exact path='/menu' element={<Menu name="Desayuno"/>} />
   <Route exact path='/menu/desayuno' element={<MenuDesayuno />} />
   <Route exact path='/menu/comida' element={<MenuComida />} />
+  <Route exact path='/cocina' element={<Cocina />} />
    </Routes>
  
     </BrowserRouter>
