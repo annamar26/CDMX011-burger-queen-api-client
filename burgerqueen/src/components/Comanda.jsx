@@ -1,4 +1,82 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { usePostProducts } from "../hooks/usePostProduct";
+import { useState } from "react";
+
+function Comanda({ order, suma, resta, deleteElement, newPricePlus, newPriceMinus }) {
+  const { postProducts, clientName, clientNameFn } = usePostProducts(1);
+  const [state, setstate] = useState([0,0])
+
+  const addProd = (prod)=>{
+    setstate([...state, prod]);
+  }
+
+  return (
+    <div id="comanda">
+      <table>
+        <thead>
+          <tr>
+            <th>Cliente</th>
+            <th>
+              <input
+                id="client"
+                type="text"
+                onChange={(e) => clientNameFn(e.target.value)}
+              />
+            </th>
+          </tr>
+          <tr>
+            <th>Cant</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {order.map((product, i) => (
+            <tr key={i}>
+              <td>
+                <span>{product.quantity}</span>
+              </td>
+              <td>{product.name}</td>
+              <td>${product.price}</td>
+              <td>
+                <FontAwesomeIcon icon={faPlusCircle} onClick={() => {
+                  addProd(product.quantity++);
+                  newPricePlus(product.price)
+                }} />
+                <FontAwesomeIcon
+                  icon={faMinusCircle}
+                  onClick={(e) => {
+                    addProd(product.quantity--);
+                    newPriceMinus(product.price)
+                    if(product.quantity === 0){
+                      deleteElement(i, e);
+                      resta(product.price);
+                    }
+                  }}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td>${suma}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button id="send" onClick={() => postProducts(order, clientName)}>
+        Enviar
+      </button>
+    </div>
+  );
+}
+
+export default Comanda;
+
+/*import { usePostProducts } from "../hooks/usePostProduct";
 import {
   Table,
   TableBody,
@@ -22,10 +100,9 @@ const styles = makeStyles({
   tableCell: {
     height: 50,
   },
-});
+});*/
 
-function Comanda({ order, suma, resta }) {
-  const { postProducts, clientName, clientNameFn } = usePostProducts();
+/* const { postProducts, clientName, clientNameFn } = usePostProducts();
   const classes = styles();
   return (
     <div id="comanda">
@@ -53,22 +130,20 @@ function Comanda({ order, suma, resta }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {order.map((producto) => (
-              <TableRow key={producto.id}>
-                <TableCell>{producto.name}</TableCell>
-                <TableCell>{"$" + producto.price}</TableCell>
-                <TableCell>
-                  <FontAwesomeIcon
-                    onClick={(e)=>{
-                      e.preventDefault()
-                      resta(suma, producto.price)}}
-                    icon={faMinusCircle}
-                  />
-                </TableCell>
-                <TableCell>
+            {order.map((producto, i) => (
+              <TableRow key={i}>
+                <><TableCell>{producto.name}</TableCell><TableCell>{"$" + producto.price}</TableCell><TableCell>
+                <FontAwesomeIcon
+                  onClick={(e) => {
+                    e.preventDefault();
+                    resta(suma, producto.price);
+                    console.log(order)
+                  } }
+                  icon={faMinusCircle} />
+              </TableCell><TableCell>
                   <FontAwesomeIcon icon={faPlusCircle} />
                   <input id="add-product" type="text" />
-                </TableCell>
+                </TableCell></>
               </TableRow>
             ))}
             <TableRow className={classes.tableCell}>
@@ -86,32 +161,4 @@ function Comanda({ order, suma, resta }) {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
-  );
-}
-
-export default Comanda;
-
-/*  <div id="comanda">
-      <table>
-        <thead>
-          <tr>
-            <th>Producto</th>
-            <th>Precio</th>
-          </tr>
-        </thead>
-        <tbody>
-          {content.map((producto) => (
-            <tr key={producto.id}>
-              <td>{producto.name}</td>
-              <td>{" $" + producto.price}</td>
-            </tr>
-          ))}
-          <tr>
-            <td>Total</td>
-            <td>{"$" + cuenta}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button onClick={()=>postProducts(content)}>Click</button>
     </div>*/

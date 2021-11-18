@@ -5,9 +5,9 @@ export const usePostProducts = () => {
   const [dataPost, setDataPost] = useState([]);
   const [clientName, setClientName] = useState("");
 
-const clientNameFn = (value) =>{
-  setClientName(value)
-}
+  const clientNameFn = (value) => {
+    setClientName(value);
+  };
 
   const postProducts = (content, client) => {
     let post = [];
@@ -30,6 +30,6 @@ const clientNameFn = (value) =>{
     postProducts,
     dataPost,
     clientNameFn,
-    clientName
+    clientName,
   };
 };
