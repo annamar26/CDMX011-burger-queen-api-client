@@ -5,22 +5,32 @@ import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
 
 import BackButton from "./BackButton";
+function contador (array) {
+   let objeto = {};
+    for (let i = 1; i < array.length; i++) {
+    objeto[array[i].name]= 0
+    }
+   return objeto;
+  };
 
-function MenuComida() {
+function MenuComida() { 
+  const { comida } = useGetProducts();
+  let count = contador(comida)
   const { sumar, suma } = useSetComanda();
 
-  const { comida } = useGetProducts();
+
 
   const [order, setOrder] = useState([]);
-const [count, setCount] = useState(1);
+  
   /* const remover = (id)=>{
   const newOrder = order.filter((element) => element.id !== id);
   setOrder(newOrder)
-} */
-
+} */ 
+  
+ 
   const actualizar = (id, count) => {
     const newOrder = order.map((item) => {
-      setCount(count+1)
+     
       if (item.id === id) {
         return { ...item, quantity: count };
       }
@@ -43,27 +53,27 @@ const [count, setCount] = useState(1);
             value={"false"}
             increment={1}
             onClick={(e) => {
-      
-              if (e.target.value === "false") { 
-                setCount(1);
+            
+              if (e.target.value === "false") {
                 sumar(item.price);
-               
 
                 setOrder([
                   ...order,
                   {
                     ...item,
-                    quantity: count,
+                    quantity: 1,
                   },
                 ]);
-                document.getElementById(item.id).value = "true";
-            
 
-                console.log(order);
+                document.getElementById(item.id).value = "true";
+
               } else {
-             setCount(1)
+                const elemToSetup = order.find(
+                  (product) => product.id === item.id
+                );
+                console.log(elemToSetup);
                 sumar(item.price);
-                actualizar(item.id, count);
+                actualizar(item.id, elemToSetup.quantity+1);
               }
             }}
           >
