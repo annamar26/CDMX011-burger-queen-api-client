@@ -9,8 +9,8 @@ $sizeImages: 90px;
   font-family: "Reem Kufi", sans-serif;
   font-size: 25px;
 }
-body{
-    background-color: azure;
+body {
+  background-color: azure;
 }
 header {
   height: 100px;
@@ -22,14 +22,13 @@ header {
     height: $sizeImages;
     margin-left: 10px;
     animation: spin 5s infinite;
-
   }
   section {
     width: 100%;
     display: flex;
     position: absolute;
     justify-content: center;
-    #time{
+    #time {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -50,118 +49,141 @@ main {
   justify-content: space-around;
   align-items: center;
   img {
-    
     width: $sizeImages;
     height: $sizeImages;
     filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
-    
   }
 }
-form{
-display: flex;
-justify-content: center;  
-width: 100%;
-#float-father{
-  margin-top: 30px;
+form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 50%;
-  #float-label {
+  justify-content: center;
+  width: 100%;
+  #float-father {
+    margin-top: 30px;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 40px;
-    position: relative;
-    input {
-      text-align: center;
-      width:95%;
-      height: 56px;
-      padding: 14px 16px 0 10px;
-      outline: 0;
-      border: {
-        style: solid;
-        width: 4px;
-        color: $colorViolet;
-        radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    #float-label {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 40px;
+      position: relative;
+      input {
+        text-align: center;
+        width: 95%;
+        height: 56px;
+        padding: 14px 16px 0 10px;
+        outline: 0;
+        border: {
+          style: solid;
+          width: 4px;
+          color: $colorViolet;
+          radius: 10px;
+        }
+      }
+      label {
+        font: {
+          size: 20px;
+        }
+        color: #999;
+        position: absolute;
+        pointer-events: none;
+        transform: translate(0, 26px) scale(1);
+        transform-origin: top left;
+        transition: all 0.2s ease-out;
       }
     }
-    label {
-      font: {
-        size: 20px
-      };
-      color: #999;
-      position: absolute;
-      pointer-events: none;
-      transform: translate(0, 26px) scale(1);
-      transform-origin: top left;
-      transition: all 0.2s ease-out;
+    #float-label:focus-within label {
+      transform: translate(0, 12px) scale(0.75);
+    }
+    #float-label .Active {
+      transform: translate(0, 12px) scale(0.75);
+    }
+    button {
+      width: 50%;
+      background-color: $colorViolet;
+      padding: 5px;
+      border: {
+        style: none;
+        radius: 10px;
+      }
+      outline: none;
+      box-shadow: 5px 10px 10px #0000002f;
     }
   }
-  #float-label:focus-within label {
-    transform: translate(0, 12px) scale(0.75);
-  }
-  #float-label .Active {
-    transform: translate(0, 12px) scale(0.75);
-  }
-  button {
-    width: 50%;
-    background-color:$colorViolet;
-    padding: 5px;
-    border: {
-      style: none;
-      radius: 10px;
-    }
-    outline: none;
-    box-shadow: 5px 10px 10px #0000002f;
-  }
-}
 }
 ::placeholder {
   text-align: center;
   color: rgba(0, 0, 0, 0.24);
 }
-button{
+
+button {
   width: 200px;
   height: 80px;
   margin: 10px;
-  background-color:$colorViolet;
-  padding: 5px;
+  background-color: $colorViolet;
+  border: {
+    style: none;
+    radius: 10px
+  }
+  outline: none;
+  box-shadow: 5px 10px 10px #0000002f;
+}
+.menu-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 20%;
+}
+.comanda-div{
+  display: flex;
+  justify-content: flex-start;
+  margin: 10px;
+  position: absolute;
+}
+.lunch-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  .menu-container {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+#client{
+  width: 110px;
   border: {
     style: none;
     radius: 10px;
   }
   outline: none;
-  box-shadow: 5px 10px 10px #0000002f;
 }
-.menu-btns{
-  display: flex;
-  justify-content: center;
-  margin-top: 15%;
+#send{
+  width: 80px;
+  height: 50px;
 }
-
-.lunch-container{
- display: flex;
- justify-content: space-around;
- .menu-container{
-  width: fit-content;
-  margin-right: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-#comanda{
-  width: 40%;
-  background-color: white;
+#add-product{
+  width: 35px;
+  text-align: center;
   border: {
     style: solid;
-    width: 4px;
     color: $colorViolet;
     radius: 10px;
   }
+  outline: none;
 }
+#regresar-btn{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
 }
-
 @keyframes spin {
-    from {transform:rotateY(0deg);}
-    to {transform:rotateY(360deg);}
+  from {
+    transform: rotateY(0deg);
   }
+  to {
+    transform: rotateY(360deg);
+  }
+}

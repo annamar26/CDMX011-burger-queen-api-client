@@ -12,7 +12,6 @@ function Breakfast() {
           {desayunos.map((product) => (
             <button
               key={product.id}
-              
               onClick={(e) => {
                 e.preventDefault();
                 console.log(product.price);

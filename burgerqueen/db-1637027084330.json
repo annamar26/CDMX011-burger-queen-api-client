@@ -103,35 +103,18 @@
   },
   "orders": [
     {
-      "id": "nana",
-      "products": [
-        "Papas Fritas",
-        "Hamburguesa doble"
-      ],
+      "id": "prueba",
+      "products": [],
+      "status": "Completado"
+    },
+    {
+      "id": "Nay",
+      "products": [],
       "status": "Pendiente"
     },
     {
-      "id": "Pablo",
-      "products": [
-        "Papas Fritas",
-        "Hamburguesa doble",
-        "Aros de cebolla",
-        "Bebida/gaseosa 750ml"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "ryM_fsY",
-      "products": [
-        "Hamburguesa simple"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "6XYoz39",
-      "products": [
-        "Hamburguesa simple"
-      ],
+      "id": "Emma",
+      "products": [],
       "status": "Pendiente"
     }
   ]
