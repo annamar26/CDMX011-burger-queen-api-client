@@ -1,183 +1,398 @@
 {
-    "products": {
-        "desayuno": [{
-                "id": "1",
-                "name": "Café americano",
-                "price": 5,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "2",
-                "name": "Café con leche",
-                "price": 7,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "3",
-                "name": "Sandwich de jamón y queso",
-                "price": 10,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "4",
-                "name": "Jugo de frutas natural",
-                "price": 7,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            }
-        ],
-        "comida": [{
-                "id": "5",
-                "name": "Hamburguesa simple",
-                "price": 10,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "6",
-                "name": "Hamburguesa doble",
-                "price": 15,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "7",
-                "name": "Papas fritas",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "8",
-                "name": "Aros de cebolla",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "9",
-                "name": "Agua 500ml",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "10",
-                "name": "Agua 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "11",
-                "name": "Bebida/gaseosa 500ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "12",
-                "name": "Bebida/gaseosa 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            }
-        ]
+  "products": {
+    "desayuno": [
+      {
+        "id": "1",
+        "name": "Café americano",
+        "price": 5,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "2",
+        "name": "Café con leche",
+        "price": 7,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "3",
+        "name": "Sandwich de jamón y queso",
+        "price": 10,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "4",
+        "name": "Jugo de frutas natural",
+        "price": 7,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      }
+    ],
+    "comida": [
+      {
+        "id": "5",
+        "name": "Hamburguesa simple",
+        "price": 10,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "6",
+        "name": "Hamburguesa doble",
+        "price": 15,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "7",
+        "name": "Papas fritas",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "8",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "9",
+        "name": "Agua 500ml",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "10",
+        "name": "Agua 750ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "11",
+        "name": "Bebida/gaseosa 500ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "12",
+        "name": "Bebida/gaseosa 750ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      }
+    ]
+  },
+  "orders": [
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "12:42:02",
+      "id": 2,
+      "salidaCocina": "19:53:26",
+      "tiempoDePreparacion": null
     },
-    "orders": [{
-        "mesero": "correo@ejemplo.com",
-        "cliente": "",
-        "productos": [{
-                "id": "5",
-                "name": "Hamburguesa simple",
-                "price": 10,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "7",
-                "name": "Papas fritas",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "6",
-                "name": "Hamburguesa doble",
-                "price": 15,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "8",
-                "name": "Aros de cebolla",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "9",
-                "name": "Agua 500ml",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "10",
-                "name": "Agua 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "11",
-                "name": "Bebida/gaseosa 500ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            },
-            {
-                "id": "12",
-                "name": "Bebida/gaseosa 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": "",
-                "quantity": 1
-            }
-        ],
-        "total": 61,
-        "status": "En preparacion",
-        "fecha": "18/11/2021",
-        "hora": "01:04:43"
-    }]
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "name": "Aros de cebolla",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "10",
+          "name": "Agua 750ml",
+          "price": 7,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 42,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "19:48:28",
+      "id": 3,
+      "salidaCocina": "19:53:31"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "name": "Aros de cebolla",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "10",
+          "name": "Agua 750ml",
+          "price": 7,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 27,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "19:49:19",
+      "id": 4,
+      "salidaCocina": "19:53:30"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 30,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "19:53:48",
+      "id": 5,
+      "salidaCocina": "19:55:17"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 2
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 2
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 2
+        },
+        {
+          "id": "8",
+          "name": "Aros de cebolla",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 65,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "19:54:33",
+      "id": 6,
+      "salidaCocina": "19:55:18"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 3
+        },
+        {
+          "id": "8",
+          "name": "Aros de cebolla",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 2
+        }
+      ],
+      "total": 60,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "19:55:26",
+      "id": 7,
+      "salidaCocina": "19:55:45"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "10",
+          "name": "Agua 750ml",
+          "price": 7,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "9",
+          "name": "Agua 500ml",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 27,
+      "status": "Listo",
+      "fecha": "18/11/2021",
+      "hora": "19:55:39",
+      "id": 8,
+      "salidaCocina": "19:55:47"
+    }
+  ]
 }

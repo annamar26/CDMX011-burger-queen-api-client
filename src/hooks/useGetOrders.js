@@ -9,7 +9,9 @@ export const useGetOrders = () => {
         const resp = await Axios({
             url: "http://localhost:4000/orders",
         });;
-        setOrders(resp.data)
+
+        const filtrado = resp.data.filter(objeto => objeto.status === 'En preparacion')
+        setOrders(filtrado)
     };
 
 
@@ -17,6 +19,5 @@ export const useGetOrders = () => {
         getOrders()
     }, [orders])
 
-
-    return { orders, setOrders };
+    return { orders, setOrders, getOrders };
 };

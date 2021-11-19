@@ -14,6 +14,7 @@ function MenuComida() {
 
   const [order, setOrder] = useState([]);
 
+
   /* const remover = (id)=>{
   const newOrder = order.filter((element) => element.id !== id);
   setOrder(newOrder)

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import {
   Paper,
   TableContainer,
@@ -14,41 +14,34 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import { useGetOrders } from "../hooks/useGetOrders";
-import Axios from 'axios'
+import moment from 'moment'
 
-const OrderToCook = ({ orders }) => {
-const {setOrders} = useGetOrders()
-  const actualizar = (id) => {
-    const newOrder = orders.map((item) => {
-      if (item.id === id) {
-        return { ...item, status: 'Listo' };
-      }
-      return item;
-    });
-  
-  setOrders([...orders,{newOrder}])
-  let res = Axios.post("http://localhost:4000/orders", 
-      {orders}
-    );
+const OrderToCook = ({ orders, actualizar }) => {
 
-    let data = res.data;
-    console.log(data);
-  
-  };
-   
+
  
   return (
-    <Fragment>
+    <Fragment >
       {orders.map((item, index) => (
-        <Card id='orden' key={item.id + 1}>
+        <Card id='orden' key={item.id + 1} >
             
               <CardActions id='orderHeader'align='center'>
               <Button  variant="contained"
-              onClick={()=>{actualizar(item.id)}}
+              onClick={()=>{
+                const elemToSetup = orders.find(
+                  (order) => order.id === item.id
+                );
+                console.log(elemToSetup);
+              elemToSetup.status = 'Listo'
+              elemToSetup.salidaCocina= new Date().toLocaleTimeString()
+             
+              
+              actualizar(elemToSetup, item.id)
+                
+             }}
         margin="large"
         color="secondary"
-        size='small'>Orden Lista</Button>
+        size='small'>Orden Lista </Button>
            
         
             <Typography
@@ -57,7 +50,7 @@ const {setOrders} = useGetOrders()
               align='center'
               color='secondary'
             >
-              Orden:#{item.id}
+              Orden:#{item.id} {item.status}
             </Typography>   </CardActions>  <CardContent>
             <TableContainer component={Paper}>
            
@@ -92,7 +85,7 @@ const {setOrders} = useGetOrders()
                 </TableBody>
               </Table>
             </TableContainer>
-        
+   
           </CardContent>
         </Card>
       ))}
