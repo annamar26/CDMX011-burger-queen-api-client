@@ -393,6 +393,218 @@
       "hora": "19:55:39",
       "id": 8,
       "salidaCocina": "19:55:47"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "Ana",
+      "productos": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 4
+        },
+        {
+          "id": "3",
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 3
+        },
+        {
+          "id": "4",
+          "name": "Jugo de frutas natural",
+          "price": 7,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 57,
+      "status": "Listo",
+      "fecha": "19/11/2021",
+      "hora": "13:03:22",
+      "id": 9,
+      "salidaCocina": "13:03:50"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "Ana",
+      "productos": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 4
+        },
+        {
+          "id": "3",
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 3
+        },
+        {
+          "id": "4",
+          "name": "Jugo de frutas natural",
+          "price": 7,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 2
+        }
+      ],
+      "total": 64,
+      "status": "Listo",
+      "fecha": "19/11/2021",
+      "hora": "13:03:44",
+      "id": 10,
+      "salidaCocina": "13:03:52"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "Ana",
+      "productos": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 4
+        },
+        {
+          "id": "3",
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 3
+        },
+        {
+          "id": "4",
+          "name": "Jugo de frutas natural",
+          "price": 7,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 2
+        }
+      ],
+      "total": 71,
+      "status": "Listo",
+      "fecha": "19/11/2021",
+      "hora": "13:03:59",
+      "id": 11,
+      "salidaCocina": "13:38:39"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "10",
+          "name": "Agua 750ml",
+          "price": 7,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 3
+        }
+      ],
+      "total": 51,
+      "status": "Listo",
+      "fecha": "19/11/2021",
+      "hora": "13:38:04",
+      "id": 12,
+      "salidaCocina": "13:38:36"
+    },
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "name": "Hamburguesa doble",
+          "price": 15,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "10",
+          "name": "Agua 750ml",
+          "price": 7,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 3
+        }
+      ],
+      "total": 51,
+      "status": "En preparacion",
+      "fecha": "19/11/2021",
+      "hora": "13:38:54",
+      "id": 13
     }
   ]
 }
