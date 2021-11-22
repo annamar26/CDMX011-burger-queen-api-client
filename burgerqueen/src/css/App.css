@@ -213,17 +213,6 @@ button {
   margin-top: 20%;
 }
 
-.comanda-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin: 10px;
-  position: absolute;
-}
-
 .lunch-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -244,25 +233,85 @@ button {
       grid-template-columns: 1fr 1fr;
 }
 
-#client {
-  width: 110px;
-  border-style: none;
-  border-radius: 10px;
-  outline: none;
+.lunch-container .menu-container button {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 28px;
 }
 
-#send {
-  width: 80px;
-  height: 50px;
+.comanda-div {
+  width: 50%;
+  margin: 20px;
+  position: absolute;
 }
 
-#add-product {
-  width: 35px;
+.comanda-div #client {
+  width: 100%;
+  background-color: #dab5e1;
+}
+
+.comanda-div #client input {
+  width: 200px;
+  margin-left: 20px;
   text-align: center;
   border-style: solid;
-  border-color: #dab5e1;
-  border-radius: 10px;
+  border-radius: 20px;
+  border-color: #fa81aa;
   outline: none;
+}
+
+.comanda-div #total {
+  background-color: #dab5e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.comanda-div #total span {
+  margin-right: 30px;
+  font-size: 35px;
+}
+
+.comanda-div table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comanda-div table td,
+.comanda-div table th {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dab5e1;
+}
+
+.comanda-div table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.comanda-div table tr:hover {
+  background-color: #f4e7f7;
+}
+
+.comanda-div table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #dab5e1;
+  color: black;
+}
+
+.comanda-div table td {
+  text-align: center;
+}
+
+.comanda-div #send {
+  width: 150px;
+  height: 50px;
+  font-size: 35px;
 }
 
 #regresar-btn {
@@ -273,6 +322,14 @@ button {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-right: 20px;
+}
+
+.cards-kitchen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @-webkit-keyframes spin {

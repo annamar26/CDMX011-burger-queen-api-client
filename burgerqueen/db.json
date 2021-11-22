@@ -7,7 +7,8 @@
         "price": 5,
         "image": "url",
         "type": "Desayuno",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "2",
@@ -15,7 +16,8 @@
         "price": 7,
         "image": "url",
         "type": "Desayuno",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "3",
@@ -23,7 +25,8 @@
         "price": 10,
         "image": "url",
         "type": "Desayuno",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "6",
@@ -31,7 +34,8 @@
         "price": 7,
         "image": "url",
         "type": "Desayuno",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       }
     ],
     "comida": [
@@ -41,7 +45,8 @@
         "price": 10,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "8",
@@ -49,7 +54,8 @@
         "price": 15,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "9",
@@ -57,7 +63,8 @@
         "price": 5,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "10",
@@ -65,7 +72,8 @@
         "price": 5,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "11",
@@ -73,7 +81,8 @@
         "price": 5,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "12",
@@ -81,7 +90,8 @@
         "price": 7,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "13",
@@ -89,7 +99,8 @@
         "price": 7,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       },
       {
         "id": "14",
@@ -97,42 +108,45 @@
         "price": 10,
         "image": "url",
         "type": "Comida",
-        "dateEntry": ""
+        "dateEntry": "",
+        "quantity": 1
       }
     ]
   },
   "orders": [
     {
-      "id": "nana",
+      "id": 1,
+      "client": "Prueba",
       "products": [
-        "Papas Fritas",
-        "Hamburguesa doble"
+        {
+          "name": "Café americano",
+          "quantity": 1
+        },
+        {
+          "name": "Sandwich de jamón y queso",
+          "quantity": 1
+        }
       ],
-      "status": "Pendiente"
+      "entry": "11:37 AM",
+      "status": "Lista",
+      "exit": "11:47 AM"
     },
     {
-      "id": "Pablo",
+      "id": 2,
+      "client": "Prueba 2",
       "products": [
-        "Papas Fritas",
-        "Hamburguesa doble",
-        "Aros de cebolla",
-        "Bebida/gaseosa 750ml"
+        {
+          "name": "Café americano",
+          "quantity": 1
+        },
+        {
+          "name": "Sandwich de jamón y queso",
+          "quantity": 1
+        }
       ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "ryM_fsY",
-      "products": [
-        "Hamburguesa simple"
-      ],
-      "status": "Pendiente"
-    },
-    {
-      "id": "6XYoz39",
-      "products": [
-        "Hamburguesa simple"
-      ],
-      "status": "Pendiente"
+      "entry": "11:54 AM",
+      "exit": "11:55 AM",
+      "status": "Lista"
     }
   ]
 }

@@ -126,7 +126,7 @@ button {
   background-color: $colorViolet;
   border: {
     style: none;
-    radius: 10px
+    radius: 10px;
   }
   outline: none;
   box-shadow: 5px 10px 10px #0000002f;
@@ -136,12 +136,7 @@ button {
   justify-content: center;
   margin-top: 20%;
 }
-.comanda-div{
-  display: flex;
-  justify-content: flex-start;
-  margin: 10px;
-  position: absolute;
-}
+
 .lunch-container {
   display: flex;
   justify-content: flex-end;
@@ -150,34 +145,84 @@ button {
     width: fit-content;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    button{
+      height: fit-content;
+      font-size: 28px;
+    }
   }
 }
-#client{
-  width: 110px;
-  border: {
-    style: none;
-    radius: 10px;
+.comanda-div {
+  width: 50%;
+  margin: 20px;
+  position: absolute;
+  #client{
+    width: 100%;
+    background-color:$colorViolet;
+     input{
+      width: 200px;
+      margin-left:20px ;
+      text-align: center;
+      border: {
+        style: solid;
+        radius: 20px;
+        color: $colorPink;
+      }
+      outline: none;
+    }
   }
-  outline: none;
-}
-#send{
-  width: 80px;
-  height: 50px;
-}
-#add-product{
-  width: 35px;
-  text-align: center;
-  border: {
-    style: solid;
-    color: $colorViolet;
-    radius: 10px;
+  #total{
+    background-color: $colorViolet;
+    display: flex;
+    justify-content: flex-end;
+    span{
+      margin-right: 30px;
+      font-size: 35px;
+    }
   }
-  outline: none;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    td,
+    th {
+      border: {
+        style: solid;
+        width: 2px;
+        color: $colorViolet;
+      }
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: rgb(244, 231, 247);
+    }
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color:$colorViolet;
+      color: rgb(0, 0, 0);
+    }
+    td{
+      text-align: center;
+    }
+   }
+   #send {
+    width: 150px;
+    height: 50px;
+   font-size: 35px;
+  }
 }
-#regresar-btn{
+#regresar-btn {
   display: flex;
   justify-content: flex-end;
   margin-right: 20px;
+}
+.cards-kitchen{
+  display: flex;
+  flex-wrap: wrap;
 }
 @keyframes spin {
   from {
