@@ -11,8 +11,10 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
+  heigth: 600,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "2px solid #800080",
+  borderRadius: '1.5vw',
   boxShadow: 24,
   p: 4,
 };
@@ -25,8 +27,12 @@ export default function OrdersModal({ orders, item, actualizar }) {
   const [object, setObject]= useState(null)
 
   return (
-    <div>
-      <Button
+    window.location.pathname === '/cocina' ?
+       <div>
+      <Button  variant="contained"
+        margin="large"
+        color="secondary"
+        size='small'
         onClick={() => {
           handleOpen();
           const elemToSetup = orders.find((order) => order.id === item.id);
@@ -52,13 +58,11 @@ export default function OrdersModal({ orders, item, actualizar }) {
                   : tiempoTrancurrido._data.seconds
               }`;
 
-              elemToSetup.tiempoTrancurrido = strTiempo;
-              setTiempo(elemToSetup.tiempoTrancurrido)
+              elemToSetup.tiempoDePreparacion = strTiempo;
+              setTiempo(elemToSetup.tiempoDePreparacion)
               setObject(elemToSetup)
         }}
-        margin="large"
-        color="secondary"
-        size="small"
+       
       >
         Orden Lista
       </Button>
@@ -69,19 +73,87 @@ export default function OrdersModal({ orders, item, actualizar }) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Tiempor en cocina: {tiempo}
+          <Typography align='center' id="modal-modal-title" variant="h6" component="h2">
+            Tiempo en cocina: {tiempo}
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+          <Typography  align='center' id="modal-modal-description" sx={{ mt: 2 }}>
             La notificación de orden lista sera enviada al mesero ¿Está seguro
             de continuar?
+
+
           </Typography>
+          <section id='modalButtons'>
           <Button
+          align='center'
+           variant="contained"
+           margin="large"
+           color="secondary"
+           size='small'
             onClick={() => {
              
               actualizar(object, item.id);
             }}
           >Enviar a piso</Button>
+          <Button
+          align='center'
+           variant="contained"
+           margin="large"
+           color="secondary"
+           size='small'
+            onClick={handleClose}
+          >Cancelar</Button></section>
+        </Box>
+      </Modal>
+    </div> :   <div>
+      <Button  variant="contained"
+        margin="large"
+        color="secondary"
+        size='small'
+        onClick={() => {
+          handleOpen();
+          const elemToSetup = orders.find((order) => order.id === item.id);
+
+              elemToSetup.status = "Entregada";
+             
+
+              
+              setObject(elemToSetup)
+        }}
+       
+      >
+        Orden Entregada
+      </Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography align='center' id="modal-modal-title" variant="h6" component="h2">
+           ¿Estás seguro de que quieres archivar esta orden?
+          </Typography>
+          
+          <section id='modalButtons'>
+          <Button
+          align='center'
+           variant="contained"
+           margin="large"
+           color="secondary"
+           size='small'
+            onClick={() => {
+             
+              actualizar(object, item.id);
+            }}
+          >Sí</Button>
+          <Button
+          align='center'
+           variant="contained"
+           margin="large"
+           color="secondary"
+           size='small'
+            onClick={handleClose}
+          >No</Button></section>
         </Box>
       </Modal>
     </div>

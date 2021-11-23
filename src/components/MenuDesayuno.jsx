@@ -4,7 +4,7 @@ import Comanda from "./Comanda";
 import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
 import BackButton from "./BackButton";
-import ButtonNewOrder from "./ButtonNewOrder";
+
 
 function MenuDesayuno() {
   const { sumar, suma } = useSetComanda();
@@ -60,7 +60,7 @@ function MenuDesayuno() {
           </div>
         ))}
       </section>
-      <ButtonNewOrder />
+      
       <BackButton content={"Regresar"} />
     </div>
   );

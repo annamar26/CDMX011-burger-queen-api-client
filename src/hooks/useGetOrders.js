@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 
 export const useGetOrders = () => {
-    const [orders, setOrders] = useState([]);
+    const [pendingOrders, setPendingOrders] = useState([]);
+    const [ordersToDeliver, setOrdersToDeliver] = useState([]);
 
 
     const getOrders = async() => {
@@ -11,13 +12,15 @@ export const useGetOrders = () => {
         });;
 
         const filtrado = resp.data.filter(objeto => objeto.status === 'En preparacion')
-        setOrders(filtrado)
+        const filtrado2 = resp.data.filter(objeto => objeto.status === 'Listo')
+        setPendingOrders(filtrado)
+        setOrdersToDeliver(filtrado2)
     };
 
 
     useEffect(() => {
         getOrders()
-    }, [orders])
+    }, [pendingOrders], [ordersToDeliver])
 
-    return { orders, setOrders, getOrders };
+    return { pendingOrders, ordersToDeliver, getOrders };
 };

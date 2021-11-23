@@ -1,6 +1,6 @@
 import { useState } from "react";
 const useSetComanda = () => {
-    /*    const [order, setOrder] = useState([]); */
+    const [order, setOrder] = useState([]);
     const [suma, setSuma] = useState(0);
     const [cliente, setCliente] = useState("");
 
@@ -23,13 +23,13 @@ const useSetComanda = () => {
 
 
     return {
-        /*   order, */
+        order,
         /*  addProduct, */
         suma,
         sumar,
         obtenerNombre,
-        cliente
-        /*    setOrder */
+        cliente,
+        setOrder
 
     }
 }

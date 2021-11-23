@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
+import React, { Fragment } from "react";
 import {
   Paper,
   TableContainer,
@@ -66,7 +66,7 @@ const OrderToCook = ({ orders, actualizar }) => {
                 </TableBody>
               </Table>
             </TableContainer>
-            <p>algo</p>
+            
           </CardContent>
         </Card>
       ))}

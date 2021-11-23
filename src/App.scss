@@ -33,16 +33,18 @@ header {
         filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
     }
     h1 {
-        font-size: 80%;
+        position: absolute;
+        left: 33.33%;
+        left: 33.33%;
+        font-size: 70%;
         color: purple;
         filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
         text-align: center;
-        width: auto;
+        width: 33.33%;
     }
     p {
-        margin-right: 5%;
-        width: 10%;
-        font-size: 40%;
+        width: 17%;
+        font-size: 37%;
         text-align: justify;
     }
 }
@@ -100,7 +102,7 @@ main {
         #Login:hover {
             background-color: $fontColor;
             color: purple;
-            border: 2px solid purple;
+            border: 2px solid #800080;
             animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
             transform: translate3d(0, 0, 0);
             backface-visibility: hidden;
@@ -110,19 +112,19 @@ main {
 }
 
 #desayunoButttons {
-    margin-left: 53vw;
+    margin-left: 59vw;
     margin-top: 5vh;
     width: 0%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     Button {
-        width: 20vw;
+        width: 17vw;
         color: white;
         margin-bottom: 3vh;
         margin-left: 2vw;
         height: 9vh;
-        font-size: 120%;
-        font-weight: 1000;
+        font-size: auto;
+        font-weight: bolder;
         background-color: $ButtonColor;
         filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
         -webkit-text-fill-color: rgb(243, 240, 243);
@@ -137,7 +139,7 @@ main {
 }
 
 #regresarMenu2 {
-    top: 90vh;
+    top: 87vh;
     ;
     position: absolute;
     width: 16vw;
@@ -150,18 +152,16 @@ main {
     border-radius: 1.5vw;
 }
 
-#nuevaOrden {
-    top: 90vh;
+#cancelar {
+    top: 87.7vh;
     ;
     position: absolute;
     width: 16vw;
     height: 5vh;
-    left: 61vw;
-    color: white;
+    left: 22vw;
     font-size: 120%;
     font-weight: 700;
-    filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
-    border-radius: 1.5vw;
+    color: black
 }
 
 #comandaButtons {
@@ -173,7 +173,7 @@ main {
 }
 
 #enviarOrden {
-    top: 91.3vh;
+    top: 88.2vh;
     ;
     position: absolute;
     width: 16vw;
@@ -188,7 +188,10 @@ main {
     border-radius: 1.5vw;
     border-style: solid;
     border-width: 0.3vw;
-    color: purple
+    color: purple;
+    #clientName {
+        height: 1.5vh;
+    }
 }
 
 .container {
@@ -229,13 +232,15 @@ main {
 
 #Comanda {
     height: 70vh;
-    width: 46vw;
+    width: 55.5vw;
     background-color: #debef12f;
     position: absolute;
-    margin-left: 4vw;
-    border: solid 6px #B3EBE4;
+    margin-left: 2.5vw;
+    border: solid 4px #B3EBE4;
     border-top: none;
-    top: 24vh
+    top: 17.3vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #cliente {
@@ -244,12 +249,13 @@ main {
     justify-content: space-around;
     align-items: center;
     background-color: $ButtonColor;
-    height: 4.35vh;
-    width: 46vw;
-    margin-left: 4vw;
-    top: 20vh;
+    height: 5.5vh;
+    width: 55.5vw;
+    margin-left: 2.5vw;
+    top: 12vh;
     position: absolute;
-    border: solid 6px #B3EBE4;
+    border: solid 4px #B3EBE4;
+    z-index: 1;
     h2 {
         color: purple;
         filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
@@ -262,27 +268,28 @@ main {
 
 #Total {
     position: absolute;
-    width: 46vw;
+    width: 55.5vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: right;
     align-items: center;
     background-color: $ButtonColor;
     height: 4.5vh;
-    top: 90.5vh;
-    border: solid 6px #B3EBE4;
+    top: 87.6vh;
+    left: 2.5vw;
+    border: solid 4px #B3EBE4;
     h2 {
-        width: 50%;
-        color: purple;
-        text-align: right;
-        filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
-    }
-    h3 {
+        width: 20%;
         color: purple;
         text-align: left;
         filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
     }
-    margin-left: 4vw;
+    h3 {
+        width: 12%;
+        color: purple;
+        text-align: left;
+        filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+    }
 }
 
 #orderContainer {
@@ -306,6 +313,13 @@ main {
     height: 40vh;
     background-color: #e1ceec2f;
     box-shadow: 0 3px 5px 2px grey;
+}
+
+#modalButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3vh;
 }
 
 @keyframes spin {

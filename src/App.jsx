@@ -9,7 +9,8 @@ import Logo from '../src/images/Logo.png'
 import moment from 'moment';
 import MenuDesayuno from './components/MenuDesayuno';
 import MenuComida from './components/MenuComida';
-import Cocina from './components/Cocina';
+import OrdersPage from './components/OrdersPage';
+import { useGetOrders } from './hooks/useGetOrders';
 
 
 
@@ -17,18 +18,20 @@ import Cocina from './components/Cocina';
 
 
 function App() {
+  const { pendingOrders, ordersToDeliver} = useGetOrders()
 const [time, setTime] = useState(Date.now());
 
 useEffect(() => {
    setInterval(() => setTime(Date.now()), 1000);
 
 }, []); 
+
   return (
     <BrowserRouter className="App">
        <header>
         <img src={Logo} alt=""></img>
         
-          <h1>POS System</h1>
+          <h1>Burguer Queen</h1>
      
         <p>{moment(time).format('DD/MM/YYYY, h:mm:ss a')}</p>
 
@@ -39,7 +42,9 @@ useEffect(() => {
   <Route exact path='/menu' element={<Menu name="Desayuno"/>} />
   <Route exact path='/menu/desayuno' element={<MenuDesayuno />} />
   <Route exact path='/menu/comida' element={<MenuComida />} />
-  <Route exact path='/cocina' element={<Cocina />} />
+  <Route exact path='/cocina' element={<OrdersPage orders={pendingOrders} header={"Cocina"}/>} />
+  <Route exact path='/pedidos' element={<OrdersPage orders={ordersToDeliver} header={"Pedidos Listos"}/>} />
+  
    </Routes>
  
     </BrowserRouter>

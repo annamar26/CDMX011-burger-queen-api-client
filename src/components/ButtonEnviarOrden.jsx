@@ -27,6 +27,7 @@ function ButtonEnviarOrden({ cliente, orden, total, mesero }) {
       <Button
         onClick={() => {
           orderToKitchen(orden, cliente, total, mesero);
+          window.location.reload()
         }}
         variant="contained"
         margin="large"

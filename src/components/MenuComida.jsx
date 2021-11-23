@@ -5,7 +5,6 @@ import { useGetProducts } from "../hooks/useGetProducts";
 import useSetComanda from "../hooks/useSetComanda";
 
 import BackButton from "./BackButton";
-import ButtonNewOrder from "./ButtonNewOrder";
 
 function MenuComida() {
   const { comida } = useGetProducts();
@@ -61,8 +60,9 @@ function MenuComida() {
                   (product) => product.id === item.id
                 );
                 console.log(elemToSetup);
+                
                 sumar(item.price);
-                actualizar(item.id, elemToSetup.quantity + 1);
+                actualizar(item.id, elemToSetup.quantity+1);
               }
             }}
           >
@@ -70,7 +70,7 @@ function MenuComida() {
           </Button>
         ))}
       </section>
-      <ButtonNewOrder />
+     
       <BackButton content={"Regresar"} />
     </div>
   );

@@ -1,363 +1,105 @@
 {
-  "products": {
-    "desayuno": [
-      {
-        "id": "1",
-        "name": "Café americano",
-        "price": 5,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      },
-      {
-        "id": "2",
-        "name": "Café con leche",
-        "price": 7,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      },
-      {
-        "id": "3",
-        "name": "Sandwich de jamón y queso",
-        "price": 10,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      },
-      {
-        "id": "4",
-        "name": "Jugo de frutas natural",
-        "price": 7,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      }
-    ],
-    "comida": [
-      {
-        "id": "5",
-        "name": "Hamburguesa simple",
-        "price": 10,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "6",
-        "name": "Hamburguesa doble",
-        "price": 15,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "7",
-        "name": "Papas fritas",
-        "price": 5,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "8",
-        "name": "Aros de cebolla",
-        "price": 5,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "9",
-        "name": "Agua 500ml",
-        "price": 5,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "10",
-        "name": "Agua 750ml",
-        "price": 7,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "11",
-        "name": "Bebida/gaseosa 500ml",
-        "price": 7,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      },
-      {
-        "id": "12",
-        "name": "Bebida/gaseosa 750ml",
-        "price": 7,
-        "image": "url",
-        "type": "Comida",
-        "dateEntry": ""
-      }
+    "products": {
+        "desayuno": [{
+                "id": "1",
+                "name": "Café americano",
+                "price": 5,
+                "image": "url",
+                "type": "Desayuno",
+                "dateEntry": ""
+            },
+            {
+                "id": "2",
+                "name": "Café con leche",
+                "price": 7,
+                "image": "url",
+                "type": "Desayuno",
+                "dateEntry": ""
+            },
+            {
+                "id": "3",
+                "name": "Sandwich de jamón y queso",
+                "price": 10,
+                "image": "url",
+                "type": "Desayuno",
+                "dateEntry": ""
+            },
+            {
+                "id": "4",
+                "name": "Jugo de frutas natural",
+                "price": 7,
+                "image": "url",
+                "type": "Desayuno",
+                "dateEntry": ""
+            }
+        ],
+        "comida": [{
+                "id": "5",
+                "name": "Hamburguesa simple",
+                "price": 10,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "6",
+                "name": "Hamburguesa doble",
+                "price": 15,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "7",
+                "name": "Papas fritas",
+                "price": 5,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "8",
+                "name": "Aros de cebolla",
+                "price": 5,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "9",
+                "name": "Agua 500ml",
+                "price": 5,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "10",
+                "name": "Agua 750ml",
+                "price": 7,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "11",
+                "name": "Bebida/gaseosa 500ml",
+                "price": 7,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            },
+            {
+                "id": "12",
+                "name": "Bebida/gaseosa 750ml",
+                "price": 7,
+                "image": "url",
+                "type": "Comida",
+                "dateEntry": ""
+            }
+        ]
+    },
+    "orders": [
+
     ]
-  },
-  "orders": [
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 15,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "16:52:01",
-      "id": 1,
-      "salidaCocina": "17:32:32",
-      "tiempoTrancurrido": "00:40:31"
-    },
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 15,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "16:55:20",
-      "id": 2,
-      "salidaCocina": "17:32:34",
-      "tiempoTrancurrido": "00:37:14"
-    },
-    {
-      "mesero": "",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 15,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "17:07:48",
-      "id": 3,
-      "salidaCocina": "17:32:45",
-      "tiempoTrancurrido": "00:24:57"
-    },
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 2
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 2
-        }
-      ],
-      "total": 30,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "17:14:29",
-      "id": 4,
-      "salidaCocina": "17:32:43",
-      "tiempoTrancurrido": "00:18:14"
-    },
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 15,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "20:42:40",
-      "id": 5,
-      "salidaCocina": "20:47:35",
-      "tiempoTrancurrido": "00:04:55"
-    },
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 15,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "20:48:20",
-      "id": 6,
-      "salidaCocina": "20:48:24",
-      "tiempoTrancurrido": "00:00:04"
-    },
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 15,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "20:51:12",
-      "id": 7,
-      "salidaCocina": "20:51:22",
-      "tiempoTrancurrido": "00:00:10"
-    },
-    {
-      "mesero": "correo@ejemplo.com",
-      "cliente": "",
-      "productos": [
-        {
-          "id": "5",
-          "name": "Hamburguesa simple",
-          "price": 10,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        },
-        {
-          "id": "7",
-          "name": "Papas fritas",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 2
-        },
-        {
-          "id": "8",
-          "name": "Aros de cebolla",
-          "price": 5,
-          "image": "url",
-          "type": "Comida",
-          "dateEntry": "",
-          "quantity": 1
-        }
-      ],
-      "total": 25,
-      "status": "Listo",
-      "fecha": "22/11/2021",
-      "hora": "20:54:54",
-      "id": 8,
-      "salidaCocina": "20:54:59",
-      "tiempoTrancurrido": "00:00:05"
-    }
-  ]
 }

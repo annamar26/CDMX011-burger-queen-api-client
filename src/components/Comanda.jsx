@@ -7,7 +7,7 @@ import {
   TableCell,
   TableContainer,
   TableHead,
-  TableRow,
+  TableRow,Button
 } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import { TextField } from "@mui/material";
@@ -19,7 +19,7 @@ import { pink } from "@mui/material/colors";
 
 
 const Comanda = ({ order, cuenta }) => {
-  const { suma, sumar, obtenerNombre, cliente } = useSetComanda();
+  const { suma, sumar, obtenerNombre, cliente, setOrder } = useSetComanda();
 
   const { email } = getUser();
  
@@ -40,8 +40,8 @@ const Comanda = ({ order, cuenta }) => {
       <Card id="Comanda">
         <CardContent>
           <TableContainer>
-            <Table width='10' stickyHeader aria-label='a dense table'>
-              <TableHead fontSize='large' height='50'color="primary" id="tableHeader">
+            <Table id='comandaTable' width='10'  aria-label='a dense table'>
+              <TableHead id='table-header' fontSize='large' height='50'color="primary">
                 <TableRow fontSize='large'>
                   <TableCell width="5" align="center">
                     #
@@ -74,9 +74,11 @@ const Comanda = ({ order, cuenta }) => {
                     <RemoveCircleOutlineTwoTone fontSize='large' sx={{ color: pink[500]}} onClick={() => {
                             if (item.quantity === 1) {
                               order.splice(index, 1);
+                              setOrder(order)
                               sumar(-item.price);
                             } else {
                               item.quantity -= 1;
+                              setOrder([...order, {...item, quantity: item.quantity}])
                               sumar(-item.price);
                             }
                           }} />
@@ -85,9 +87,11 @@ const Comanda = ({ order, cuenta }) => {
                               order.push(item);
                               sumar(item.price);
                               console.log(order);
+                              setOrder(order)
                             } else {
                               item.quantity += 1;
                               sumar(item.price);
+                              setOrder([...order, {...item, quantity: item.quantity}])
                               console.log(order);
                             }
                           }}/>
@@ -108,7 +112,7 @@ const Comanda = ({ order, cuenta }) => {
       </Card>
       <section id="Total">
         <h2>Total:</h2>
-        <h3>$ {suma + cuenta}</h3>
+        <h3 id='totalPrint'>$ {suma + cuenta}</h3>
       </section>
       <ButtonEnviarOrden
         cliente={cliente}
@@ -117,6 +121,8 @@ const Comanda = ({ order, cuenta }) => {
         mesero={email}
         
       />
+      <Button id='cancelar' onClick={()=>{window.location.reload()
+      }}>Cancelar</Button>
     </div>
   );
 };
