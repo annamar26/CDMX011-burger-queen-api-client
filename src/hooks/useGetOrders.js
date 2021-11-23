@@ -1,26 +1,19 @@
 import { useState, useEffect } from "react";
-import Axios from "axios";
+import { getOrders } from "../lib/axios/axios";
 
 export const useGetOrders = () => {
     const [pendingOrders, setPendingOrders] = useState([]);
     const [ordersToDeliver, setOrdersToDeliver] = useState([]);
 
-
-    const getOrders = async() => {
-        const resp = await Axios({
-            url: "http://localhost:4000/orders",
-        });;
-
-        const filtrado = resp.data.filter(objeto => objeto.status === 'En preparacion')
-        const filtrado2 = resp.data.filter(objeto => objeto.status === 'Listo')
-        setPendingOrders(filtrado)
-        setOrdersToDeliver(filtrado2)
-    };
-
+    getOrders().then((resp) => {
+        setPendingOrders(resp.filter(objeto => objeto.status === 'En preparacion'));
+        setOrdersToDeliver(resp.filter(objeto => objeto.status === 'Listo'))
+    });
 
     useEffect(() => {
         getOrders()
+
     }, [pendingOrders], [ordersToDeliver])
 
-    return { pendingOrders, ordersToDeliver, getOrders };
+    return { pendingOrders, ordersToDeliver };
 };

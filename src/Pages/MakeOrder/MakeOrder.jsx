@@ -1,23 +1,14 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
-import Comanda from "./Comanda";
-import { useGetProducts } from "../hooks/useGetProducts";
-import useSetComanda from "../hooks/useSetComanda";
+import React from "react";
+import Comanda from "../../components/Comanda";
+import useSetComanda from "../../hooks/useSetComanda";
 
-import BackButton from "./BackButton";
+import BackButton from "../../components/BackButton";
 
-function MenuComida() {
-  const { comida } = useGetProducts();
+function MakeOrder({products}) {
+ 
 
-  const { sumar, suma } = useSetComanda();
-
-  const [order, setOrder] = useState([]);
-
-
-  /* const remover = (id)=>{
-  const newOrder = order.filter((element) => element.id !== id);
-  setOrder(newOrder)
-} */
+  const { sumar, suma, order, setOrder} = useSetComanda();
 
   const actualizar = (id, count) => {
     const newOrder = order.map((item) => {
@@ -32,7 +23,7 @@ function MenuComida() {
     <div className="contenedorBotones">
       <Comanda order={order} cuenta={suma} />
       <section id="desayunoButttons">
-        {comida.map((item, index) => (
+        {products.map((item, index) => (
           <Button
             mycustomattribute={1}
             id={item.id}
@@ -76,4 +67,4 @@ function MenuComida() {
   );
 }
 
-export default MenuComida;
+export default MakeOrder;

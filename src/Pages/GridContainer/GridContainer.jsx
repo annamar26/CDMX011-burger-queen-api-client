@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import OrderToCook from "./OrderToCook";
+import OrderCard from "../../components/OrderCard";
 import Axios from "axios";
-import { useGetOrders } from "../hooks/useGetOrders";
-function OrdersPage({orders, header}) {
+import { useGetOrders } from "../../hooks/useGetOrders";
+function GridContainer({orders, header}) {
   const { getOrders} = useGetOrders();
   const actualizar = async (objeto, id) => {
    
@@ -23,10 +23,10 @@ function OrdersPage({orders, header}) {
      <h2 width='100' align='center'>{header}</h2>
       <div id="orderContainer">
         
-        <OrderToCook orders={orders} actualizar={actualizar} />
+        <OrderCard orders={orders} actualizar={actualizar} />
       </div>
     </Fragment>
   );
 }
 
-export default OrdersPage;
+export default GridContainer;

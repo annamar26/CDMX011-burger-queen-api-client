@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import { TextField } from "@mui/material";
-import ButtonEnviarOrden from "./ButtonEnviarOrden";
+import ButtonEnviarOrden from "./ButtonSendOrder";
 import { getUser } from "../lib/FirebaseAut";
 import { RemoveCircleOutlineTwoTone } from "@mui/icons-material";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
