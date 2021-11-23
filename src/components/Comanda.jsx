@@ -17,10 +17,14 @@ import { RemoveCircleOutlineTwoTone } from "@mui/icons-material";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { pink } from "@mui/material/colors";
 
+
 const Comanda = ({ order, cuenta }) => {
   const { suma, sumar, obtenerNombre, cliente } = useSetComanda();
 
   const { email } = getUser();
+ 
+ 
+  
   return (
     <div>
       <section id="cliente">
@@ -111,6 +115,7 @@ const Comanda = ({ order, cuenta }) => {
         orden={order}
         total={suma + cuenta}
         mesero={email}
+        
       />
     </div>
   );

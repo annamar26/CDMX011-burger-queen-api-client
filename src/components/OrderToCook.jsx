@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import {
   Paper,
   TableContainer,
@@ -6,54 +6,35 @@ import {
   TableRow,
   TableCell,
   TableHead,
- 
   Table,
   Card,
   CardContent,
   CardActions,
-  Button,
+
   Typography,
 } from "@mui/material";
-import moment from 'moment'
+
+import OrdersModal from './OrdersModal'
+
 
 const OrderToCook = ({ orders, actualizar }) => {
-
-
- 
   return (
-    <Fragment >
+    <Fragment>
       {orders.map((item, index) => (
-        <Card id='orden' key={item.id + 1} >
-            
-              <CardActions id='orderHeader'align='center'>
-              <Button  variant="contained"
-              onClick={()=>{
-                const elemToSetup = orders.find(
-                  (order) => order.id === item.id
-                );
-                console.log(elemToSetup);
-              elemToSetup.status = 'Listo'
-              elemToSetup.salidaCocina= new Date().toLocaleTimeString()
-             
-              
-              actualizar(elemToSetup, item.id)
-                
-             }}
-        margin="large"
-        color="secondary"
-        size='small'>Orden Lista </Button>
-           
-        
+        <Card id="orden" key={item.id + 1}>
+          <CardActions id="orderHeader" align="center">
+           <OrdersModal orders={orders} item={item} actualizar={actualizar}/>
             <Typography
               sx={{ fontSize: 22 }}
               gutterBottom
-              align='center'
-              color='secondary'
+              align="center"
+              color="secondary"
             >
-              Orden:#{item.id} {item.status}
-            </Typography>   </CardActions>  <CardContent>
+              Orden:#{item.id}
+            </Typography>
+          </CardActions>
+          <CardContent>
             <TableContainer component={Paper}>
-           
               <Table size="small" aria-label="a dense table">
                 <TableHead
                   sx={{ maxWidth: 100 }}
@@ -85,7 +66,7 @@ const OrderToCook = ({ orders, actualizar }) => {
                 </TableBody>
               </Table>
             </TableContainer>
-   
+            <p>algo</p>
           </CardContent>
         </Card>
       ))}
