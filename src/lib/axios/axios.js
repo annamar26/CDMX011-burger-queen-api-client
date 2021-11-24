@@ -11,6 +11,7 @@ export const getProducts = async() => {
     const resp = await Axios({
         url: "https://my-json-server.typicode.com/annamar26/CDMX011-burger-queen-api-client/products",
     });
+    console.log(resp.data)
     return resp.data
 }
 export const orderToKitchen = async(order) => {
