@@ -139,7 +139,6 @@ main {
 
 #regresarMenu2 {
     top: 87vh;
-    ;
     position: absolute;
     width: 16vw;
     height: 5vh;
@@ -153,14 +152,13 @@ main {
 
 #cancelar {
     top: 87.7vh;
-    ;
     position: absolute;
     width: 16vw;
     height: 5vh;
     left: 22vw;
     font-size: 120%;
     font-weight: 700;
-    color: black
+    color: black;
 }
 
 #comandaButtons {
@@ -173,7 +171,6 @@ main {
 
 #enviarOrden {
     top: 88.2vh;
-    ;
     position: absolute;
     width: 16vw;
     height: 4vh;
@@ -201,7 +198,6 @@ main {
     margin-top: 10vh;
     width: 70%;
     height: 40vh;
-    ;
     Button {
         background-color: $ButtonColor;
         width: 45vw;
@@ -235,7 +231,7 @@ main {
     background-color: #debef12f;
     position: absolute;
     margin-left: 2.5vw;
-    border: solid 4px #B3EBE4;
+    border: solid 4px #b3ebe4;
     border-top: none;
     top: 17.3vh;
     overflow-y: scroll;
@@ -253,7 +249,7 @@ main {
     margin-left: 2.5vw;
     top: 12vh;
     position: absolute;
-    border: solid 4px #B3EBE4;
+    border: solid 4px #b3ebe4;
     z-index: 1;
     h2 {
         color: purple;
@@ -261,7 +257,7 @@ main {
     }
     #clientName {
         background-color: white;
-        border-radius: .5vw;
+        border-radius: 0.5vw;
     }
 }
 
@@ -276,7 +272,7 @@ main {
     height: 4.5vh;
     top: 87.6vh;
     left: 2.5vw;
-    border: solid 4px #B3EBE4;
+    border: solid 4px #b3ebe4;
     h2 {
         width: 20%;
         color: purple;
@@ -319,6 +315,44 @@ main {
     flex-direction: row;
     justify-content: space-around;
     margin-top: 3vh;
+}
+
+#adminContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8vh;
+    form {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #Login {
+        background-color: purple;
+        width: 50%;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 0 3px 5px 2px grey;
+        color: white;
+        font-size: 1.5vh;
+        font-weight: 700;
+        height: 4vh;
+        line-height: 1.5vh;
+        padding: 0 30px;
+        margin: 0 auto;
+        filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+    }
+    #Login:hover {
+        background-color: $fontColor;
+        color: purple;
+        border: 2px solid #800080;
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
 }
 
 @keyframes spin {

@@ -1,4 +1,4 @@
-import { signInWithEmailAndPassword, auth } from "../lib/firebaseConfig";
+import { signInWithEmailAndPassword, auth, createUserWithEmailAndPassword } from "../lib/firebaseConfig";
 
 let messageError = ''
 const enviarDatos = (event, email, password) => {
@@ -23,6 +23,20 @@ const enviarDatos = (event, email, password) => {
 
 
 };
+const registrarUsuario = (event, email, password) => {
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            alert('usuario creado')
+                // ...
+        })
+        .catch((error) => {
+            messageError = 'Ocurrió un error, verifique la información proporcionada'
+                // ..
+        });
+}
 
 
 const getUser = (user = auth.currentUser) => {
@@ -37,4 +51,4 @@ const getUser = (user = auth.currentUser) => {
 
     return { email, uid }
 }
-export { getUser, messageError, enviarDatos }
+export { getUser, messageError, enviarDatos, registrarUsuario }

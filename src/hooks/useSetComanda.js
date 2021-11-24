@@ -8,12 +8,6 @@ const useSetComanda = () => {
         setCliente(nombre)
     }
 
-    /*  const addProduct = (id, product, price, cantidad) => {
-         setOrder([...order, { id: id, producto: product, precio: price, quantity: cantidad }]);
-         console.log(order)
-     }; */
-
-
 
     const sumar = (price) => {
         setSuma(price + suma);
@@ -24,7 +18,6 @@ const useSetComanda = () => {
 
     return {
         order,
-        /*  addProduct, */
         suma,
         sumar,
         obtenerNombre,

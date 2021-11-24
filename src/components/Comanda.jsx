@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import { TextField } from "@mui/material";
-import ButtonEnviarOrden from "./ButtonEnviarOrden";
+import ButtonSendOrder from "./ButtonSendOrder";
 import { getUser } from "../lib/FirebaseAut";
 import { RemoveCircleOutlineTwoTone } from "@mui/icons-material";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
@@ -114,7 +114,7 @@ const Comanda = ({ order, cuenta }) => {
         <h2>Total:</h2>
         <h3 id='totalPrint'>$ {suma + cuenta}</h3>
       </section>
-      <ButtonEnviarOrden
+      <ButtonSendOrder
         cliente={cliente}
         orden={order}
         total={suma + cuenta}

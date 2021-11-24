@@ -232,7 +232,7 @@ main form #Login:hover {
   background-color: #debef12f;
   position: absolute;
   margin-left: 2.5vw;
-  border: solid 4px #B3EBE4;
+  border: solid 4px #b3ebe4;
   border-top: none;
   top: 17.3vh;
   overflow-y: scroll;
@@ -250,7 +250,7 @@ main form #Login:hover {
   margin-left: 2.5vw;
   top: 12vh;
   position: absolute;
-  border: solid 4px #B3EBE4;
+  border: solid 4px #b3ebe4;
   z-index: 1;
 }
 #cliente h2 {
@@ -273,7 +273,7 @@ main form #Login:hover {
   height: 4.5vh;
   top: 87.6vh;
   left: 2.5vw;
-  border: solid 4px #B3EBE4;
+  border: solid 4px #b3ebe4;
 }
 #Total h2 {
   width: 20%;
@@ -317,6 +317,46 @@ main form #Login:hover {
   flex-direction: row;
   justify-content: space-around;
   margin-top: 3vh;
+}
+
+#adminContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8vh;
+}
+#adminContainer form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#adminContainer #Login {
+  background-color: purple;
+  width: 50%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 2px grey;
+  color: white;
+  font-size: 1.5vh;
+  font-weight: 700;
+  height: 4vh;
+  line-height: 1.5vh;
+  padding: 0 30px;
+  margin: 0 auto;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+}
+#adminContainer #Login:hover {
+  background-color: #fa81aa;
+  color: purple;
+  border: 2px solid #800080;
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @-webkit-keyframes spin {

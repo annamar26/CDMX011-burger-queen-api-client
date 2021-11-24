@@ -77,7 +77,7 @@ export default function OrdersModal({ orders, item, actualizar }) {
             Tiempo en cocina: {tiempo}
           </Typography>
           <Typography  align='center' id="modal-modal-description" sx={{ mt: 2 }}>
-            La notificación de orden lista sera enviada al mesero ¿Está seguro
+            La notificación de orden lista será enviada al mesero ¿Está seguro
             de continuar?
 
 

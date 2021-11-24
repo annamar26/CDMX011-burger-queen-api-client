@@ -1,13 +1,14 @@
 import { Button } from "@mui/material";
 import React, { Fragment } from "react";
-import Axios from "axios";
+import { orderToKitchen } from "../lib/axios/axios";
 
-function ButtonEnviarOrden({ cliente, orden, total, mesero }) {
-  const orderToKitchen = async (array, cliente, total, mesero) => {
+
+function ButtonSendOrder({ cliente, orden, total, mesero }) {
+  const buildOrder = (array, cliente, total, mesero) => {
     if (array.length === 0) {
-      alert("Tu orden esta vacía");
+      throw new Error('La orden no puede estar vacía')
     } else {
-      let res = await Axios.post("http://localhost:4000/orders", {
+      const order = { 
         mesero: mesero,
         cliente: cliente,
         productos: array,
@@ -15,18 +16,17 @@ function ButtonEnviarOrden({ cliente, orden, total, mesero }) {
         status: "En preparacion",
         fecha: new Date().toLocaleDateString(),
         hora: new Date().toLocaleTimeString(),
-      });
+      };
 
-      let data = res.data;
-      console.log(data);
-    }
+    return orderToKitchen(order)}
+    
   };
 
   return (
     <Fragment>
       <Button
         onClick={() => {
-          orderToKitchen(orden, cliente, total, mesero);
+          buildOrder(orden, cliente, total, mesero);
           window.location.reload()
         }}
         variant="contained"
@@ -41,4 +41,4 @@ function ButtonEnviarOrden({ cliente, orden, total, mesero }) {
   );
 }
 
-export default ButtonEnviarOrden;
+export default ButtonSendOrder;
