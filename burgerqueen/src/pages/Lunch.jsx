@@ -7,26 +7,24 @@ import { useProducts } from "../hooks/useProducts";
 function Lunch() {
   const { comidas } = useProducts();
   const {
-    order,
+    cleanOrder,
     addProduct,
-    cuenta,
-    suma,
-    resta,
-    deleteElement,
-    newPricePlus,
-    newPriceMinus,
+    total,
+    minusButton,
+    deleteRow,
+    plusButton,
   } = useOrder();
+
   return (
     <Fragment>
       <div className="comanda-div">
         <section>
           <Comanda
-            order={order}
-            suma={cuenta}
-            resta={resta}
-            deleteElement={deleteElement}
-            newPricePlus={newPricePlus}
-            newPriceMinus={newPriceMinus}
+            order={cleanOrder}
+            total={total}    
+            deleteRow={deleteRow}
+           minusButton={minusButton}
+           plusButton={plusButton}
           />
         </section>
       </div>
@@ -35,15 +33,23 @@ function Lunch() {
         <section className="menu-container">
           {comidas.map((product, i) => (
             <button
-              className="m-1"
               key={i}
+              id="activado"
               onClick={(e) => {
-                e.preventDefault();
-                addProduct(product.name, product.price, product.id, 1);
-                suma(product.price);
+                if (e.target.id === "activado") {
+                  e.target.id = "desactivado";
+                  addProduct(
+                    product.name,
+                    product.price,
+                    product.id,
+                    product.quantity
+                  );
+                }
               }}
             >
-              {product.name + "$" + product.price}
+              {product.name} 
+            <br />
+            ${product.price}
             </button>
           ))}
         </section>

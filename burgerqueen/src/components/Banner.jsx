@@ -1,9 +1,8 @@
 import logo from "../images/logo.png";
 import moment from "moment";
-import { useTime } from "../hooks/useTime";
-
+import { usePostProducts } from "../hooks/usePostProduct";
 function Banner() {
-  const { time } = useTime();
+  const { time } = usePostProducts();
 
   return (
     <div>
@@ -12,8 +11,8 @@ function Banner() {
         <section>
           <p id="header-text">POS System</p>
           <section id="time">
-            <p>{moment(time).format("l")}</p>
-            <p>{moment(time).format("LTS")}</p>
+            <p>{moment().format('l')}</p>
+            <p>{moment(time).format('LT')}</p>
           </section>
         </section>
       </header>

@@ -5,9 +5,13 @@ export const logIn = (e, value, password) => {
   e.preventDefault();
   signInWithEmailAndPassword(auth, value, password)
     .then((userCredential) => {
-      const user = userCredential.user.uid;
-      console.log(user);
-      window.location.href = "./home";
+      const user = userCredential.user.email;
+      if (user === "cocina@ejemplo.com") {
+              window.location.href = "./kitchen";
+
+      }else if( user === "mesero@ejemplo.com"){
+        window.location.href = "./home"
+      }
     })
     .catch((err) => {
       console.log(err);

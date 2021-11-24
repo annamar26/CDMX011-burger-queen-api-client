@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Breakfast from "../pages/Breakfast";
 import Lunch from "../pages/Lunch";
 import Banner from "../components/Banner";
+import Kitchen from "../pages/Kitchen";
 
 function RoutesPath() {
   //Enrutado
@@ -17,10 +18,13 @@ function RoutesPath() {
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/breakfast" element={<Breakfast />} />
           <Route exact path="/lunch" element={<Lunch />} />
+          <Route exact path="/kitchen" element={<Kitchen />} />
         </Routes>
       </Router>
     </>
   );
+
+
 }
 
 export default RoutesPath;

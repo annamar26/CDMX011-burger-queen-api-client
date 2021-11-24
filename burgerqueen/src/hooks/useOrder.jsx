@@ -2,35 +2,38 @@ import { useState } from "react";
 
 export const useOrder = () => {
   const [order, setOrder] = useState([]);
-  const [cuenta, setCuenta] = useState(0);
-
-  const addProduct = (product, price, id, i) => {
-    setOrder([...order, { name: product, price: price, id: id, quantity: i }]);
+  const [total, setTotal] = useState(0);
+  const addProduct = (product, price, id, quantity) => {
+    setOrder([
+      ...order,
+      { name: product, price: price, id: id, quantity: quantity },
+    ]);
+    setTotal(total + price);
   };
-  const suma = (price) => {
-    setCuenta(cuenta + price);
+  const minusButton = (price) => {
+    setTotal(total-price);
   };
-  const resta = (price) => {
-    setCuenta(cuenta - price);
+  const plusButton = (price) => {
+    setTotal(total+price)
   };
-  const newPricePlus = (price) => {
-    setCuenta(cuenta + price);
-  };
-  const newPriceMinus = (price) => {
-    setCuenta(cuenta - price);
-  };
-  const deleteElement = (index, e) => {
+  const deleteRow = (index, e) => {
     setOrder(order.filter((v, i) => i !== index));
   };
+  const cleanOrder = order.filter((valorActual, indiceActual, arreglo) => {
+    return (
+      arreglo.findIndex(
+        (valorDelArreglo) =>
+          JSON.stringify(valorDelArreglo) === JSON.stringify(valorActual)
+      ) === indiceActual
+    );
+  });
 
   return {
-    order,
     addProduct,
-    cuenta,
-    suma,
-    resta,
-    deleteElement,
-    newPricePlus,
-    newPriceMinus
+    total,
+    minusButton,
+    cleanOrder,
+    deleteRow,
+    plusButton,
   };
 };
