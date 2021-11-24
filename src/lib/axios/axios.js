@@ -19,3 +19,15 @@ export const orderToKitchen = async(order) => {
 
 
 };
+export const actualizar = async(objeto, id) => {
+
+
+    return await Axios.put(`http://localhost:4000/orders/${id}`, objeto)
+
+
+
+
+
+
+
+};

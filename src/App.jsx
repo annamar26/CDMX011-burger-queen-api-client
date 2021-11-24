@@ -9,6 +9,7 @@ import MakeOrder from "../src/Pages/MakeOrder/MakeOrder";
 import GridContainer from "../src/Pages/GridContainer/GridContainer";
 import { useGetOrders } from "./hooks/useGetOrders";
 import { useGetProducts } from "./hooks/useGetProducts";
+import { actualizar } from "./lib/axios/axios";
 
 function App() {
   const { pendingOrders, ordersToDeliver } = useGetOrders();
@@ -48,7 +49,7 @@ function App() {
         <Route
           exact
           path="/cocina"
-          element={<GridContainer orders={pendingOrders} header={"Cocina"} />}
+          element={<GridContainer orders={pendingOrders} header={"Cocina"} actualizar={actualizar} />}
         />
         <Route
           exact

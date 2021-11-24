@@ -9,9 +9,8 @@ export const useGetProducts = () => {
         setComida(resp.comida)
     })
 
-
     useEffect(() => {
         getProducts()
-    }, [desayuno], [comida]);
+    }, [setDesayuno], [setComida]);
     return { desayuno, comida };
 };
