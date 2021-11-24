@@ -13,11 +13,9 @@ export const usePostProducts = () => {
       clearInterval(interval);
     };
   }, []);
-
   const clientNameFn = (value) => {
     setClientName(value);
   };
-
   const postProducts = ((order, client) => {
     const product = [];
     order.map((item) => (
@@ -28,20 +26,15 @@ export const usePostProducts = () => {
         id:"",
         client: client,
         products: product,
-        entry: moment(time).format('LT'),
+        entry: moment(time).format('HH:mm'),
         exit:"",
         status: "Pendiente",
+        time: ""
       })
       .then((res) => {
         setDataPost(res.data);
       });
   });
-
-  const updateApi = async()=>{
-  /* const res = await dataApi.put('http://localhost:3001/orders', { status: 'ok' });
-
-  console.log(res.data)*/
-  }
 
   return {
     postProducts,
@@ -49,6 +42,5 @@ export const usePostProducts = () => {
     clientNameFn,
     clientName,
     time, 
-    updateApi
   };
 };

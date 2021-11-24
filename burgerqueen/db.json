@@ -116,37 +116,39 @@
   "orders": [
     {
       "id": 1,
-      "client": "Prueba",
+      "client": "",
       "products": [
         {
-          "name": "Café americano",
+          "name": "Hamburguesa simple",
           "quantity": 1
         },
         {
-          "name": "Sandwich de jamón y queso",
+          "name": "Papas Fritas",
           "quantity": 1
         }
       ],
-      "entry": "11:37 AM",
+      "entry": "17:49",
+      "exit": "18:08",
       "status": "Lista",
-      "exit": "11:47 AM"
+      "time": 59
     },
     {
       "id": 2,
-      "client": "Prueba 2",
+      "client": "",
       "products": [
         {
-          "name": "Café americano",
+          "name": "Hamburguesa doble",
           "quantity": 1
         },
         {
-          "name": "Sandwich de jamón y queso",
+          "name": "Aros de cebolla",
           "quantity": 1
         }
       ],
-      "entry": "11:54 AM",
-      "exit": "11:55 AM",
-      "status": "Lista"
+      "entry": "17:49",
+      "exit": "18:09",
+      "status": "Lista",
+      "time": 60
     }
   ]
 }

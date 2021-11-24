@@ -13,15 +13,12 @@ export const useOrder = () => {
   const minusButton = (price) => {
     setTotal(total-price);
   };
-
   const plusButton = (price) => {
     setTotal(total+price)
   };
-
   const deleteRow = (index, e) => {
     setOrder(order.filter((v, i) => i !== index));
   };
-  
   const cleanOrder = order.filter((valorActual, indiceActual, arreglo) => {
     return (
       arreglo.findIndex(

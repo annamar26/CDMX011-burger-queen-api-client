@@ -35,7 +35,6 @@ function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
                   onClick={() => {
                     product.quantity++;
                     plusButton(product.price, product.quantity);
-                    // newPricePlus(product.price);
                   }}
                 />
                 <br />
@@ -57,7 +56,6 @@ function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
           ))}
         </tbody>
       </table>
-
       <section id="total">
         <span>Total ${total}</span>
       </section>

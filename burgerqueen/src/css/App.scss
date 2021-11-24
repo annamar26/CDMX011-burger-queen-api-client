@@ -217,12 +217,16 @@ button {
 }
 #regresar-btn {
   display: flex;
-  justify-content: flex-end;
+  flex-wrap: wrap;
   margin-right: 20px;
 }
 .cards-kitchen{
   display: flex;
-  flex-wrap: wrap;
+ justify-content: flex-end;
+  #kitchen-btn{
+    height:50px;
+    flex-wrap: wrap;
+  }
 }
 @keyframes spin {
   from {
