@@ -127,7 +127,6 @@ main form #Login:hover {
   height: 9vh;
   font-size: auto;
   font-weight: bolder;
-  background-color: #dab5e1;
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
   -webkit-text-fill-color: #f3f0f3;
   -webkit-text-stroke: 0.3px rgba(128, 0, 128, 0.377);
