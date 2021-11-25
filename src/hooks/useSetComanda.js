@@ -18,7 +18,8 @@ export const useSetComanda = () => {
 
     };
     const orderToKitchen = async(array, client, total, waiter, table) => {
-        await Axios.post("http://localhost:4000/orders", {
+
+        await Axios.post("https://fake-server-burguer-queen.herokuapp.com/orders", {
             waiter: waiter,
             cliente: client,
             table: table,
@@ -28,7 +29,7 @@ export const useSetComanda = () => {
             date: new Date().toLocaleDateString(),
             hour: new Date().toLocaleTimeString(),
         });
-
+        return window.location.reload()
     };
 
     return {

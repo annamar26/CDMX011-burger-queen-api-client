@@ -6,7 +6,7 @@ export const useGetProducts = () => {
     const [comida, setComida] = useState([]);
     const getProducts = async() => {
         const resp = await Axios({
-            url: "http://localhost:4000/products",
+            url: "https://fake-server-burguer-queen.herokuapp.com/products",
         });
         setDesayuno(resp.data.desayuno);
         setComida(resp.data.comida)

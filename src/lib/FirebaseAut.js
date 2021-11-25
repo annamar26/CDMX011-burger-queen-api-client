@@ -31,7 +31,7 @@ const createEmployee = (event, email, password, fullname, objeto) => {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            Axios.post("http://localhost:4000/users", {
+            Axios.post("https://fake-server-burguer-queen.herokuapp.com/users", {
                 id: user.uid,
                 name: fullname,
                 email: email,

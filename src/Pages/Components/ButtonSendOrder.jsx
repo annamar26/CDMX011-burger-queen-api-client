@@ -5,7 +5,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ErrorOutlineRoundedIcon from '@mui/icons-material/ErrorOutlineRounded';
-import { red } from "@mui/material/colors";
+import { red, green } from "@mui/material/colors";
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 
 
@@ -38,8 +39,9 @@ const [content, setContent]= useState("")
         if (order.length === 0 ) {
            setContent('Tu orden no puede estar vacía')
           } else if(((client === ""|| client=== undefined) && table>0)||(table<0 && client.length)){
+            setContent('Orden enviada a cocina')
             orderToKitchen(order, client, total, waiter);
-            window.location.reload()
+            
           } else{
            setContent('Debes ingresar nombre del cliente o número de mesa para continuar con la orden')
             
@@ -62,7 +64,7 @@ const [content, setContent]= useState("")
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-        <ErrorOutlineRoundedIcon alignItems='center' fontSize='large' sx={{ color: red[500]}}/>
+       {content === "Orden enviada a cocina"? <CheckCircleIcon alignItems='center' fontSize='large' sx={{ color: green[500]}}/>: <ErrorOutlineRoundedIcon alignItems='center' fontSize='large' sx={{ color: red[500]}}/>}
           <Typography
             align="center"
             id="modal-modal-title"

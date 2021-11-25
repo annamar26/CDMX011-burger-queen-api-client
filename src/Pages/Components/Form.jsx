@@ -10,25 +10,38 @@ import warning from "../../images/warning.png";
 import PersonIcon from "@mui/icons-material/Person";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 
-import { MenuItem, Select, OutlinedInput, InputLabel} from "@mui/material";
+import { MenuItem} from "@mui/material";
 
 function Form() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState({});
-  const [type, setType]= useState('')
+  const [role, setRole]=useState({})
+  const roles = [
+    {
+      value: 'waiter',
+      label: 'Mesero',
+    },
+    {
+      value: 'kitchen',
+      label: 'Cocinero',
+    },
+    {
+      value: 'admin',
+      label: 'Administrador',
+    }
+  ];
 
   const [visible, setVisible] = useState(false);
   const toggleVisibility = () => {
     setVisible(!visible);
   };
   const handleChange = (e) => {
-    setType(e.target.value);
+    setRole(e.target.value);
 
-    if (type === "admin") {
+    if (role.value === "admin") {
       setRole({ ...role, admin: true });
-    }else if (type === "waiter") {
+    }else if (role.value === "waiter") {
       
       setRole({ ...role, admin:false, waiter: true })
     }else{
@@ -45,6 +58,7 @@ function Form() {
     >
       <h1>Inicia Sesión</h1>
       <TextField
+    
         fullWidth
         autoFocus
         color="secondary"
@@ -178,22 +192,24 @@ function Form() {
         {messageError === "" ? "" : <img src={warning} alt=""></img>}{" "}
         {messageError}
       </p>
-     <InputLabel id="demo-multiple-name-label">Name</InputLabel>
-    
-      
-      <Select
-        labelId="demo-multiple-name-label"
-        id="demo-multiple-name"
-        
-        value={type}
-                input={<OutlinedInput label="Name" />}
-        fullWidth
-        onChange={(e)=> handleChange(e)}
-      >
-        <MenuItem value={"admin"}>Aministrador</MenuItem>
-        <MenuItem value={"waiter"}>Mesero</MenuItem>
-        <MenuItem value={"kitchen"}>Cocinero</MenuItem>
-      </Select>
+      <TextField
+          id="outlined-select-currency"
+          select
+          label="Permisos"
+          value={role.value}
+          onChange={handleChange}
+          fullWidth
+          placeholder='Permisos'
+          color='secondary'
+          margin="normal"
+         
+        >
+          {roles.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
       <Button
         fullWidth
         id="Login"

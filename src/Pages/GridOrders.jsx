@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import OrderToCook from "./Components/OrderCard";
+import OrderCard from "./Components/OrderCard";
 
 function OrdersPage({ orders, header, updateOrder }) {
   return (
@@ -8,7 +8,7 @@ function OrdersPage({ orders, header, updateOrder }) {
         {header}
       </h2>
       <div id="orderContainer">
-        <OrderToCook orders={orders} updateOrder={updateOrder} />
+        <OrderCard orders={orders} updateOrder={updateOrder} />
       </div>
     </Fragment>
   );

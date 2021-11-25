@@ -38,10 +38,10 @@ export default function OrdersModal({ orders, item, updateOrder }) {
           const elemToSetup = orders.find((order) => order.id === item.id);
 
               elemToSetup.status = "Listo";
-              elemToSetup.salidaCocina = new Date().toLocaleTimeString();
+              elemToSetup.outOfKitchen = new Date().toLocaleTimeString();
 
-              let initial = moment.duration(elemToSetup.hora);
-              var end = moment.duration(elemToSetup.salidaCocina);
+              let initial = moment.duration(elemToSetup.hour);
+              var end = moment.duration(elemToSetup.outOfKitchen);
               let lapseTime = moment.duration(end - initial);
 
               let strTiempo = `${

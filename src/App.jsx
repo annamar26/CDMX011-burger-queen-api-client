@@ -59,7 +59,7 @@ function App() {
           exact
           path="/admin"
           element={
-            <Home options={["Agregar Producto", "Editar Producto", "Eliminar Producto", "Agregar empleado", "Editar empleado", "Eliminar empleado"]} header={"Consola"} />
+            <Home options={["Agregar Producto", "Editar/Eliminar Producto","Agregar empleado", "Editar/Eliminar empleado"]} header={"Consola"} />
           }
         />
         <Route

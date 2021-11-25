@@ -8,7 +8,7 @@ export const useGetOrders = () => {
 
     const getOrders = async() => {
         const resp = await Axios({
-            url: "http://localhost:4000/orders",
+            url: "https://fake-server-burguer-queen.herokuapp.com/orders",
         });;
 
         const filtrado = resp.data.filter(objeto => objeto.status === 'En preparacion')
@@ -20,7 +20,7 @@ export const useGetOrders = () => {
     const updateOrder = async(objeto, id) => {
 
 
-        Axios.put(`http://localhost:4000/orders/${id}`, objeto)
+        Axios.put(`https://fake-server-burguer-queen.herokuapp.com/orders/${id}`, objeto)
         getOrders()
 
     };
