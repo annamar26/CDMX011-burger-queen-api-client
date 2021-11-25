@@ -1,36 +1,46 @@
 import { useState } from "react";
-const useSetComanda = () => {
+import Axios from "axios";
+export const useSetComanda = () => {
     const [order, setOrder] = useState([]);
-    const [suma, setSuma] = useState(0);
-    const [cliente, setCliente] = useState("");
+    const [addition, setAddition] = useState(0);
+    const [client, setClient] = useState("");
+    const [table, setTable] = useState(0)
 
-    const obtenerNombre = (nombre) => {
-        setCliente(nombre)
+    const getName = (name) => {
+        setClient(name)
+    }
+    const getTable = (num) => {
+        setTable(num)
     }
 
-    /*  const addProduct = (id, product, price, cantidad) => {
-         setOrder([...order, { id: id, producto: product, precio: price, quantity: cantidad }]);
-         console.log(order)
-     }; */
+    const add = (price) => {
+        setAddition(price + addition);
 
-
-
-    const sumar = (price) => {
-        setSuma(price + suma);
+    };
+    const orderToKitchen = async(array, client, total, waiter, table) => {
+        await Axios.post("http://localhost:4000/orders", {
+            waiter: waiter,
+            cliente: client,
+            table: table,
+            products: array,
+            total: total,
+            status: "En preparacion",
+            date: new Date().toLocaleDateString(),
+            hour: new Date().toLocaleTimeString(),
+        });
 
     };
 
-
-
     return {
         order,
-        /*  addProduct, */
-        suma,
-        sumar,
-        obtenerNombre,
-        cliente,
-        setOrder
+        addition,
+        add,
+        getName,
+        client,
+        setOrder,
+        orderToKitchen,
+        getTable,
+        table
 
     }
 }
-export default useSetComanda;

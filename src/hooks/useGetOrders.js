@@ -17,10 +17,18 @@ export const useGetOrders = () => {
         setOrdersToDeliver(filtrado2)
     };
 
+    const updateOrder = async(objeto, id) => {
+
+
+        Axios.put(`http://localhost:4000/orders/${id}`, objeto)
+        getOrders()
+
+    };
+
 
     useEffect(() => {
         getOrders()
     }, [pendingOrders], [ordersToDeliver])
 
-    return { pendingOrders, ordersToDeliver, getOrders };
+    return { pendingOrders, ordersToDeliver, getOrders, updateOrder };
 };

@@ -1,20 +1,16 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
-import Comanda from "./Comanda";
-import { useGetProducts } from "../hooks/useGetProducts";
-import useSetComanda from "../hooks/useSetComanda";
+import React from "react";
+import Comanda from "../Pages/Components/Comanda";
+import {useSetComanda} from "../hooks/useSetComanda";
 
-import BackButton from "./BackButton";
+import BackButton from "./Components/BackButton";
 
-function MenuComida() {
-  const { comida } = useGetProducts();
+function MakeOrder({products}) {
 
-  const { sumar, suma } = useSetComanda();
-
-  const [order, setOrder] = useState([]);
+  const { addition, add, order, setOrder } = useSetComanda();
 
 
-  const actualizar = (id, count) => {
+  const updateQuantity = (id, count) => {
     const newOrder = order.map((item) => {
       if (item.id === id) {
         return { ...item, quantity: count };
@@ -25,10 +21,11 @@ function MenuComida() {
   };
   return (
     <div className="contenedorBotones">
-      <Comanda order={order} cuenta={suma} />
+      <Comanda order={order} bill={addition} />
       <section id="desayunoButttons">
-        {comida.map((item, index) => (
+        {products.map((item, index) => (
           <Button
+          className='productButton'
             mycustomattribute={1}
             id={item.id}
             key={item.id}
@@ -39,7 +36,7 @@ function MenuComida() {
             increment={1}
             onClick={(e) => {
               if (e.target.value === "false") {
-                sumar(item.price);
+                add(item.price);
 
                 setOrder([
                   ...order,
@@ -50,14 +47,15 @@ function MenuComida() {
                 ]);
 
                 document.getElementById(item.id).value = "true";
+                
               } else {
                 const elemToSetup = order.find(
                   (product) => product.id === item.id
                 );
-                console.log(elemToSetup);
+              
                 
-                sumar(item.price);
-                actualizar(item.id, elemToSetup.quantity+1);
+                add(item.price);
+                updateQuantity(item.id, elemToSetup.quantity+1);
               }
             }}
           >
@@ -71,4 +69,4 @@ function MenuComida() {
   );
 }
 
-export default MenuComida;
+export default MakeOrder;

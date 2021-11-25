@@ -74,7 +74,8 @@ main .Usuarios img:hover {
           backface-visibility: hidden;
   perspective: 1000px;
 }
-main form {
+main form,
+main #form2 {
   margin-top: 10vh;
   display: flex;
   flex-direction: column;
@@ -82,11 +83,13 @@ main form {
   width: 60%;
   font-size: 100%;
 }
-main form .MuiInputAdornment-positionEnd input {
+main form .MuiInputAdornment-positionEnd input,
+main #form2 .MuiInputAdornment-positionEnd input {
   border: 2px solid purple;
   outline-color: purple;
 }
-main form #Login {
+main form #Login,
+main #form2 #Login {
   background-color: purple;
   width: 90%;
   border: 2px solid black;
@@ -100,7 +103,47 @@ main form #Login {
   margin-top: 4vh;
   filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
-main form #Login:hover {
+main form #Login:hover,
+main #form2 #Login:hover {
+  background-color: #fa81aa;
+  color: purple;
+  border: 2px solid #800080;
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+#form2 {
+  margin: 0 auto;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  font-size: 100%;
+}
+#form2 .MuiInputAdornment-positionEnd input {
+  border: 2px solid purple;
+  outline-color: purple;
+}
+#form2 #Login {
+  background-color: purple;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px 2px grey;
+  color: white;
+  font-size: 3vh;
+  font-weight: 700;
+  height: 8vh;
+  padding: 0 30px;
+  margin-top: 4vh;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+}
+#form2 #Login:hover {
   background-color: #fa81aa;
   color: purple;
   border: 2px solid #800080;
@@ -192,23 +235,24 @@ main form #Login:hover {
 }
 
 .container {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 10vh;
-  width: 70%;
-  height: 40vh;
+  display: grid;
+  width: 100vw;
+  height: 70vh;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 0.5vh;
+  -moz-column-gap: 1vw;
+       column-gap: 1vw;
+  margin: 0 auto;
 }
 .container Button {
   background-color: #dab5e1;
-  width: 45vw;
+  width: 20vw;
   height: 10vh;
   color: white;
   font-size: 3.3vh;
   font-weight: 700;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  margin: 0 auto;
   -webkit-text-fill-color: white;
   -webkit-text-stroke: 1px rgba(128, 0, 128, 0.438);
   border-color: rgba(128, 0, 128, 0.377);
@@ -257,7 +301,7 @@ main form #Login:hover {
   color: purple;
   filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
 }
-#cliente #clientName {
+#cliente .comandInput {
   background-color: white;
   border-radius: 0.5vw;
 }

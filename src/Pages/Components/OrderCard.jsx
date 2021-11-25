@@ -1,29 +1,17 @@
 import React, { Fragment } from "react";
-import {
-  Paper,
-  TableContainer,
-  TableBody,
-  TableRow,
-  TableCell,
-  TableHead,
-  Table,
-  Card,
-  CardContent,
-  CardActions,
-
-  Typography,
+import { Paper, TableContainer, TableBody, TableRow, TableCell, TableHead, Table, Card, CardContent, CardActions,Typography,
 } from "@mui/material";
 
 import OrdersModal from './OrdersModal'
 
 
-const OrderToCook = ({ orders, actualizar }) => {
+const OrderCard = ({ orders, updateOrder }) => {
   return (
     <Fragment>
-      {orders.map((item, index) => (
+      {orders.map((item) => (
         <Card id="orden" key={item.id + 1}>
           <CardActions id="orderHeader" align="center">
-           <OrdersModal orders={orders} item={item} actualizar={actualizar}/>
+           <OrdersModal orders={orders} item={item} updateOrder={updateOrder}/>
             <Typography
               sx={{ fontSize: 22 }}
               gutterBottom
@@ -53,7 +41,7 @@ const OrderToCook = ({ orders, actualizar }) => {
                 </TableHead>
 
                 <TableBody>
-                  {item.productos.map((product, index) => (
+                  {item.products.map((product, index) => (
                     <TableRow key={index}>
                       <TableCell width="5" align="center">
                         {product.quantity}
@@ -74,4 +62,4 @@ const OrderToCook = ({ orders, actualizar }) => {
   );
 };
 
-export default OrderToCook;
+export default OrderCard;

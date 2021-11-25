@@ -19,7 +19,7 @@ const style = {
   p: 4,
 };
 
-export default function OrdersModal({ orders, item, actualizar }) {
+export default function OrdersModal({ orders, item, updateOrder }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -42,24 +42,24 @@ export default function OrdersModal({ orders, item, actualizar }) {
 
               let initial = moment.duration(elemToSetup.hora);
               var end = moment.duration(elemToSetup.salidaCocina);
-              let tiempoTrancurrido = moment.duration(end - initial);
+              let lapseTime = moment.duration(end - initial);
 
               let strTiempo = `${
-                tiempoTrancurrido._data.hours < 9
-                  ? "0" + tiempoTrancurrido._data.hours + ":"
-                  : tiempoTrancurrido._data.hours + ":"
+                lapseTime._data.hours < 9
+                  ? "0" + lapseTime._data.hours + ":"
+                  : lapseTime._data.hours + ":"
               }${
-                tiempoTrancurrido._data.minutes < 9
-                  ? "0" + tiempoTrancurrido._data.minutes + ":"
-                  : tiempoTrancurrido._data.minutes + ":"
+                lapseTime._data.minutes < 9
+                  ? "0" + lapseTime._data.minutes + ":"
+                  : lapseTime._data.minutes + ":"
               }${
-                tiempoTrancurrido._data.seconds < 9
-                  ? "0" + tiempoTrancurrido._data.seconds
-                  : tiempoTrancurrido._data.seconds
+                lapseTime._data.seconds < 9
+                  ? "0" + lapseTime._data.seconds
+                  : lapseTime._data.seconds
               }`;
 
-              elemToSetup.tiempoDePreparacion = strTiempo;
-              setTiempo(elemToSetup.tiempoDePreparacion)
+              elemToSetup.cookingTime = strTiempo;
+              setTiempo(elemToSetup.cookingTime)
               setObject(elemToSetup)
         }}
        
@@ -91,7 +91,7 @@ export default function OrdersModal({ orders, item, actualizar }) {
            size='small'
             onClick={() => {
              
-              actualizar(object, item.id);
+              updateOrder(object, item.id);
             }}
           >Enviar a piso</Button>
           <Button
@@ -143,7 +143,7 @@ export default function OrdersModal({ orders, item, actualizar }) {
            size='small'
             onClick={() => {
              
-              actualizar(object, item.id);
+              updateOrder(object, item.id);
             }}
           >Sí</Button>
           <Button

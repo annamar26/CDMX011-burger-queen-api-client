@@ -1,7 +1,8 @@
-import { signInWithEmailAndPassword, auth } from "../lib/firebaseConfig";
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword, auth } from "../lib/firebaseConfig";
+import Axios from 'axios'
 
 let messageError = ''
-const enviarDatos = (event, email, password) => {
+const loginFb = (event, email, password) => {
 
     event.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
@@ -23,6 +24,37 @@ const enviarDatos = (event, email, password) => {
 
 
 };
+const createEmployee = (event, email, password, fullname, objeto) => {
+
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password, )
+        .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            Axios.post("http://localhost:4000/users", {
+                id: user.uid,
+                name: fullname,
+                email: email,
+                role: objeto
+
+
+
+            });
+            console.log(user);
+
+
+            // ...
+        })
+        .catch(() => {
+
+            messageError = 'Error. Intente nuevamente'
+        });
+
+
+
+
+
+};
 
 
 const getUser = (user = auth.currentUser) => {
@@ -37,4 +69,4 @@ const getUser = (user = auth.currentUser) => {
 
     return { email, uid }
 }
-export { getUser, messageError, enviarDatos }
+export { getUser, messageError, loginFb, createEmployee }

@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import React from "react";
-import Form from "./Form"
+import Form from "./Components/Form"
 import camarera from '../images/camarera.png'
 import guardaespaldas from '../images/guardaespaldas.png'
 import cocinero from '../images/cocinero.png'

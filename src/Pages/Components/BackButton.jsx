@@ -2,13 +2,13 @@ import React, { Fragment } from 'react'
 import { Button } from "@mui/material";
 
 function BackButton({content}) {
-    const regresar = () => {
+    const back = () => {
         window.history.back();
       };
     return (
         <Fragment>
              <Button
-        onClick={regresar}
+        onClick={back}
         id="regresarMenu2"
         variant="contained"
         margin="large"

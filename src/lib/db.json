@@ -132,6 +132,147 @@
       "id": 1,
       "salidaCocina": "17:23:16",
       "tiempoDePreparacion": "00:00:17"
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Café con leche",
+          "price": 7,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 22,
+      "status": "Entregada",
+      "date": "24/11/2021",
+      "hour": "19:38:51",
+      "id": 2,
+      "salidaCocina": "19:40:51",
+      "cookingTime": "19:40:51"
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:56:22",
+      "id": 3
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:57:47",
+      "id": 4
+    },
+    {
+      "waiter": "",
+      "cliente": "",
+      "products": [],
+      "total": 0,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:57:51",
+      "id": 5
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [],
+      "total": 0,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:57:55",
+      "id": 6
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "20:01:02",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "uid": "WY84qlvgC2QSUijlhIPmn653URk2",
+      "name": "ProBird738/",
+      "email": "corre4o2@ejemplo.com",
+      "role": {
+        "admin": false,
+        "kitchen": true
+      },
+      "id": 5
+    },
+    {
+      "id": "Y4YvNIjeJwfxqzknfnhKBRldlqX2",
+      "name": "ProBird738/88",
+      "email": "corre4o28@ejemplo.com",
+      "role": {
+        "admin": false,
+        "kitchen": true
+      }
     }
   ]
 }
