@@ -7,21 +7,19 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import BasicModal from "../components/Modal";
-import { useState } from "react";
+import { ModalKitchen } from "../components/Modal";
 
 function Kitchen() {
- 
   const {
     dataKitchen,
-    updateApi,
+    updateApiKitchen,
     timeInKitchen,
-    timeInK,
+    timeInMinutes,
     open,
     handleOpen,
     handleClose,
-    recoverID, 
-    id
+    recoverID,
+    id,
   } = useDataKitchen();
   return (
     <div className="cards-kitchen">
@@ -40,8 +38,8 @@ function Kitchen() {
                 </TableHead>
                 {item.products.map((elem, j) => (
                   <TableBody key={j}>
-                    <TableRow key={j}>
-                      <TableCell>{elem.name} </TableCell>
+                    <TableRow >
+                      <TableCell>{elem.name}</TableCell>
                       <TableCell align="center">{elem.quantity}</TableCell>
                     </TableRow>
                   </TableBody>
@@ -50,7 +48,6 @@ function Kitchen() {
             </TableContainer>
             <p>Entrada: {item.entry}</p>
             <p>Salida: {item.exit}</p>
-
             <button
               id="kitchen-btn"
               onClick={(e) => {
@@ -58,8 +55,6 @@ function Kitchen() {
                 timeInKitchen(item.exit, item.entry);
                 handleOpen();
                 recoverID(item.id);
-                //updateApi(item.id, item.exit);
-                // console.log(timeInK);
               }}
             >
               Orden terminada
@@ -67,12 +62,12 @@ function Kitchen() {
           </CardContent>
         </Card>
       ))}
-      <BasicModal
+      <ModalKitchen
         key="modal"
         open={open}
         handleClose={handleClose}
-        updateApi={updateApi}
-        timeInK={timeInK}
+        updateApiKitchen={updateApiKitchen}
+        timeInK={timeInMinutes}
         id={id}
       />
     </div>

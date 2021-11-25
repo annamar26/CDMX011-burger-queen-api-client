@@ -5,49 +5,73 @@ import { usePostProducts } from "./usePostProduct";
 
 export const useDataKitchen = () => {
   const [dataKitchen, setDataKitchen] = useState([]);
+  const [ready, setReady] = useState([])
   const { time } = usePostProducts();
-  const [timeInK, setTimeInK] = useState(0);
+  const [timeInMinutes, setTimeInMinutes] = useState(0);
   const [open, setOpen] = useState(false);
-  const handleOpen = () => {setOpen(true)}
-  const handleClose = () => {setOpen(false)};
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   const [id, setId] = useState(0);
-  
   useEffect(() => {
-    getOrders();
-  }, [dataKitchen]);
+    const interval = setInterval(() => {
+      getOrders();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   const getOrders = async () => {
     const resp = await dataApi.get("http://localhost:3001/orders");
-    setDataKitchen(resp.data);
+    const pendingOrder = resp.data.filter((i) => i.status === "Pendiente");
+    setDataKitchen(pendingOrder);
+    const readyOrder =  resp.data.filter((i) => i.status === "Lista");
+    setReady(readyOrder)
   };
 
-  const updateApi = async (id) => {
-    await dataApi.patch(`http://localhost:3001/orders/${id}`, {
-      status: "Lista",
-      exit: moment(time).format("HH:mm"),
-      time: timeInK,
-    });
+  const updateApiKitchen = async (id) => {
+      await dataApi.patch(`http://localhost:3001/orders/${id}`, {
+        status: "Lista",
+        exit: moment(time).format("HH:mm"),
+        time: timeInMinutes,
+      });
   };
+
+  const updateApiReady = async (id) => {
+  await dataApi.patch(`http://localhost:3001/orders/${id}`, {
+        status: "Entregada",
+      });
+  }
 
   const timeInKitchen = (exit, entry) => {
     exit = moment(time).format("HH:mm");
-    const numEntry = parseInt(entry.split(":").join(""));
-    const numExit = parseInt(exit.split(":").join(""));
-    const timeInKintechen = numExit - numEntry;
-    setTimeInK(timeInKintechen);
+    const splitEntry = entry.split(":");
+    const hourEntry = parseInt(splitEntry[0]);
+    const minEntry = parseInt(splitEntry[1]);
+    const splitExit = exit.split(":");
+    const hourExit = parseInt(splitExit[0]);
+    const minExit = parseInt(splitExit[1]);
+    const timeElapsed = hourExit * 60 + minExit - (hourEntry * 60 + minEntry);
+    setTimeInMinutes(timeElapsed);
   };
+
   const recoverID = (idOrder) => {
     setId(idOrder);
-    console.log(id);
   };
+ 
   return {
     dataKitchen,
-    updateApi,
+    updateApiKitchen,
+    updateApiReady,
     timeInKitchen,
-    timeInK,
+    timeInMinutes,
     open,
     handleOpen,
     handleClose,
     recoverID,
-    id
+    id,
+    ready
   };
 };
