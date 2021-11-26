@@ -244,33 +244,13 @@
         }
     ],
     "users": [{
-            "uid": "WY84qlvgC2QSUijlhIPmn653URk2",
+            "id": "WY84qlvgC2QSUijlhIPmn653URk2",
             "name": "ProBird738/",
             "email": "corre4o2@ejemplo.com",
-            "role": {
-                "admin": false,
-                "kitchen": true
-            },
-            "id": 5
-        },
-        {
-            "id": "Y4YvNIjeJwfxqzknfnhKBRldlqX2",
-            "name": "ProBird738/88",
-            "email": "corre4o28@ejemplo.com",
-            "role": {
-                "admin": false,
-                "kitchen": true
-            }
-        },
+            "password": "12345"
 
-        {
-            "id": "1uJ7Co1DB2djEes81QFC9Lm94303",
-            "name": "ProBird738",
-            "email": "corre8888o@ejemplo.com",
-            "role": {
-                "admin": false,
-                "kitchen": true
-            }
+
         }
+
     ]
 }

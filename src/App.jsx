@@ -12,12 +12,16 @@ import { useSetTime } from "./hooks/useSetTime";
 import GridOrders from '../src/Pages/GridOrders'
 import {Edit} from '../src/Pages/Edit'
 import  {AddEmployeeForm} from './Pages/Components/AddEmployeeForm'
+import useGetEmployes from "./hooks/useGetEmployes";
+import OrderCard from "./Pages/Components/OrderCard"
+import {EmployeeAndProductEdit} from "./Pages/Components/EmployeeAndProductEdit"
 
 
 function App() {
   const { pendingOrders, ordersToDeliver, updateOrder} = useGetOrders();
   const { desayuno, comida } = useGetProducts();
   const {time}= useSetTime()
+  const { employee, updateEmployee} = useGetEmployes();
 
 
   return (
@@ -49,13 +53,13 @@ function App() {
         <Route
           exact
           path="/cocina"
-          element={<GridOrders orders={pendingOrders} header={"Cocina"} updateOrder={updateOrder}/>}
+          element={<GridOrders content={<OrderCard array={pendingOrders} updateOrder={updateOrder}/>}  header={"Cocina"} />}
         />
         <Route
           exact
           path="/pedidos"
           element={
-            <GridOrders orders={ordersToDeliver} header={"Pedidos Listos"}  updateOrder={updateOrder}/>
+            <GridOrders content={<OrderCard array={ordersToDeliver} updateOrder={updateOrder}/>} header={"Pedidos Listos"}  />
           }
         />
         <Route
@@ -70,6 +74,13 @@ function App() {
           path="/Agregar%20empleado"
           element={
             <Edit content={<AddEmployeeForm />} />
+          }
+        />
+         <Route
+          exact
+          path="Editar/Eliminar%20empleado"
+          element={
+            <GridOrders content={<EmployeeAndProductEdit array={employee} updateItem={updateEmployee}/>}header={'Empleados'} />
           }
         />
         

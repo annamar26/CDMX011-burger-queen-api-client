@@ -5,13 +5,13 @@ import { Paper, TableContainer, TableBody, TableRow, TableCell, TableHead, Table
 import OrdersModal from './OrdersModal'
 
 
-const OrderCard = ({ orders, updateOrder }) => {
+const OrderCard = ({ array, updateOrder }) => {
   return (
     <Fragment>
-      {orders.map((item) => (
+      {array.map((item) => (
         <Card id="orden" key={item.id + 1}>
           <CardActions id="orderHeader" align="center">
-           <OrdersModal orders={orders} item={item} updateOrder={updateOrder}/>
+           <OrdersModal orders={array} item={item} updateOrder={updateOrder}/>
             <Typography
               sx={{ fontSize: 22 }}
               gutterBottom
