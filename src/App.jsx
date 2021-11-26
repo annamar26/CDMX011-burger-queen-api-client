@@ -11,7 +11,7 @@ import Home from "./Pages/Home";
 import { useSetTime } from "./hooks/useSetTime";
 import GridOrders from '../src/Pages/GridOrders'
 import {Edit} from '../src/Pages/Edit'
-import Form from '../src/Pages/Components/Form'
+import  {AddEmployeeForm} from './Pages/Components/AddEmployeeForm'
 
 
 function App() {
@@ -69,7 +69,7 @@ function App() {
           exact
           path="/Agregar%20empleado"
           element={
-            <Edit content={<Form />} />
+            <Edit content={<AddEmployeeForm />} />
           }
         />
         
