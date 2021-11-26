@@ -1,10 +1,10 @@
 import React from 'react'
-import Form from './Components/Form'
 
-export const Edit = () => {
+export const Edit = ({content}) => {
+    
     return (
         <div>
-            <Form />
+           {content}
         </div>
     )
 }

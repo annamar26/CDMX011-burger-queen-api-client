@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import React, {Fragment} from "react";
 import BackButton from "./BackButton";
 
+
 function RoleOptions({options}) {
 
   return (
@@ -17,12 +18,13 @@ function RoleOptions({options}) {
           margin="large"
           type="submit"
           data-testid="Desayuno"
-          onClick={()=>{ window.location.href = `/${option}`}}
+          onClick={()=>window.location.pathname = `/${option}`}
         >
          {option}
         </Button>
       ))}
       </section>
+     
       <BackButton  content={'Salir'}/>
     </Fragment>
   );

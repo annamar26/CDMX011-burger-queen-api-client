@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import useSetOpenModal from "../../hooks/useSetOpenModal";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -28,8 +28,8 @@ const style = {
   alignItems:'center'
 };
 function ButtonSendOrder({ client, order, total, waiter, orderToKitchen, table }) {
-const {handleOpen, open, handleClose}= useSetOpenModal()
-const [content, setContent]= useState("")
+const {handleOpen, open, handleClose, content, handleContent}= useSetOpenModal()
+
 
   return (
     <Fragment>
@@ -37,13 +37,13 @@ const [content, setContent]= useState("")
         onClick={() => {
           handleOpen()
         if (order.length === 0 ) {
-           setContent('Tu orden no puede estar vacía')
+           handleContent('Tu orden no puede estar vacía')
           } else if(((client === ""|| client=== undefined) && table>0)||(table<0 && client.length)){
-            setContent('Orden enviada a cocina')
+            handleContent('Orden enviada a cocina')
             orderToKitchen(order, client, total, waiter);
             
           } else{
-           setContent('Debes ingresar nombre del cliente o número de mesa para continuar con la orden')
+           handleContent('Debes ingresar nombre del cliente o número de mesa para continuar con la orden')
             
           }
            

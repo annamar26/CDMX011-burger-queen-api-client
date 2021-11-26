@@ -1,16 +1,20 @@
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword, auth } from "../lib/firebaseConfig";
 import Axios from 'axios'
 
-let messageError = ''
-const loginFb = (event, email, password) => {
 
-    event.preventDefault();
+let messageError = ''
+let contentModal = ""
+
+const loginFb = (e, email, password) => {
+    e.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
             console.log(user.uid);
             window.location.href = "/menu";
+
+
 
             // ...
         })
@@ -24,9 +28,9 @@ const loginFb = (event, email, password) => {
 
 
 };
-const createEmployee = (event, email, password, fullname, objeto) => {
+const createEmployee = (e, email, password, fullname, objeto) => {
 
-    event.preventDefault();
+    e.preventDefault()
     createUserWithEmailAndPassword(auth, email, password, )
         .then((userCredential) => {
             // Signed in
@@ -41,6 +45,7 @@ const createEmployee = (event, email, password, fullname, objeto) => {
 
             });
             console.log(user);
+            contentModal = 'Registro exitoso'
 
 
             // ...
@@ -48,6 +53,7 @@ const createEmployee = (event, email, password, fullname, objeto) => {
         .catch(() => {
 
             messageError = 'Error. Intente nuevamente'
+            contentModal = messageError
         });
 
 
@@ -69,4 +75,4 @@ const getUser = (user = auth.currentUser) => {
 
     return { email, uid }
 }
-export { getUser, messageError, loginFb, createEmployee }
+export { getUser, messageError, loginFb, createEmployee, contentModal }

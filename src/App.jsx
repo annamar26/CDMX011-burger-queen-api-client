@@ -11,11 +11,14 @@ import Home from "./Pages/Home";
 import { useSetTime } from "./hooks/useSetTime";
 import GridOrders from '../src/Pages/GridOrders'
 import {Edit} from '../src/Pages/Edit'
+import Form from '../src/Pages/Components/Form'
+
 
 function App() {
   const { pendingOrders, ordersToDeliver, updateOrder} = useGetOrders();
   const { desayuno, comida } = useGetProducts();
   const {time}= useSetTime()
+
 
   return (
     <BrowserRouter className="App">
@@ -64,12 +67,13 @@ function App() {
         />
         <Route
           exact
-          path="/Agregar%20Producto"
+          path="/Agregar%20empleado"
           element={
-            <Edit  />
+            <Edit content={<Form />} />
           }
         />
-        /Agregar%20Producto
+        
+ 
       </Routes>
     </BrowserRouter>
   );
