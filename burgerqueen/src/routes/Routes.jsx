@@ -6,6 +6,7 @@ import Breakfast from "../pages/Breakfast";
 import Lunch from "../pages/Lunch";
 import Banner from "../components/Banner";
 import Kitchen from "../pages/Kitchen";
+import Ready from "../pages/Ready";
 
 function RoutesPath() {
   //Enrutado
@@ -19,6 +20,7 @@ function RoutesPath() {
           <Route exact path="/breakfast" element={<Breakfast />} />
           <Route exact path="/lunch" element={<Lunch />} />
           <Route exact path="/kitchen" element={<Kitchen />} />
+          <Route exact path="/ready" element={<Ready />} />
         </Routes>
       </Router>
     </>

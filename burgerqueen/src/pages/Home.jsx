@@ -7,7 +7,6 @@ function desyunos(e) {
 function comida(e) {
   e.preventDefault();
   window.location.href = "./lunch";
-
 }
   return (
     <div className="menu-btns" id="home">

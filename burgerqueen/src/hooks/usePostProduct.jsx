@@ -13,9 +13,11 @@ export const usePostProducts = () => {
       clearInterval(interval);
     };
   }, []);
+
   const clientNameFn = (value) => {
     setClientName(value);
   };
+  
   const postProducts = ((order, client) => {
     const product = [];
     order.map((item) => (
