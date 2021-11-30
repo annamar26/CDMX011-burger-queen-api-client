@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import camarera from "../images/camarera.png";
 import cocinero from "../images/cocinero.png"; // with import
 import gerente from "../images/gerente.png";
-import Form from "../components/Form";
+import { FormLogin } from "../components/Form";
 
 function Login() {
   return (
@@ -13,7 +13,7 @@ function Login() {
           <img src={camarera} alt="Error al cargar imagen" />
           <img src={cocinero} alt="Error al cargar imagen" />
         </div>
-        <Form></Form>
+        <FormLogin/ >
       </main>
     </Fragment>
   );

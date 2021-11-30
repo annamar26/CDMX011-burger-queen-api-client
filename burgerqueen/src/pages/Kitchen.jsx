@@ -7,9 +7,12 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { ModalKitchen } from "../components/Modal";
+import ContentModal from "../components/Modal";
+import LoginJSON from "../api/LoginJSON";
+import { useEffect } from "react";
 
 function Kitchen() {
+  const { getCookies, removeCookies } = LoginJSON();
   const {
     dataKitchen,
     updateApiKitchen,
@@ -21,6 +24,12 @@ function Kitchen() {
     recoverID,
     id,
   } = useDataKitchen();
+
+
+  useEffect(() => {
+    getCookies();
+  }, []);
+  
   return (
     <div className="cards-kitchen">
       {dataKitchen.map((item, i) => (
@@ -38,7 +47,7 @@ function Kitchen() {
                 </TableHead>
                 {item.products.map((elem, j) => (
                   <TableBody key={j}>
-                    <TableRow >
+                    <TableRow>
                       <TableCell>{elem.name}</TableCell>
                       <TableCell align="center">{elem.quantity}</TableCell>
                     </TableRow>
@@ -62,14 +71,26 @@ function Kitchen() {
           </CardContent>
         </Card>
       ))}
-      <ModalKitchen
-        key="modal"
-        open={open}
-        handleClose={handleClose}
-        updateApiKitchen={updateApiKitchen}
-        timeInK={timeInMinutes}
-        id={id}
-      />
+      <ContentModal key="modalKitchen" open={open} handleClose={handleClose}>
+        <h1>Tiempo en cocina {timeInMinutes} minutos</h1>
+        <p>¿Enviar orden {id} a mesero?</p>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            handleClose();
+            updateApiKitchen(id);
+          }}
+        >
+          Enviar
+        </button>
+      </ContentModal>
+      <button
+        onClick={() => {
+          removeCookies();
+        }}
+      >
+        Salir
+      </button>
     </div>
   );
 }

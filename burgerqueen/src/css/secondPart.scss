@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap");
+$colorViolet: #dab5e1;
+$colorAqua: #b3ebe4;
+$colorPink: #fa81aa;
+
+#close-modal{
+    text-align: end;
+}
+#form-admin{
+    width: fit-content;
+    margin: 50px;
+    label{
+        display: block;
+    }
+}
+#nav-admin-menu{
+    display: flex;
+    justify-content: center;
+}
+.admin-container{
+display: flex;
+justify-content: space-around;
+}
