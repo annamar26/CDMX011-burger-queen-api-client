@@ -9,8 +9,8 @@ const OrderCard = ({ array, updateOrder }) => {
   return (
     <Fragment>
       {array.map((item) => (
-        <Card id="orden" key={item.id + 1}>
-          <CardActions id="orderHeader" align="center">
+        <Card className="orden" key={item.id + 1}>
+          <CardActions className="orderHeader" align="center">
            <OrdersModal orders={array} item={item} updateOrder={updateOrder}/>
             <Typography
               sx={{ fontSize: 22 }}

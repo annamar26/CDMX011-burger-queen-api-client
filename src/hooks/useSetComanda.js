@@ -29,7 +29,7 @@ export const useSetComanda = () => {
             date: new Date().toLocaleDateString(),
             hour: new Date().toLocaleTimeString(),
         });
-        return window.location.reload()
+
     };
 
     return {

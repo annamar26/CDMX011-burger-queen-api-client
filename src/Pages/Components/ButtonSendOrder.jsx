@@ -80,7 +80,8 @@ const {handleOpen, open, handleClose, content, handleContent}= useSetOpenModal()
               margin="large"
               color="secondary"
               size="small"
-              onClick={handleClose}
+              onClick={()=>{handleClose();
+              window.location.reload()}}
             >
               OK
             </Button>

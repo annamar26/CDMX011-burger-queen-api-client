@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
   FormControlLabel,
+  Input,
   Checkbox,
   form,
   Paper,
@@ -14,83 +15,36 @@ import {
   CardContent,
   CardActions,
   Typography,
-  TextField,
+  FilledInput,
+  Button,
 } from "@mui/material";
-import { EmployeeModal } from "./EmployeeModal";
+import EmployeeModal from "./EmployeeModal";
 
-export const EmployeeAndProductEdit = ({ array, updateItem }) => {
+export const EmployeeAndProductEdit = ({ array, updateItem, deleteItem }) => {
+  const [name, setName] = useState("");
   return (
     <Fragment>
-      {array.map((item, index) => (
-        <Card id="orden" key={item.email}>
-          <CardActions id="orderHeader" align="center">
+      {array.map((item) => (
+        <Card className="orden" key={item.id}>
+          <CardActions className="orderHeader" align="center">
+            <EmployeeModal
+              orders={array}
+              item={item}
+              updateItem={updateItem}
+              deleteItem={deleteItem}
+            />
             <Typography
               sx={{ fontSize: 22 }}
               gutterBottom
               align="center"
               color="secondary"
             >
-              Empleado:#{item.email}
+              Empleado:#{item.id}
             </Typography>
-            <EmployeeModal action={"Editar"} array={array} item={item} updateItem={updateItem}/>
           </CardActions>
           <CardContent>
-            <form>
-              <TextField
-                fullWidth
-                autoFocus
-                syze="small"
-                color="secondary"
-                margin="normal"
-                variant="filled"
-                id="name"
-                type="name"
-                label="Nombre completo del empleado"
-                value={item.name}
-                onChange={(e) => console.log(e.target.value)}
-                required
-              />
-              <TextField
-                fullWidth
-                autoFocus
-                syze="small"
-                color="secondary"
-                margin="normal"
-                variant="filled"
-                id="email"
-                type="email"
-                label="Correo electrónico"
-                value={item.email}
-                onChange={(e) => console.log(e.target.value)}
-                required
-              />
-              <TextField
-                fullWidth
-                autoFocus
-                syze="small"
-                color="secondary"
-                margin="normal"
-                variant="filled"
-                id="password"
-                type="text"
-                label="Contraseña"
-                value={item.password}
-                onChange={(e) => console.log(e.target.value)}
-                required
-              />
-              <FormControlLabel
-                label="Admin"
-                control={<Checkbox checked={true} />}
-              />
-              <FormControlLabel
-                label="Cocinero"
-                control={<Checkbox checked={false} />}
-              />
-              <FormControlLabel
-                label="Mesero"
-                control={<Checkbox checked={true} />}
-              />
-            </form>
+          
+            
           </CardContent>
         </Card>
       ))}

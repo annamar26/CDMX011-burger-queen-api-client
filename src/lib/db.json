@@ -244,10 +244,12 @@
         }
     ],
     "users": [{
-            "id": "WY84qlvgC2QSUijlhIPmn653URk2",
+            "id": 1,
             "name": "ProBird738/",
             "email": "corre4o2@ejemplo.com",
-            "password": "12345"
+            "password": "12345",
+            "role": { "admin": true, "waiter": false, "kitchen": true }
+
 
 
         }

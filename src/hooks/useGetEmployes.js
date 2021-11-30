@@ -3,17 +3,19 @@ import { useState, useEffect } from "react";
 import Axios from "axios";
 const useGetEmployes = () => {
 
-    const [employee, setEmployees] = useState([]);
+    const [employee, setEmployee] = useState([]);
 
 
 
     const getUsers = async() => {
         const resp = await Axios({
-            url: "https://fake-server-burguer-queen.herokuapp.com/users",
-        });;
+
+            url: "http://localhost:4000/users",
+        });
 
 
-        console.log(resp.data)
+        let data = resp.data
+        setEmployee(data)
 
 
     };
@@ -25,13 +27,20 @@ const useGetEmployes = () => {
         getUsers()
 
     };
+    const deleteEmployee = async(objeto, id) => {
+
+
+        await Axios.delete(`http://localhost:4000/users/${id}`, objeto)
+        getUsers()
+
+    };
 
 
     useEffect(() => {
         getUsers()
     }, [employee])
 
-    return { employee, getUsers, updateEmployee };
+    return { employee, getUsers, updateEmployee, deleteEmployee };
 };
 
 

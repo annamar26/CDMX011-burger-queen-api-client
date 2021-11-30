@@ -341,14 +341,14 @@ main #form2 #Login:hover {
        column-gap: 1vw;
 }
 
-#orden {
+.orden {
   margin: auto 0;
   width: 98%;
   height: 40vh;
   background-color: #e1ceec2f;
   box-shadow: 0 3px 5px 2px grey;
 }
-#orden #orderHeader {
+.orden .orderHeader {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;

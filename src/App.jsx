@@ -21,7 +21,7 @@ function App() {
   const { pendingOrders, ordersToDeliver, updateOrder} = useGetOrders();
   const { desayuno, comida } = useGetProducts();
   const {time}= useSetTime()
-  const { employee, updateEmployee} = useGetEmployes();
+  const { employee, updateEmployee, deleteEmployee} = useGetEmployes();
 
 
   return (
@@ -80,7 +80,7 @@ function App() {
           exact
           path="Editar/Eliminar%20empleado"
           element={
-            <GridOrders content={<EmployeeAndProductEdit array={employee} updateItem={updateEmployee}/>}header={'Empleados'} />
+            <GridOrders content={<EmployeeAndProductEdit array={employee} updateItem={updateEmployee} deleteItem={deleteEmployee}/>}header={'Empleados'} />
           }
         />
         

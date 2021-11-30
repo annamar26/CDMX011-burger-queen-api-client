@@ -337,8 +337,8 @@ main {
     column-gap: 1vw;
 }
 
-#orden {
-    #orderHeader {
+.orden {
+    .orderHeader {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;

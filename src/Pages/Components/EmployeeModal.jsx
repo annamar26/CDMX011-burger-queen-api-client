@@ -18,12 +18,13 @@ const style = {
   p: 4,
 };
 
-export const EmployeeModal = (array, action, item, updateItem) => {
+export default function EmployeeModal({ array, item, updateItem, deleteItem}) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
+  const [content, setContent] = useState(null);
   const [object, setObject] = useState(null);
+
   return (
     <div>
       <Button
@@ -33,35 +34,25 @@ export const EmployeeModal = (array, action, item, updateItem) => {
         size="small"
         onClick={() => {
           handleOpen();
-          /* const elemToSetup = array.find((order) => order.id === item.id); */
-          /* 
-              elemToSetup.active = "Listo";
-              elemToSetup.outOfKitchen = new Date().toLocaleTimeString();
-
-              let initial = moment.duration(elemToSetup.hour);
-              var end = moment.duration(elemToSetup.outOfKitchen);
-              let lapseTime = moment.duration(end - initial);
-
-              let strTiempo = `${
-                lapseTime._data.hours < 9
-                  ? "0" + lapseTime._data.hours + ":"
-                  : lapseTime._data.hours + ":"
-              }${
-                lapseTime._data.minutes < 9
-                  ? "0" + lapseTime._data.minutes + ":"
-                  : lapseTime._data.minutes + ":"
-              }${
-                lapseTime._data.seconds < 9
-                  ? "0" + lapseTime._data.seconds
-                  : lapseTime._data.seconds
-              }`;
-
-              elemToSetup.cookingTime = strTiempo;
-              setTiempo(elemToSetup.cookingTime)
-              setObject(elemToSetup) */
+          setContent('Los datos del empleado serán modificados, ¿Estás seguro de continuar?')
+          setObject(item)
+         
         }}
       >
-       {action}
+        Editar
+      </Button>
+      <Button
+        variant="contained"
+        margin="large"
+        color="secondary"
+        size="small"
+        onClick={() => {
+          handleOpen();
+          setContent('El empleado será eliminado, ¿Estás seguro de continuar?')
+         
+        }}
+      >
+        Borrar
       </Button>
       <Modal
         open={open}
@@ -72,11 +63,13 @@ export const EmployeeModal = (array, action, item, updateItem) => {
         <Box sx={style}>
           <Typography
             align="center"
-            id="modal-modal-description"
-            sx={{ mt: 2 }}
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
           >
-            ¿Estas seguro de querer {action} este empleado?
+           {content}
           </Typography>
+          
           <section id="modalButtons">
             <Button
               align="center"
@@ -85,10 +78,14 @@ export const EmployeeModal = (array, action, item, updateItem) => {
               color="secondary"
               size="small"
               onClick={() => {
-                updateItem(object, item.id);
+                if(content === 'Los datos del empleado serán modificados, ¿Estás seguro de continuar?'){
+                updateItem(object, item.id);}
+                else{
+                  deleteItem(object, item.id);}
+                
               }}
             >
-              {action}
+              Aceptar
             </Button>
             <Button
               align="center"
@@ -105,4 +102,4 @@ export const EmployeeModal = (array, action, item, updateItem) => {
       </Modal>
     </div>
   );
-};
+}
