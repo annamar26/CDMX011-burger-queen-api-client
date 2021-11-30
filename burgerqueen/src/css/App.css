@@ -276,27 +276,33 @@ button {
   font-size: 35px;
 }
 
-.comanda-div table {
+.comanda-div #send {
+  width: 150px;
+  height: 50px;
+  font-size: 35px;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
 }
 
-.comanda-div table td,
-.comanda-div table th {
+table td,
+table th {
   border-style: solid;
   border-width: 2px;
   border-color: #dab5e1;
 }
 
-.comanda-div table tr:nth-child(even) {
+table tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.comanda-div table tr:hover {
+table tr:hover {
   background-color: #f4e7f7;
 }
 
-.comanda-div table th {
+table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -304,14 +310,8 @@ button {
   color: black;
 }
 
-.comanda-div table td {
+table td {
   text-align: center;
-}
-
-.comanda-div #send {
-  width: 150px;
-  height: 50px;
-  font-size: 35px;
 }
 
 #regresar-btn {

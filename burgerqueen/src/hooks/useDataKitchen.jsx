@@ -9,12 +9,21 @@ export const useDataKitchen = () => {
   const { time } = usePostProducts();
   const [timeInMinutes, setTimeInMinutes] = useState(0);
   const [open, setOpen] = useState(false);
+  const [showEmployees, setShowEmployees] = useState(false);
+  
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
+
+const handleShowEmployees = ()=> {
+  setShowEmployees(true)
+}
+const handleHideEmployees = ()=> {
+  setShowEmployees(false)
+}
   const [id, setId] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -72,6 +81,10 @@ export const useDataKitchen = () => {
     handleClose,
     recoverID,
     id,
-    ready
+    ready,
+    showEmployees,
+    handleShowEmployees,
+    handleHideEmployees,
+    
   };
 };

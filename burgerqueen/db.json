@@ -116,69 +116,89 @@
   "orders": [
     {
       "id": 1,
-      "client": "Anita",
+      "client": "Alice",
       "products": [
         {
           "name": "Hamburguesa simple",
           "quantity": 1
         },
         {
-          "name": "Hamburguesa doble",
-          "quantity": 1
-        },
-        {
-          "name": "Agua 500ml",
+          "name": "Papas Fritas",
           "quantity": 1
         }
       ],
-      "entry": "17:10",
-      "exit": "17:19",
-      "status": "Entregada",
-      "time": 9
+      "entry": "11:26",
+      "exit": "",
+      "status": "Pendiente",
+      "time": ""
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Carlos Hernandez",
+      "role": "Cocinero",
+      "email": "cocina@ejemplo.com",
+      "password": "123456"
     },
     {
       "id": 2,
-      "client": "Isa",
-      "products": [
-        {
-          "name": "Aros de cebolla",
-          "quantity": 1
-        },
-        {
-          "name": "Agua 750ml",
-          "quantity": 1
-        },
-        {
-          "name": "Papas Fritas",
-          "quantity": 1
-        },
-        {
-          "name": "Bebida/gaseosa 750ml",
-          "quantity": 1
-        }
-      ],
-      "entry": "17:11",
-      "exit": "17:43",
-      "status": "Entregada",
-      "time": 32
+      "name": "Juan Perez",
+      "role": "Mesero",
+      "email": "mesero@ejemplo.com",
+      "password": "123456"
     },
     {
       "id": 3,
-      "client": "Nay",
-      "products": [
-        {
-          "name": "Hamburguesa simple",
-          "quantity": 1
-        },
-        {
-          "name": "Papas Fritas",
-          "quantity": 1
-        }
-      ],
-      "entry": "18:02",
-      "exit": "18:05",
-      "status": "Entregada",
-      "time": 3
+      "name": {
+        "firstName": "Nayelli Guadalupe",
+        "lastName": "Olvera Domínguez"
+      },
+      "role": {
+        "admin": false,
+        "waiter": true,
+        "kitchen": false
+      },
+      "email": "mesrx@ejemplo.com",
+      "password": "123456"
+    },
+    {
+      "id": 4,
+      "name": {
+        "firstName": "Nayelli Guadal",
+        "lastName": "Olvera Domínguez"
+      },
+      "role": {
+        "admin": false,
+        "waiter": true,
+        "kitchen": true
+      },
+      "email": "cocinx@ejemplo.com",
+      "password": "123456"
+    },
+    {
+      "id": 5,
+      "name": {
+        "firstName": "Nayelli Guadal",
+        "lastName": "Olvera Domínguez"
+      },
+      "role": {
+        "waiter": true
+      },
+      "email": "prueba@ejemplo.com",
+      "password": "123456"
+    },
+    {
+      "id": 6,
+      "name": {
+        "firstName": "Nayelli Guadal",
+        "lastName": "Olvera Domínguez"
+      },
+      "role": {
+        "kitchen": true
+      },
+      "email": "prueba2@ejemplo.com",
+      "password": "123456"
     }
   ]
 }

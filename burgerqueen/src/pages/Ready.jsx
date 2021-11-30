@@ -6,11 +6,11 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { ModalReady } from "../components/Modal";
+import ContentModal from "../components/Modal";
 import { useDataKitchen } from "../hooks/useDataKitchen";
 
 function Ready() {
-   const {ready, open, handleOpen, handleClose, id, recoverID, updateApiReady } =useDataKitchen()
+   const {ready, open, handleOpen, handleClose, updateApiReady, recoverID, id } =useDataKitchen()
     return (
         <div className="cards-kitchen">
         {ready.map((item, i) => (
@@ -28,7 +28,7 @@ function Ready() {
                   </TableHead>
                   {item.products.map((elem, j) => (
                     <TableBody key={j}>
-                      <TableRow >
+                      <TableRow>
                         <TableCell>{elem.name}</TableCell>
                         <TableCell align="center">{elem.quantity}</TableCell>
                       </TableRow>
@@ -43,21 +43,35 @@ function Ready() {
                 onClick={(e) => {
                   e.preventDefault();
                   handleOpen();
-                  recoverID(item.id);
-                }}
+                  recoverID(item.id)
+                } }
               >
                 Entregar orden
               </button>
             </CardContent>
           </Card>
+
         ))}
-        <ModalReady
-          key="modal"
-          open={open}
-          handleClose={handleClose}
-          id={id}
-          updateApiReady={updateApiReady}
-        />*
+ <ContentModal key="modalReady" open={open} handleClose={handleClose}>
+              <h1>Entregar orden {id}</h1>
+              <p>¿Esta seguro de continuar?</p>
+              <button
+              onClick={(e) => {
+                e.preventDefault();
+                handleClose();
+                updateApiReady(id);
+              }}
+            >
+              Enviar
+            </button>
+            <button
+              onClick={(e) => {
+                handleClose();
+              }}
+            >
+              Cancelar
+            </button>
+            </ContentModal>
       </div>
     )
 }

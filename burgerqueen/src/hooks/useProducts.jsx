@@ -4,7 +4,7 @@ import { dataApi } from "../api/dataApi";
 export const useProducts = () => {
   const [desayunos, setDesayunos] = useState([]);
   const [comidas, setComidas] = useState([]);
-
+ 
   useEffect(() => {
     getProducts();
   }, []);
@@ -13,9 +13,10 @@ export const useProducts = () => {
     setDesayunos(resp.data.desayunos);
     setComidas(resp.data.comida);
   };
-
+ 
   return {
     desayunos,
     comidas,
+ 
   };
 };

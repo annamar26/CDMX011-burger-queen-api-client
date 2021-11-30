@@ -1,16 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import { faExclamationTriangle, faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { usePostProducts } from "../hooks/usePostProduct";
 import { Fragment } from "react";
+import ContentModal from "./Modal";
+import { useDataKitchen } from "../hooks/useDataKitchen";
 
 function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
   const { postProducts, clientName, clientNameFn } = usePostProducts(1);
+  const { open, handleOpen, handleClose } = useDataKitchen();
 
   return (
     <Fragment>
       <section id="client">
         Cliente
-        <input type="text" onChange={(e) => clientNameFn(e.target.value)} />
+        <input
+          type="text"
+          onChange={(e) => {
+            clientNameFn(e.target.value);
+          }}
+        />
       </section>
       <table>
         <thead>
@@ -62,12 +70,20 @@ function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
       <button
         id="send"
         onClick={() => {
-          postProducts(order, clientName);
-          window.location.reload();
+          if (clientName === "" || total === 0) {
+            handleOpen();
+          } else {
+            postProducts(order, clientName, );
+            window.location.reload();
+          }
         }}
       >
         Enviar
       </button>
+      <ContentModal open={open} handleClose={handleClose}>
+        <FontAwesomeIcon icon={faExclamationTriangle}></FontAwesomeIcon>
+        <p>Agrega nombre del cliente o producto</p>
+      </ContentModal>
     </Fragment>
   );
 }
