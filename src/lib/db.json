@@ -1,258 +1,303 @@
 {
-    "products": {
-        "desayuno": [{
-                "id": "1",
-                "name": "Café americano",
-                "price": 5,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "2",
-                "name": "Café con leche",
-                "price": 7,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "3",
-                "name": "Sandwich de jamón y queso",
-                "price": 10,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            },
-            {
-                "id": "4",
-                "name": "Jugo de frutas natural",
-                "price": 7,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": ""
-            }
-        ],
-        "comida": [{
-                "id": "5",
-                "name": "Hamburguesa simple",
-                "price": 10,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "6",
-                "name": "Hamburguesa doble",
-                "price": 15,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "7",
-                "name": "Papas fritas",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "8",
-                "name": "Aros de cebolla",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "9",
-                "name": "Agua 500ml",
-                "price": 5,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "10",
-                "name": "Agua 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "11",
-                "name": "Bebida/gaseosa 500ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            },
-            {
-                "id": "12",
-                "name": "Bebida/gaseosa 750ml",
-                "price": 7,
-                "image": "url",
-                "type": "Comida",
-                "dateEntry": ""
-            }
-        ]
-    },
-    "orders": [{
-            "mesero": "correo@ejemplo.com",
-            "cliente": "",
-            "productos": [{
-                    "id": "5",
-                    "name": "Hamburguesa simple",
-                    "price": 10,
-                    "image": "url",
-                    "type": "Comida",
-                    "dateEntry": "",
-                    "quantity": 1
-                },
-                {
-                    "id": "7",
-                    "name": "Papas fritas",
-                    "price": 5,
-                    "image": "url",
-                    "type": "Comida",
-                    "dateEntry": "",
-                    "quantity": 1
-                }
-            ],
-            "total": 15,
-            "status": "Entregada",
-            "fecha": "24/11/2021",
-            "hora": "17:22:59",
-            "id": 1,
-            "salidaCocina": "17:23:16",
-            "tiempoDePreparacion": "00:00:17"
-        },
-        {
-            "waiter": "correo@ejemplo.com",
-            "cliente": "",
-            "products": [{
-                    "id": "1",
-                    "name": "Café americano",
-                    "price": 5,
-                    "image": "url",
-                    "type": "Desayuno",
-                    "dateEntry": "",
-                    "quantity": 1
-                },
-                {
-                    "id": "3",
-                    "name": "Sandwich de jamón y queso",
-                    "price": 10,
-                    "image": "url",
-                    "type": "Desayuno",
-                    "dateEntry": "",
-                    "quantity": 1
-                },
-                {
-                    "id": "2",
-                    "name": "Café con leche",
-                    "price": 7,
-                    "image": "url",
-                    "type": "Desayuno",
-                    "dateEntry": "",
-                    "quantity": 1
-                }
-            ],
-            "total": 22,
-            "status": "Entregada",
-            "date": "24/11/2021",
-            "hour": "19:38:51",
-            "id": 2,
-            "salidaCocina": "19:40:51",
-            "cookingTime": "19:40:51"
-        },
-        {
-            "waiter": "correo@ejemplo.com",
-            "cliente": "",
-            "products": [{
-                "id": "1",
-                "name": "Café americano",
-                "price": 5,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": "",
-                "quantity": 1
-            }],
-            "total": 5,
-            "status": "En preparacion",
-            "date": "24/11/2021",
-            "hour": "19:56:22",
-            "id": 3
-        },
-        {
-            "waiter": "correo@ejemplo.com",
-            "cliente": "",
-            "products": [{
-                "id": "1",
-                "name": "Café americano",
-                "price": 5,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": "",
-                "quantity": 1
-            }],
-            "total": 5,
-            "status": "En preparacion",
-            "date": "24/11/2021",
-            "hour": "19:57:47",
-            "id": 4
-        },
-        {
-            "waiter": "",
-            "cliente": "",
-            "products": [],
-            "total": 0,
-            "status": "En preparacion",
-            "date": "24/11/2021",
-            "hour": "19:57:51",
-            "id": 5
-        },
-        {
-            "waiter": "correo@ejemplo.com",
-            "cliente": "",
-            "products": [],
-            "total": 0,
-            "status": "En preparacion",
-            "date": "24/11/2021",
-            "hour": "19:57:55",
-            "id": 6
-        },
-        {
-            "waiter": "correo@ejemplo.com",
-            "cliente": "",
-            "products": [{
-                "id": "1",
-                "name": "Café americano",
-                "price": 5,
-                "image": "url",
-                "type": "Desayuno",
-                "dateEntry": "",
-                "quantity": 1
-            }],
-            "total": 5,
-            "status": "En preparacion",
-            "date": "24/11/2021",
-            "hour": "20:01:02",
-            "id": 7
-        }
+  "products": {
+    "desayuno": [
+      {
+        "id": "1",
+        "name": "Café americano",
+        "price": 5,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "2",
+        "name": "Café con leche",
+        "price": 7,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "3",
+        "name": "Sandwich de jamón y queso",
+        "price": 10,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      },
+      {
+        "id": "4",
+        "name": "Jugo de frutas natural",
+        "price": 7,
+        "image": "url",
+        "type": "Desayuno",
+        "dateEntry": ""
+      }
     ],
-    "users": [{
-            "id": 1,
-            "name": "ProBird738/",
-            "email": "corre4o2@ejemplo.com",
-            "password": "12345",
-            "role": { "admin": true, "waiter": false, "kitchen": true }
-
-
-
-        }
-
+    "comida": [
+      {
+        "id": "5",
+        "name": "Hamburguesa simple",
+        "price": 10,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "6",
+        "name": "Hamburguesa doble",
+        "price": 15,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "7",
+        "name": "Papas fritas",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "8",
+        "name": "Aros de cebolla",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "9",
+        "name": "Agua 500ml",
+        "price": 5,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "10",
+        "name": "Agua 750ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "11",
+        "name": "Bebida/gaseosa 500ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      },
+      {
+        "id": "12",
+        "name": "Bebida/gaseosa 750ml",
+        "price": 7,
+        "image": "url",
+        "type": "Comida",
+        "dateEntry": ""
+      }
     ]
+  },
+  "orders": [
+    {
+      "mesero": "correo@ejemplo.com",
+      "cliente": "",
+      "productos": [
+        {
+          "id": "5",
+          "name": "Hamburguesa simple",
+          "price": 10,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "7",
+          "name": "Papas fritas",
+          "price": 5,
+          "image": "url",
+          "type": "Comida",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 15,
+      "status": "Entregada",
+      "fecha": "24/11/2021",
+      "hora": "17:22:59",
+      "id": 1,
+      "salidaCocina": "17:23:16",
+      "tiempoDePreparacion": "00:00:17"
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "name": "Sandwich de jamón y queso",
+          "price": 10,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "name": "Café con leche",
+          "price": 7,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 22,
+      "status": "Entregada",
+      "date": "24/11/2021",
+      "hour": "19:38:51",
+      "id": 2,
+      "salidaCocina": "19:40:51",
+      "cookingTime": "19:40:51"
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:56:22",
+      "id": 3
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:57:47",
+      "id": 4
+    },
+    {
+      "waiter": "",
+      "cliente": "",
+      "products": [],
+      "total": 0,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:57:51",
+      "id": 5
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [],
+      "total": 0,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "19:57:55",
+      "id": 6
+    },
+    {
+      "waiter": "correo@ejemplo.com",
+      "cliente": "",
+      "products": [
+        {
+          "id": "1",
+          "name": "Café americano",
+          "price": 5,
+          "image": "url",
+          "type": "Desayuno",
+          "dateEntry": "",
+          "quantity": 1
+        }
+      ],
+      "total": 5,
+      "status": "En preparacion",
+      "date": "24/11/2021",
+      "hour": "20:01:02",
+      "id": 7
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Mesero",
+      "email": "mesero@correo.com",
+      "password": "123456",
+      "role": {
+        "admin": false,
+        "kitchen": false,
+        "waiter": true
+      }
+    },
+    {
+      "id": "2",
+      "name": "Cocinero",
+      "email": "cocinero@correo.com",
+      "password": "123456",
+      "role": {
+        "admin": false,
+        "kitchen": true,
+        "waiter": false
+      }
+    },
+    {
+      "id": "3",
+      "name": "Administrador",
+      "email": "admin@correo.com",
+      "password": "123456",
+      "role": {
+        "admin": true,
+        "kitchen": false,
+        "waiter": false
+      }
+    },
+    {
+      "name": "mesero2",
+      "email": "mesero2@correo.com",
+      "password": "123456",
+      "role": {
+        "admin": false,
+        "kitchen": true
+      },
+      "id": "gvbX1QE"
+    }
+    
+  ]
 }

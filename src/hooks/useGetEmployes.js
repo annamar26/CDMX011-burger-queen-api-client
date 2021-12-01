@@ -1,6 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import Axios from "axios";
+
+
 const useGetEmployes = () => {
 
     const [employee, setEmployee] = useState([]);
@@ -10,7 +12,7 @@ const useGetEmployes = () => {
     const getUsers = async() => {
         const resp = await Axios({
 
-            url: "http://localhost:4000/users",
+            url: "https://fake-server-burguer-queen.herokuapp.com/users",
         });
 
 
@@ -20,27 +22,41 @@ const useGetEmployes = () => {
 
     };
 
-    const updateEmployee = async(objeto, id) => {
+    const updateEmployee = async(id , objeto) => {
 
 
-        await Axios.put(`http://localhost:4000/users/${id}`, objeto)
+        await Axios.put(`https://fake-server-burguer-queen.herokuapp.com/users/${id}`, objeto)
         getUsers()
 
     };
-    const deleteEmployee = async(objeto, id) => {
+    const searchEmployee = async(name, email, role) => {
+        
+       const resp=  await Axios.get("https://fake-server-burguer-queen.herokuapp.com/users", {params : {email: email, name: name, role: role}})
+       return resp.data
+    }
+       
+       
+       
+    const addEmployee = async(name, email, password, role)=>{
+        Axios.post("https://fake-server-burguer-queen.herokuapp.com/users", {name, email, password, role})
+    getUsers()
+    }
+    
+   
+    const deleteEmployee = async(id) => {
 
 
-        await Axios.delete(`http://localhost:4000/users/${id}`, objeto)
+        await Axios.delete(`https://fake-server-burguer-queen.herokuapp.com/users/${id}`)
         getUsers()
 
-    };
+    }
 
 
     useEffect(() => {
         getUsers()
     }, [employee])
 
-    return { employee, getUsers, updateEmployee, deleteEmployee };
+    return { employee, getUsers, updateEmployee, deleteEmployee, addEmployee, searchEmployee};
 };
 
 

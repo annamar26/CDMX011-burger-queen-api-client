@@ -4,40 +4,51 @@
   margin: 0;
 }
 
-body {
-  /*   background-color: $BgColor; */
-}
-
 header {
   background-color: #b3ebe4;
   width: 100vw;
   height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-size: 5vh;
   margin-bottom: 2vh;
-  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
+
 header img {
   margin-left: 5%;
   height: 7.5vh;
   width: 10%;
   -webkit-animation: spin 5s infinite;
           animation: spin 5s infinite;
-  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
+
 header h1 {
   position: absolute;
   left: 33.33%;
   left: 33.33%;
   font-size: 70%;
   color: purple;
-  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
   text-align: center;
   width: 33.33%;
 }
+
 header p {
   width: 17%;
   font-size: 37%;
@@ -45,121 +56,227 @@ header p {
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 main .Usuarios {
   margin-top: 5vh;
   width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 main .Usuarios img {
   height: 15vh;
   width: 15vh;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
 }
+
 main .Usuarios img:hover {
   -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
           animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
-main form,
-main #form2 {
+
+main form {
   margin-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 60%;
   font-size: 100%;
 }
-main form .MuiInputAdornment-positionEnd input,
-main #form2 .MuiInputAdornment-positionEnd input {
+
+main form .MuiInputAdornment-positionEnd input {
   border: 2px solid purple;
   outline-color: purple;
 }
-main form #Login,
-main #form2 #Login {
+
+main form #Login {
   background-color: purple;
   width: 90%;
   border: 2px solid black;
   border-radius: 10px;
-  box-shadow: 0 3px 5px 2px grey;
+  -webkit-box-shadow: 0 3px 5px 2px grey;
+          box-shadow: 0 3px 5px 2px grey;
   color: white;
   font-size: 3vh;
   font-weight: 700;
   height: 8vh;
   padding: 0 30px;
   margin-top: 4vh;
-  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
-main form #Login:hover,
-main #form2 #Login:hover {
+
+main form #Login:hover {
   background-color: #fa81aa;
   color: purple;
   border: 2px solid #800080;
   -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
           animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
 }
 
-#form2 {
+#form3 {
   margin: 0 auto;
-  margin-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 60%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 98%;
   font-size: 100%;
 }
-#form2 .MuiInputAdornment-positionEnd input {
+
+#form3 .MuiInputAdornment-positionEnd input {
   border: 2px solid purple;
   outline-color: purple;
 }
-#form2 #Login {
+
+#form3 #Login {
   background-color: purple;
   width: 90%;
   border: 2px solid black;
   border-radius: 10px;
-  box-shadow: 0 3px 5px 2px grey;
+  -webkit-box-shadow: 0 3px 5px 2px grey;
+          box-shadow: 0 3px 5px 2px grey;
   color: white;
   font-size: 3vh;
   font-weight: 700;
   height: 8vh;
   padding: 0 30px;
   margin-top: 4vh;
-  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
 }
+
+#form3 #Login:hover {
+  background-color: #fa81aa;
+  color: purple;
+  border: 2px solid #800080;
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+          animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+#form2 {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  font-size: 100%;
+}
+
+#form2 .MuiInputAdornment-positionEnd input {
+  border: 2px solid purple;
+  outline-color: purple;
+}
+
+#form2 #Login {
+  background-color: purple;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 5px 2px grey;
+          box-shadow: 0 3px 5px 2px grey;
+  color: white;
+  font-size: 3vh;
+  font-weight: 700;
+  height: 8vh;
+  padding: 0 30px;
+  margin-top: 4vh;
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+}
+
 #form2 #Login:hover {
   background-color: #fa81aa;
   color: purple;
   border: 2px solid #800080;
   -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
           animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  perspective: 1000px;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.modal-icons {
+  margin: 0 auto;
 }
 
 #desayunoButttons {
   margin-left: 59vw;
   margin-top: 5vh;
   width: 0%;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
 }
+
 #desayunoButttons Button {
   width: 17vw;
   color: white;
@@ -168,7 +285,8 @@ main #form2 #Login:hover {
   height: 9vh;
   font-size: auto;
   font-weight: bolder;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
   -webkit-text-fill-color: #f3f0f3;
   -webkit-text-stroke: 0.3px rgba(128, 0, 128, 0.377);
   border-color: rgba(128, 0, 128, 0.089);
@@ -188,7 +306,8 @@ main #form2 #Login:hover {
   color: white;
   font-size: 120%;
   font-weight: 700;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
   border-radius: 1.5vw;
 }
 
@@ -204,10 +323,19 @@ main #form2 #Login:hover {
 }
 
 #comandaButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 1vw;
 }
 
@@ -228,21 +356,25 @@ main #form2 #Login:hover {
   border-width: 0.3vw;
   color: purple;
 }
+
 #enviarOrden #clientName {
   height: 1.5vh;
 }
 
 .container {
+  display: -ms-grid;
   display: grid;
   width: 100vw;
   height: 70vh;
   margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
   row-gap: 0.5vh;
-  -moz-column-gap: 1vw;
-       column-gap: 1vw;
+  -webkit-column-gap: 1vw;
+          column-gap: 1vw;
   margin: 0 auto;
 }
+
 .container Button {
   background-color: #dab5e1;
   width: 20vw;
@@ -258,7 +390,8 @@ main #form2 #Login:hover {
   border-style: solid;
   border-width: 0.5vw;
   line-height: 3vh;
-  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.459));
 }
 
 #MenuH1 {
@@ -282,10 +415,18 @@ main #form2 #Login:hover {
 }
 
 #cliente {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #dab5e1;
   height: 5.5vh;
   width: 55.5vw;
@@ -295,50 +436,85 @@ main #form2 #Login:hover {
   border: solid 4px #B3EBE4;
   z-index: 1;
 }
+
 #cliente h2 {
   color: purple;
-  filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
 }
+
 #cliente .comandInput {
   background-color: white;
-  border-radius: 0.5vw;
+  border-radius: .5vw;
 }
 
 #Total {
   position: absolute;
   width: 55.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: #dab5e1;
   height: 4.5vh;
   top: 87.6vh;
   left: 2.5vw;
   border: solid 4px #B3EBE4;
 }
+
 #Total h2 {
   width: 20%;
   color: purple;
   text-align: left;
-  filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
 }
+
 #Total h3 {
   width: 12%;
   color: purple;
   text-align: left;
-  filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+  -webkit-filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
+          filter: drop-shadow(0 1.5px 1.5px rgba(0, 0, 0, 0.459));
 }
 
 #orderContainer {
+  display: -ms-grid;
   display: grid;
   width: 95%;
   height: 90vh;
   margin: 0 auto;
-  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   row-gap: 0.5vh;
-  -moz-column-gap: 1vw;
-       column-gap: 1vw;
+  -webkit-column-gap: 1vw;
+          column-gap: 1vw;
+}
+
+#employeeTable {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .orden {
@@ -346,63 +522,103 @@ main #form2 #Login:hover {
   width: 98%;
   height: 40vh;
   background-color: #e1ceec2f;
-  box-shadow: 0 3px 5px 2px grey;
+  -webkit-box-shadow: 0 3px 5px 2px grey;
+          box-shadow: 0 3px 5px 2px grey;
 }
+
 .orden .orderHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #modalButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-top: 3vh;
 }
 
 @-webkit-keyframes spin {
   from {
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
 }
 
 @keyframes spin {
   from {
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
   }
   to {
-    transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
   }
 }
+
 @-webkit-keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+            transform: translate3d(-1px, 2px, 0) rotate(-1deg);
   }
-  20%, 80% {
-    transform: translate3d(2px, 4px, 0) rotate(3deg);
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 4px, 0) rotate(3deg);
+            transform: translate3d(2px, 4px, 0) rotate(3deg);
   }
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+            transform: translate3d(-4px, 6px, 0) rotate(-5deg);
   }
-  40%, 60% {
-    transform: translate3d(4px, 8px, 0) rotate(8deg);
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 8px, 0) rotate(8deg);
+            transform: translate3d(4px, 8px, 0) rotate(8deg);
   }
 }
+
 @keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 2px, 0) rotate(-1deg);
+            transform: translate3d(-1px, 2px, 0) rotate(-1deg);
   }
-  20%, 80% {
-    transform: translate3d(2px, 4px, 0) rotate(3deg);
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 4px, 0) rotate(3deg);
+            transform: translate3d(2px, 4px, 0) rotate(3deg);
   }
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+  30%,
+  50%,
+  70% {
+    -webkit-transform: translate3d(-4px, 6px, 0) rotate(-5deg);
+            transform: translate3d(-4px, 6px, 0) rotate(-5deg);
   }
-  40%, 60% {
-    transform: translate3d(4px, 8px, 0) rotate(8deg);
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 8px, 0) rotate(8deg);
+            transform: translate3d(4px, 8px, 0) rotate(8deg);
   }
-}/*# sourceMappingURL=App.css.map */
+}
+/*# sourceMappingURL=App.css.map */

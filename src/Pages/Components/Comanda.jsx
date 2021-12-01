@@ -13,10 +13,11 @@ import {
 import CardContent from "@mui/material/CardContent";
 import { TextField } from "@mui/material";
 import ButtonSendOrder from "./ButtonSendOrder";
-import { getUser } from "../../lib/FirebaseAut";
 import { RemoveCircleOutlineTwoTone } from "@mui/icons-material";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { pink } from "@mui/material/colors";
+import Cookies from "universal-cookie"
+const cookies = new Cookies()
 
 const Comanda = ({ order, bill }) => {
   const {
@@ -30,7 +31,7 @@ const Comanda = ({ order, bill }) => {
     getTable,
   } = useSetComanda();
 
-  const { email } = getUser();
+  
 
   return (
     <div>
@@ -153,7 +154,7 @@ const Comanda = ({ order, bill }) => {
         table={table}
         order={order}
         total={addition + bill}
-        waiter={email}
+        waiter={cookies.get('name')}
         orderToKitchen={orderToKitchen}
       />
       <Button

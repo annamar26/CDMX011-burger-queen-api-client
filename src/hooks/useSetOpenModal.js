@@ -6,8 +6,10 @@ const useSetOpenModal = () => {
 
     const handleClose = () => setOpen(false);
     const handleContent = (valor) => setContent(valor)
+    
+    const [object, setObject] = useState(null);
 
-    return { open, handleClose, handleOpen, content, handleContent }
+    return { open, handleClose, handleOpen, content, handleContent, object, setObject}
 }
 
 export default useSetOpenModal

@@ -15,12 +15,13 @@ import DefaultModal from "./DefaultModal"
 import useGetEmployes from "../../hooks/useGetEmployes"
 
 
-export const AddEmployeeForm = ({addEmployee, header}) => {
+export const AddProductsForm = ({addProduct, header}) => {
 
-  const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [role, setRole] = useState(null);
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState(null)
+  const [type, setType] = useState("");
+  const [dateEntry, setDateEntry] = useState("");
   
   const { handleClose, open, handleOpen, handleContent, content} = useSetOpenModal();
   const {searchEmployee} = useGetEmployes()

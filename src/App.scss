@@ -8,9 +8,6 @@ $ButtonColor: #dab5e1;
     margin: 0;
 }
 
-body {
-    /*   background-color: $BgColor; */
-}
 
 header {
     background-color: #b3ebe4;
@@ -72,8 +69,8 @@ main {
             perspective: 1000px;
         }
     }
-    form,
-    #form2 {
+    form
+   {
         margin-top: 10vh;
         display: flex;
         flex-direction: column;
@@ -110,13 +107,12 @@ main {
     }
 }
 
-#form2 {
+#form3 {
     margin: 0 auto;
-    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 98%;
     font-size: 100%;
     .MuiInputAdornment-positionEnd input {
         border: 2px solid purple;
@@ -146,7 +142,45 @@ main {
         perspective: 1000px;
     }
 }
-
+#form2 {
+    margin: 0 auto;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    font-size: 100%;
+    .MuiInputAdornment-positionEnd input {
+        border: 2px solid purple;
+        outline-color: purple;
+    }
+    #Login {
+        background-color: purple;
+        width: 90%;
+        border: 2px solid black;
+        border-radius: 10px;
+        box-shadow: 0 3px 5px 2px grey;
+        color: white;
+        font-size: 3vh;
+        font-weight: 700;
+        height: 8vh;
+        padding: 0 30px;
+        margin-top: 4vh;
+        filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.459));
+    }
+    #Login:hover {
+        background-color: $fontColor;
+        color: purple;
+        border: 2px solid #800080;
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+        transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+}
+.modal-icons{
+    margin: 0 auto
+}
 #desayunoButttons {
     margin-left: 59vw;
     margin-top: 5vh;
@@ -335,6 +369,14 @@ main {
     grid-template-columns: repeat(3, 1fr);
     row-gap: 0.5vh;
     column-gap: 1vw;
+}
+#employeeTable{
+    width: 90%;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+    
 }
 
 .orden {

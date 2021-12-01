@@ -14,14 +14,15 @@ import {Edit} from '../src/Pages/Edit'
 import  {AddEmployeeForm} from './Pages/Components/AddEmployeeForm'
 import useGetEmployes from "./hooks/useGetEmployes";
 import OrderCard from "./Pages/Components/OrderCard"
-import {EmployeeAndProductEdit} from "./Pages/Components/EmployeeAndProductEdit"
+import EmployeeTable from "./Pages/Components/EmployeeTable"
+
 
 
 function App() {
   const { pendingOrders, ordersToDeliver, updateOrder} = useGetOrders();
   const { desayuno, comida } = useGetProducts();
   const {time}= useSetTime()
-  const { employee, updateEmployee, deleteEmployee} = useGetEmployes();
+  const { employee, updateEmployee, deleteEmployee, addEmployee} = useGetEmployes();
 
 
   return (
@@ -73,15 +74,15 @@ function App() {
           exact
           path="/Agregar%20empleado"
           element={
-            <Edit content={<AddEmployeeForm />} />
+            <Edit content={<AddEmployeeForm header={'Registrar nuevo empleado'} addEmployee={addEmployee} />} />
           }
         />
          <Route
           exact
           path="Editar/Eliminar%20empleado"
           element={
-            <GridOrders content={<EmployeeAndProductEdit array={employee} updateItem={updateEmployee} deleteItem={deleteEmployee}/>}header={'Empleados'} />
-          }
+            <EmployeeTable array={employee} updateItem={updateEmployee} deleteItem={deleteEmployee} />}
+          
         />
         
  

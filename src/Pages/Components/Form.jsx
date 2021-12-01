@@ -4,10 +4,10 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import {
  
-  loginFb,
+  login,
 
   messageError,
-} from "../../lib/FirebaseAut";
+} from "../../lib/jsonServer";
 import emailIco from "../../images/emailIco.png";
 import iconoPassword from "../../images/iconoPassword.png";
 import iconoNotPassword from "../../images/iconoNotPassword.png";
@@ -33,7 +33,7 @@ function Form() {
   
   return (
     <form
-      onSubmit={(e) => loginFb(e, email, password)}
+      onSubmit={(e) => login(e, email, password)}
       className="form"
       id="form"
       data-testid="form"
