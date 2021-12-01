@@ -136,68 +136,38 @@
   "users": [
     {
       "id": 1,
-      "name": "Carlos Hernandez",
-      "role": "Cocinero",
-      "email": "cocina@ejemplo.com",
-      "password": "123456"
-    },
-    {
-      "id": 2,
-      "name": "Juan Perez",
-      "role": "Mesero",
-      "email": "mesero@ejemplo.com",
-      "password": "123456"
-    },
-    {
-      "id": 3,
       "name": {
         "firstName": "Nayelli Guadalupe",
         "lastName": "Olvera Domínguez"
       },
       "role": {
-        "admin": false,
-        "waiter": true,
-        "kitchen": false
-      },
-      "email": "mesrx@ejemplo.com",
-      "password": "123456"
-    },
-    {
-      "id": 4,
-      "name": {
-        "firstName": "Nayelli Guadal",
-        "lastName": "Olvera Domínguez"
-      },
-      "role": {
-        "admin": false,
-        "waiter": true,
-        "kitchen": true
-      },
-      "email": "cocinx@ejemplo.com",
-      "password": "123456"
-    },
-    {
-      "id": 5,
-      "name": {
-        "firstName": "Nayelli Guadal",
-        "lastName": "Olvera Domínguez"
-      },
-      "role": {
         "waiter": true
       },
-      "email": "prueba@ejemplo.com",
+      "email": "mesero@ejemplo.com",
       "password": "123456"
     },
     {
-      "id": 6,
+      "id": 2,
       "name": {
-        "firstName": "Nayelli Guadal",
-        "lastName": "Olvera Domínguez"
+        "firstName": "Carlos",
+        "lastName": "Hernández"
+      },
+      "role": {
+        "admin": true
+      },
+      "email": "admin@ejemplo.com",
+      "password": "123456894"
+    },
+    {
+      "id": 3,
+      "name": {
+        "firstName": "Juana",
+        "lastName": "Pérez"
       },
       "role": {
         "kitchen": true
       },
-      "email": "prueba2@ejemplo.com",
+      "email": "cocina@ejemplo.com",
       "password": "123456"
     }
   ]

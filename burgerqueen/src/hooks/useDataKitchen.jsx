@@ -8,22 +8,8 @@ export const useDataKitchen = () => {
   const [ready, setReady] = useState([])
   const { time } = usePostProducts();
   const [timeInMinutes, setTimeInMinutes] = useState(0);
-  const [open, setOpen] = useState(false);
-  const [showEmployees, setShowEmployees] = useState(false);
   
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-const handleShowEmployees = ()=> {
-  setShowEmployees(true)
-}
-const handleHideEmployees = ()=> {
-  setShowEmployees(false)
-}
+  
   const [id, setId] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -76,15 +62,8 @@ const handleHideEmployees = ()=> {
     updateApiReady,
     timeInKitchen,
     timeInMinutes,
-    open,
-    handleOpen,
-    handleClose,
     recoverID,
     id,
     ready,
-    showEmployees,
-    handleShowEmployees,
-    handleHideEmployees,
-    
   };
 };

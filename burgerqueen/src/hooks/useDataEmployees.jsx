@@ -2,24 +2,39 @@ import { useEffect, useState } from "react";
 import { dataApi } from "../api/dataApi";
 
 export const useDataEmployees = () => {
-  const [dataUsers, setDataUsers] = useState([]);//<-----Hacer post 
-  const [postUsers, setPostUsers] = useState([]);
-  const [dataRole, setDataRole] = useState({
-  admin: false,
-  waiter: false,
-  kitchen: false
-  })
-  const [dataEmploy, setDataEmploy] = useState({
-    id: "",
-    name: "",
-    uid: "",
-  });
+  const [dataUsers, setDataUsers] = useState([]); //<-----Hacer post
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
-    email:"",
-    password:""
+    email: "",
+    password: "",
   });
+
+  const [dataRole, setDataRole] = useState({
+    admin: false,
+    waiter: false,
+    kitchen: false,
+  });
+
+  const [recoveredData, setRecoveredData] = useState({
+    id: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const recoveryDataUser = (id, name, lastName, email, password) => {
+    setRecoveredData({
+      id: id,
+      firstName: name,
+      lastName: lastName,
+      email: email,
+      password: password,
+    });
+  };
+
+ 
   const handleUserChange = (event) => {
     setUser({
       ...user,
@@ -29,20 +44,13 @@ export const useDataEmployees = () => {
       [event.target.name]: event.target.value,
     });
   };
-  const handleDataRole = (event) =>{
-    //console.log(event.target.value)
-     setDataRole({
-      [event.target.value]: true,
-     [event.target.value]: true,
-    [event.target.value]: true,
-    })
-  }
 
-  const recoveryDataEmployee = (id, name, uid) => {
-    setDataEmploy({
-      id: id,
-      name: name,
-      uid: uid,
+  const handleDataRole = (event) => {
+    //console.log(event.target.value)
+    setDataRole({
+      [event.target.value]: true,
+      [event.target.value]: true,
+      [event.target.value]: true,
     });
   };
 
@@ -58,54 +66,53 @@ export const useDataEmployees = () => {
     setDataUsers(resp.data);
   };
 
-  const deleteEmployee = async (id) => {
+  const deleteUser = async (id) => {
     await dataApi.delete(`http://localhost:3001/users/${id}`);
     console.log("Eliminar empleado funcionando en json api");
   };
 
-  const postDataUsers = async () => {
-    await dataApi
-      .post("http://localhost:3001/users", {
-        id: "",
-        name: {
-          firstName: user.firstName,
-          lastName: user.lastName,
-        },
-        role: { 
-          admin: dataRole.admin, 
-          waiter: dataRole.waiter, 
-          kitchen: dataRole.kitchen 
-        },
-        email: user.email,
-        password: user.password,
-      })
-      .then((res) => {
-        console.log(res.data);
-      });
+  const editUser = async (id) => {
+    await dataApi.patch(`http://localhost:3001/users/${id}`, {
+      name: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+      },
+      role: {
+        admin: dataRole.admin,
+        waiter: dataRole.waiter,
+        kitchen: dataRole.kitchen,
+      },
+      email: user.email,
+      password: user.password,
+    });
   };
-  /*
-  dataApi
-  .post("http://localhost:3001/employees", {
-    id: "",
-    uid: user,
-    name: name,
-    rol: job,
-    email: value,
-    password: password,
-  })
-  .then((res) => {
-    addDataEmployee(res.data);
-  });*/
+  const postDataUsers = async () => {
+    await dataApi.post("http://localhost:3001/users", {
+      id: "",
+      name: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+      },
+      role: {
+        admin: dataRole.admin,
+        waiter: dataRole.waiter,
+        kitchen: dataRole.kitchen,
+      },
+      email: user.email,
+      password: user.password,
+    });
+  };
+
   return {
     dataUsers,
-    deleteEmployee,
-    dataEmploy,
-    recoveryDataEmployee,
+    deleteUser,
+    recoveredData,
+    recoveryDataUser,
     handleUserChange,
     handleDataRole,
     user,
     dataRole,
     postDataUsers,
-
+    editUser,
   };
 };

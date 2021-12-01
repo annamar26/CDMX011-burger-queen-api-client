@@ -3,11 +3,11 @@ import { faExclamationTriangle, faMinusCircle, faPlusCircle } from "@fortawesome
 import { usePostProducts } from "../hooks/usePostProduct";
 import { Fragment } from "react";
 import ContentModal from "./Modal";
-import { useDataKitchen } from "../hooks/useDataKitchen";
+import { useShowHooks } from "../hooks/useShowHooks";
 
 function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
   const { postProducts, clientName, clientNameFn } = usePostProducts(1);
-  const { open, handleOpen, handleClose } = useDataKitchen();
+  const { open, handleOpen, handleClose } = useShowHooks();
 
   return (
     <Fragment>

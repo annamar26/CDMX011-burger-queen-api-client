@@ -10,6 +10,7 @@ import TableRow from "@mui/material/TableRow";
 import ContentModal from "../components/Modal";
 import LoginJSON from "../api/LoginJSON";
 import { useEffect } from "react";
+import { useShowHooks } from "../hooks/useShowHooks";
 
 function Kitchen() {
   const { getCookies, removeCookies } = LoginJSON();
@@ -18,18 +19,16 @@ function Kitchen() {
     updateApiKitchen,
     timeInKitchen,
     timeInMinutes,
-    open,
-    handleOpen,
-    handleClose,
     recoverID,
     id,
   } = useDataKitchen();
 
+  const { open, handleOpen, handleClose } = useShowHooks();
 
   useEffect(() => {
     getCookies();
   }, []);
-  
+
   return (
     <div className="cards-kitchen">
       {dataKitchen.map((item, i) => (
