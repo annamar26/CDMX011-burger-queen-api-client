@@ -62,11 +62,3 @@ function Lunch() {
 }
 
 export default Lunch;
-
-/*
-{comanda.map((p) => (
-  <ul key={p.id}>
-    <li>{p.name}</li>
-    <li>{" $" + p.price}</li>
-  </ul>
-))}*/

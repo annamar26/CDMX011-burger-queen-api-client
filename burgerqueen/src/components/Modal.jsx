@@ -2,7 +2,6 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import { useDataKitchen } from "../hooks/useDataKitchen";
 
 const style = {
   position: "absolute",

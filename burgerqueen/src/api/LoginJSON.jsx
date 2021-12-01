@@ -20,12 +20,12 @@ const LoginJSON = () => {
           cookies.set("role", res.role, { path: "/" });
           cookies.set("email", res.email, { path: "/" });
           cookies.set("password", res.password, { path: "/" });
-          alert(`Bienvenido ${res.name}`);
-          if (res.role === "Cocinero") {
+          alert(`Bienvenido ${res.name.firstName}`);
+          if (res.role.kitchen) {
             window.location.href = "./kitchen";
-          } else if (res.role === "Mesero") {
+          } else if (res.role.waiter) {
             window.location.href = "./home";
-          } else if (res.role === "Admin") {
+          } else if (res.role.admin) {
             window.location.href = "./admin";
           }
         } else {

@@ -8,9 +8,12 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import ContentModal from "../components/Modal";
 import { useDataKitchen } from "../hooks/useDataKitchen";
+import { useShowHooks } from "../hooks/useShowHooks";
 
 function Ready() {
-   const {ready, open, handleOpen, handleClose, updateApiReady, recoverID, id } =useDataKitchen()
+   const {ready, updateApiReady, recoverID, id } = useDataKitchen();
+   const { open, handleOpen, handleClose } = useShowHooks();
+   
     return (
         <div className="cards-kitchen">
         {ready.map((item, i) => (

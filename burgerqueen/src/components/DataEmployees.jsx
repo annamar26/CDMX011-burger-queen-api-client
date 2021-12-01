@@ -1,41 +1,67 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { useDataEmployees } from "../hooks/useDataEmployees";
-import { useDataKitchen } from "../hooks/useDataKitchen";
+import { useShowHooks } from "../hooks/useShowHooks";
+import { FormEdit } from "./FormEdit";
+import { FormAdmin } from "./FormLogin";
 
 import ContentModal from "./Modal";
 const DataEmployees = () => {
-  const { dataEmployees, deleteEmployee, recoveryDataEmployee, dataEmploy } =
+  const { dataUsers, deleteUser, recoveryDataUser, recoveredData } =
     useDataEmployees();
-  const { open, handleClose, handleOpen } = useDataKitchen();
+  const {
+    open,
+    handleClose,
+    handleOpen,
+    conditionalRenderTrue,
+    conditionalRenderFalse,
+    conditionalButtonModal,
+  } = useShowHooks();
+
   return (
     <div>
       <table>
         <thead>
           <tr>
-            <th>Id</th>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Puesto</th>
             <th>Correo</th>
+            <th>Contraseña</th>
             <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
-          {dataEmployees.map((person, i) => (
+          {dataUsers.map((item, i) => (
             <tr key={i}>
-              <td>{person.id}</td>
-              <td>{person.name}</td>
-              <td>{person.rol}</td>
-              <td>{person.email}</td>
+              <td>{item.id}</td>
               <td>
-                <FontAwesomeIcon icon={faEdit}></FontAwesomeIcon>
+                {item.name.firstName}
+                <br />
+                {item.name.lastName}
+              </td>
+              {item.role.admin ? <td>Administrador</td> : null}
+              {item.role.kitchen ? <td>Cocinero</td> : null}
+              {item.role.waiter ? <td>Mesero</td> : null}
+              <td>{item.email}</td>
+              <td>{item.password}</td>
+              <td>
+                <FontAwesomeIcon
+                  onClick={() => {
+                    conditionalRenderTrue();
+                    recoveryDataUser(item.id, item.name.firstName, item.name.lastName, item.email, item.password);
+                    handleOpen();
+                  }}
+                  icon={faEdit}
+                ></FontAwesomeIcon>
                 <br />
                 <FontAwesomeIcon
                   icon={faTrashAlt}
                   onClick={(e) => {
+                    conditionalRenderFalse();
+                    recoveryDataUser(item.id, item.name.firstName, item.name.lastName, item.email, item.password);
                     handleOpen();
-                    recoveryDataEmployee(person.id, person.name, person.uid);
                   }}
                 ></FontAwesomeIcon>
               </td>
@@ -43,19 +69,24 @@ const DataEmployees = () => {
           ))}
         </tbody>
       </table>
-      <ContentModal open={open} handleClose={handleClose}>
-        <p>¿Estas seguro de eliminar a {dataEmploy.name}?</p>
-        <button
-          onClick={(e) => {
-            deleteEmployee(dataEmploy.id);
-            handleClose();
-//            DeleteUser(e, dataEmploy.uid);
-          }}
-        >
-          Elminar
-        </button>
-        <button onClick={() => handleClose()}>Cancelar</button>
-      </ContentModal>
+      {conditionalButtonModal ? (
+        <ContentModal open={open} handleClose={handleClose}>
+          <h1>Editar información de empleado</h1>
+          <FormEdit recoveredData={recoveredData} handleClose={handleClose}/>
+        </ContentModal>
+      ) : (
+        <ContentModal open={open} handleClose={handleClose}>
+          <p>¿Estas seguro de eliminar a {recoveredData.firstName}?</p>
+          <button
+            onClick={(e) => {
+              deleteUser(recoveredData.id);
+              handleClose();
+            }}
+          >
+            Elminar
+          </button>
+        </ContentModal>
+      )}
     </div>
   );
 };
