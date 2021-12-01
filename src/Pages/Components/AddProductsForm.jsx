@@ -12,7 +12,8 @@ import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
 import { red, green } from "@mui/material/colors";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import DefaultModal from "./DefaultModal"
-import useGetEmployes from "../../hooks/useGetEmployes"
+import {useGetProducts} from "../../hooks/useGetProducts"
+
 
 
 export const AddProductsForm = ({addProduct, header}) => {
@@ -21,65 +22,41 @@ export const AddProductsForm = ({addProduct, header}) => {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null)
   const [type, setType] = useState("");
-  const [dateEntry, setDateEntry] = useState("");
+  const {searchProduct}= useGetProducts()
+  
   
   const { handleClose, open, handleOpen, handleContent, content} = useSetOpenModal();
-  const {searchEmployee} = useGetEmployes()
-  const roles = [
-    {
-      value: "waiter",
-      label: "Mesero",
-    },
-    {
-      value: "kitchen",
-      label: "Cocinero",
-    },
-    {
-      value: "admin",
-      label: "Administrador",
-    },
-  ];
-
-
-
-  const handleChange = (e) => {
     
-
-    if (e.target.value === "admin") {
-      setRole({  admin: true });
-      
-    } else if (e.target.value === "waiter") {
-      setRole({  admin: false, waiter: true });
-     
-    } else if (e.target.value === "kitchen"){
-      setRole({  admin: false, kitchen: true });
-       }
-   
-    
-  };
   return (
     <form
       onSubmit={(e) => {
+       
+     
         e.preventDefault()
      
-searchEmployee(name, email, role)
-.then((res)=>{
-  if(res.length){
-    addEmployee(name, email, password, role);
-    handleContent('Registro exitoso')
-  }else{
-    handleContent('Ya existe un usuario registrado con los datos proporcionados')
-  }
-}
-).catch(()=>{
-  handleContent('Ocurrió un error, intente nuevamente')
-})
+        searchProduct(name)
+        .then((res)=>{
+          if(!res.length){
+            addProduct(name, price, image, type);
+            handleContent('Producto agregado con éxito')
+          }else{
+            handleContent('Ya existe un producto registrado con los datos proporcionados')
+          }
+        }
+        ).catch(()=>{
+          handleContent('Ocurrió un error, intente nuevamente')
+        })
+                  
+                  
+              
+        
+                setTimeout(handleOpen, 2000);
+              }}
           
           
       
 
-        setTimeout(handleOpen, 2000);
-      }}
+     
       className="form"
       id="form2"
       data-testid="form"
@@ -93,7 +70,7 @@ searchEmployee(name, email, role)
         variant="outlined"
         id="name"
         type="text"
-        label="Nombre completo del empleado"
+        label="Producto"
         value={name}
         onChange={(e) => setName(e.target.value)}
         required
@@ -111,11 +88,11 @@ searchEmployee(name, email, role)
         color="secondary"
         margin="normal"
         variant="outlined"
-        id="email"
-        type="email"
-        label="Correo electrónico"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        id="price"
+        type="number"
+        label="Precio"
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
         required
         InputProps={{
           endAdornment: (
@@ -130,12 +107,13 @@ searchEmployee(name, email, role)
         color="secondary"
         margin="normal"
         variant="outlined"
-        id="password"
-        type="text"
-        label="Contraseña"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
+        id="image"
+        type="file"
+        helperText='Imagen del producto'
+        placeholder=''
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+       
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
@@ -148,19 +126,21 @@ searchEmployee(name, email, role)
       <TextField
         id="outlined-select-currency"
         select
-        label="Permisos"
-        onChange={handleChange}
+        label="Categoría"
+        onChange={(e)=>setType(e.target.value)}
         fullWidth
         placeholder="Permisos"
         color="secondary"
         margin="normal"
         
       >
-        {roles.map((option) => (
-          <MenuItem key={option.value} value={option.value}>
-            {option.label}
+          <MenuItem  value={"Desayuno"}>
+            Desayuno
           </MenuItem>
-        ))}
+          <MenuItem  value={"Comida"}>
+            Comida
+          </MenuItem>
+       
       </TextField>
       <Button
         fullWidth
@@ -175,7 +155,7 @@ searchEmployee(name, email, role)
      
             <DefaultModal open={open} handleClose={handleClose}>
            
-          {content === "Registro exitoso" ? (
+          {content === "Producto agregado con éxito" ? (
             <CheckCircleIcon
               className='modal-icon'
               fontSize="large"

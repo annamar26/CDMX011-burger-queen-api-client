@@ -15,12 +15,14 @@ import  {AddEmployeeForm} from './Pages/Components/AddEmployeeForm'
 import useGetEmployes from "./hooks/useGetEmployes";
 import OrderCard from "./Pages/Components/OrderCard"
 import EmployeeTable from "./Pages/Components/EmployeeTable"
+import { AddProductsForm } from "./Pages/Components/AddProductsForm";
+import ProductsTable from "./Pages/Components/ProductsTable";
 
 
 
 function App() {
   const { pendingOrders, ordersToDeliver, updateOrder} = useGetOrders();
-  const { desayuno, comida } = useGetProducts();
+  const { desayuno, comida, addProduct, updateProduct, deleteProduct} = useGetProducts();
   const {time}= useSetTime()
   const { employee, updateEmployee, deleteEmployee, addEmployee} = useGetEmployes();
 
@@ -84,8 +86,20 @@ function App() {
             <EmployeeTable array={employee} updateItem={updateEmployee} deleteItem={deleteEmployee} />}
           
         />
-        
- 
+         <Route
+          exact
+          path="Agregar%20Producto"
+          element={
+            <Edit  content={<AddProductsForm header={'Agregar nuevo producto'} addProduct={addProduct} />} />}
+          
+        />
+      <Route
+          exact
+          path="Editar/Eliminar%20producto"
+          element={
+            <ProductsTable array={desayuno.concat(comida)} updateItem={updateProduct} deleteItem={deleteProduct} />}
+          
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -29,9 +29,9 @@ const useGetEmployes = () => {
         getUsers()
 
     };
-    const searchEmployee = async(name, email, role) => {
+    const searchEmployee = async(name, email) => {
         
-       const resp=  await Axios.get("https://fake-server-burguer-queen.herokuapp.com/users", {params : {email: email, name: name, role: role}})
+       const resp=  await Axios.get("https://fake-server-burguer-queen.herokuapp.com/users", {params : {email: email, name: name}})
        return resp.data
     }
        

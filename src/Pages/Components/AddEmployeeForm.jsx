@@ -61,9 +61,9 @@ export const AddEmployeeForm = ({addEmployee, header}) => {
       onSubmit={(e) => {
         e.preventDefault()
      
-searchEmployee(name, email, role)
+searchEmployee(name, email)
 .then((res)=>{
-  if(res.length){
+  if(!res.length){
     addEmployee(name, email, password, role);
     handleContent('Registro exitoso')
   }else{

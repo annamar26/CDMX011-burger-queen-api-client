@@ -1,40 +1,40 @@
 {
-  "products": {
-    "desayuno": [
-      {
-        "id": "1",
-        "name": "Café americano",
-        "price": 5,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      },
-      {
-        "id": "2",
-        "name": "Café con leche",
-        "price": 7,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      },
-      {
-        "id": "3",
-        "name": "Sandwich de jamón y queso",
-        "price": 10,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      },
-      {
-        "id": "4",
-        "name": "Jugo de frutas natural",
-        "price": 7,
-        "image": "url",
-        "type": "Desayuno",
-        "dateEntry": ""
-      }
-    ],
-    "comida": [
+  "products": [
+  
+      {"id": "1",
+    "name": "Café americano",
+    "price": 5,
+    "image": "url",
+    "type": "Desayuno",
+    "dateEntry": ""
+  },
+  {
+    "id": "2",
+    "name": "Café con leche",
+    "price": 7,
+    "image": "url",
+    "type": "Desayuno",
+    "dateEntry": ""
+  },
+  {
+    "id": "3",
+    "name": "Sandwich de jamón y queso",
+    "price": 10,
+    "image": "url",
+    "type": "Desayuno",
+    "dateEntry": ""
+  },
+  {
+    "id": "4",
+    "name": "Jugo de frutas natural",
+    "price": 7,
+    "image": "url",
+    "type": "Desayuno",
+    "dateEntry": ""
+  },
+   
+     
+   
       {
         "id": "5",
         "name": "Hamburguesa simple",
@@ -100,7 +100,7 @@
         "dateEntry": ""
       }
     ]
-  },
+  ,
   "orders": [
     {
       "mesero": "correo@ejemplo.com",
