@@ -40,6 +40,6 @@ export const useGetProducts = () => {
     };
     useEffect(() => {
         getProducts();
-    }, [setDesayuno], [setComida], [desayuno], [comida]);
+    }, [desayuno], [comida]);
     return { desayuno, comida, addProduct, searchProduct, deleteProduct, updateProduct};
 };
