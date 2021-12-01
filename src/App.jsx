@@ -83,7 +83,7 @@ function App() {
           exact
           path="Editar/Eliminar%20empleado"
           element={
-            <EmployeeTable array={employee} updateItem={updateEmployee} deleteItem={deleteEmployee} />}
+            <EmployeeTable array={employee} />}
           
         />
          <Route
@@ -97,7 +97,7 @@ function App() {
           exact
           path="Editar/Eliminar%20producto"
           element={
-            <ProductsTable array={desayuno.concat(comida)} updateItem={updateProduct} deleteItem={deleteProduct} />}
+            <ProductsTable array={desayuno.concat(comida)}  />}
           
         />
       </Routes>

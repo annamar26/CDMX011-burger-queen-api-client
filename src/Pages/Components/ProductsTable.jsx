@@ -5,10 +5,10 @@ import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import { useState } from "react";
 import DefaultModal from './DefaultModal';
   import useSetOpenModal from "../../hooks/useSetOpenModal";
-import { EditEmployeeForm } from './EditEmployeeForm';
 import CloseIcon from '@mui/icons-material/Close';
 
 import { useGetProducts } from '../../hooks/useGetProducts';
+import { EditProductForm } from './EditProductForm';
 const style = {
   position: "absolute",
   top: "5%",
@@ -17,7 +17,7 @@ const style = {
   
 
 };
-const ProductsTable = ({array, updateItem}) => {
+const ProductsTable = ({array}) => {
 const [object, setObject]= useState({});
 const[edit, setEdit]= useState(false)
   const { handleOpen, open, handleClose} =  useSetOpenModal();
@@ -26,7 +26,7 @@ const[edit, setEdit]= useState(false)
 
 
     return (
-        <Fragment id='employeeTable'>
+        <div id='employeeTable'>
             <TableContainer  align='center' component={Paper}>
               <Table  align='center' size="small" aria-label="a dense table">
                 <TableHead
@@ -108,10 +108,10 @@ const[edit, setEdit]= useState(false)
             <DefaultModal open={open} handleClose={handleClose} >
            
               {edit=== "si" ?<Fragment>
-              <CloseIcon sx={style} onClick={handleClose}/>
-              <EditEmployeeForm  header={"Editar empleado"} item={object} handleClose={handleClose}/> </Fragment>:
+             <CloseIcon sx={style} onClick={handleClose}/>
+             <EditProductForm  header={"Editar producto"} item={object} handleClose={handleClose}/> </Fragment>:
               <Typography align='center' id="modal-modal-title" variant="h6" component="h2">
-              ¿Estas seguro de querer eliminar a {object.name}?
+              ¿Estas seguro de querer eliminar {object.name}?
               <section id='modalButtons'>
           <Button
           align='center'
@@ -137,7 +137,7 @@ const[edit, setEdit]= useState(false)
              </DefaultModal>
            
 
-        </Fragment>
+        </div>
     )
 }
 

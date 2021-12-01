@@ -18,7 +18,7 @@ const style = {
   
 
 };
-const EmployeeTable = ({array, updateItem}) => {
+const EmployeeTable = ({array}) => {
 const [object, setObject]= useState({});
 const[edit, setEdit]= useState(false)
   const { handleOpen, open, handleClose} =  useSetOpenModal();
@@ -27,7 +27,7 @@ const[edit, setEdit]= useState(false)
 
 
     return (
-        <Fragment id='employeeTable'>
+        <div id='employeeTable'>
             <TableContainer  align='center' component={Paper}>
               <Table  align='center' size="small" aria-label="a dense table">
                 <TableHead
@@ -142,7 +142,7 @@ const[edit, setEdit]= useState(false)
              </DefaultModal>
            
 
-        </Fragment>
+        </div>
     )
 }
 
