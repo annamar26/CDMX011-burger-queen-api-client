@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import emailIco from "../../images/emailIco.png";
-
 import PersonIcon from "@mui/icons-material/Person";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import { Typography, MenuItem } from "@mui/material";
@@ -13,8 +12,6 @@ import { red, green } from "@mui/material/colors";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import DefaultModal from "./DefaultModal"
 import {useGetProducts} from "../../hooks/useGetProducts"
-
-
 
 export const AddProductsForm = ({addProduct, header}) => {
 
