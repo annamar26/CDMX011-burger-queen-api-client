@@ -106,7 +106,7 @@ export const EditProductForm = ({header, item, handleClose}) => {
           placeholder=''
           value={image}
           onChange={(e) => setImage(e.target.value)}
-          required
+         
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -119,7 +119,7 @@ export const EditProductForm = ({header, item, handleClose}) => {
         <TextField
           id="outlined-select-currency"
           select
-          label="Permisos"
+          label="Categoría"
           onChange={(e) => setType(e.target.value)}
           fullWidth
           placeholder="Categoría"
@@ -152,7 +152,7 @@ export const EditProductForm = ({header, item, handleClose}) => {
        
            <DefaultModal open={open} handleClose={handleClose}>
              
-            {content === "Empleado actualizado correctamente" ? (
+            {content === "Producto actualizado correctamente" ? (
               <CheckCircleIcon
                 className='modal-icon'
                 fontSize="large"
