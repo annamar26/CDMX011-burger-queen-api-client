@@ -4,7 +4,7 @@ import { dataApi } from "../api/dataApi";
 export const useProducts = () => {
   const [desayunos, setDesayunos] = useState([]);
   const [comidas, setComidas] = useState([]);
-const [recoveredIdProduct, setRecoveredIdProduct] = useState({
+const [recoveredDataProduct, setRecoveredDataProduct] = useState({
   name:"",
   id:"",
 });
@@ -14,26 +14,26 @@ const [recoveredIdProduct, setRecoveredIdProduct] = useState({
   }, []);
   const getProducts = async () => {
     const resp = await dataApi.get("http://localhost:3001/products");
-    setDesayunos(resp.data.desayunos);
-    setComidas(resp.data.comida);
+    setDesayunos(resp.data.filter(prod =>prod.type === "Desayuno"));
+    setComidas(resp.data.filter(prod => prod.type === "Comida"));
   };
  
-  const recoverIdProduct = (id, name)=>{
-    setRecoveredIdProduct({
+  const recoverDataProduct = (id, name)=>{
+    setRecoveredDataProduct({
       name: name,
       id: id,
     })
   }
+
   const deleteProduct = async (id) => {
-    await dataApi.delete(`http://localhost:3001/users/${id}`);
-    console.log("Eliminar producto funcionando en json api", id);
+    await dataApi.delete(`http://localhost:3001/products/${id}`);
   };
 
   return {
     desayunos,
     comidas,
-    recoverIdProduct,
-    recoveredIdProduct,
+    recoverDataProduct,
+    recoveredDataProduct,
     deleteProduct,
 
   };

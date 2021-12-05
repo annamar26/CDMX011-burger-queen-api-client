@@ -6,76 +6,87 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import Cookies from "universal-cookie";
+import Banner from "../components/Banner";
 import ContentModal from "../components/Modal";
 import { useDataKitchen } from "../hooks/useDataKitchen";
 import { useShowHooks } from "../hooks/useShowHooks";
+import camarera from "../images/camarera.png";
+const cookies = new Cookies();
 
 function Ready() {
    const {ready, updateApiReady, recoverID, id } = useDataKitchen();
    const { open, handleOpen, handleClose } = useShowHooks();
-   
+   let userLoggged =[];
+   const cook = cookies.get("name");
+   for(const [key, value] of Object.entries(cook)){
+     userLoggged.push(value);
+   }
     return (
-        <div className="cards-kitchen">
-        {ready.map((item, i) => (
-          <Card key={i} sx={{ width: 370, margin: 2 }}>
-            <CardContent>
-              <span>{item.id}</span>
-              <h1 align="center">Cliente: {item.client}</h1>
-              <TableContainer>
-                <Table>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell>Producto</TableCell>
-                      <TableCell>Cantidad</TableCell>
-                    </TableRow>
-                  </TableHead>
-                  {item.products.map((elem, j) => (
-                    <TableBody key={j}>
+      <>
+      <Banner>
+        <p>{userLoggged[0]}<img src={camarera} alt="mesera" /></p>
+      </Banner><div className="cards-kitchen">
+          {ready.map((item, i) => (
+            <Card key={i} sx={{ width: 370, margin: 2 }}>
+              <CardContent>
+                <span>{item.id}</span>
+                <h1 align="center">Cliente: {item.client}</h1>
+                <TableContainer>
+                  <Table>
+                    <TableHead>
                       <TableRow>
-                        <TableCell>{elem.name}</TableCell>
-                        <TableCell align="center">{elem.quantity}</TableCell>
+                        <TableCell>Producto</TableCell>
+                        <TableCell>Cantidad</TableCell>
                       </TableRow>
-                    </TableBody>
-                  ))}
-                </Table>
-              </TableContainer>
-              <p>Entrada: {item.entry}</p>
-              <p>Salida: {item.exit}</p>
-              <button
-                id="kitchen-btn"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleOpen();
-                  recoverID(item.id)
-                } }
-              >
-                Entregar orden
-              </button>
-            </CardContent>
-          </Card>
+                    </TableHead>
+                    {item.products.map((elem, j) => (
+                      <TableBody key={j}>
+                        <TableRow>
+                          <TableCell>{elem.name}</TableCell>
+                          <TableCell align="center">{elem.quantity}</TableCell>
+                        </TableRow>
+                      </TableBody>
+                    ))}
+                  </Table>
+                </TableContainer>
+                <p>Entrada: {item.entry}</p>
+                <p>Salida: {item.exit}</p>
+                <button
+                  id="kitchen-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleOpen();
+                    recoverID(item.id);
+                  } }
+                >
+                  Entregar orden
+                </button>
+              </CardContent>
+            </Card>
 
-        ))}
- <ContentModal key="modalReady" open={open} handleClose={handleClose}>
-              <h1>Entregar orden {id}</h1>
-              <p>¿Esta seguro de continuar?</p>
-              <button
+          ))}
+          <ContentModal key="modalReady" open={open} handleClose={handleClose}>
+            <h1>Entregar orden {" "} {"no." + id}</h1>
+            <p>¿Quieres continuar?</p>
+            <button
               onClick={(e) => {
                 e.preventDefault();
                 handleClose();
                 updateApiReady(id);
-              }}
+              } }
             >
               Enviar
             </button>
             <button
               onClick={(e) => {
                 handleClose();
-              }}
+              } }
             >
               Cancelar
             </button>
-            </ContentModal>
-      </div>
+          </ContentModal>
+        </div></>
     )
 }
 

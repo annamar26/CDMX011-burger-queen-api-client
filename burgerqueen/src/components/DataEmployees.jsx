@@ -1,15 +1,21 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
 import { useDataEmployees } from "../hooks/useDataEmployees";
 import { useShowHooks } from "../hooks/useShowHooks";
 import { FormEdit } from "./FormEdit";
-import { FormAdmin } from "./FormLogin";
 
 import ContentModal from "./Modal";
 const DataEmployees = () => {
-  const { dataUsers, deleteUser, recoveryDataUser, recoveredData } =
-    useDataEmployees();
+  const {
+    dataUsers,
+    deleteUser,
+    recoveryDataUser,
+    recoveredData,
+    user,
+    handleUserChange,
+    handleDataRole,
+    editUser,
+  } = useDataEmployees();
   const {
     open,
     handleClose,
@@ -50,7 +56,13 @@ const DataEmployees = () => {
                 <FontAwesomeIcon
                   onClick={() => {
                     conditionalRenderTrue();
-                    recoveryDataUser(item.id, item.name.firstName, item.name.lastName, item.email, item.password);
+                    recoveryDataUser(
+                      item.id,
+                      item.name.firstName,
+                      item.name.lastName,
+                      item.email,
+                      item.password
+                    );
                     handleOpen();
                   }}
                   icon={faEdit}
@@ -60,7 +72,13 @@ const DataEmployees = () => {
                   icon={faTrashAlt}
                   onClick={(e) => {
                     conditionalRenderFalse();
-                    recoveryDataUser(item.id, item.name.firstName, item.name.lastName, item.email, item.password);
+                    recoveryDataUser(
+                      item.id,
+                      item.name.firstName,
+                      item.name.lastName,
+                      item.email,
+                      item.password
+                    );
                     handleOpen();
                   }}
                 ></FontAwesomeIcon>
@@ -72,7 +90,14 @@ const DataEmployees = () => {
       {conditionalButtonModal ? (
         <ContentModal open={open} handleClose={handleClose}>
           <h1>Editar información de empleado</h1>
-          <FormEdit recoveredData={recoveredData} handleClose={handleClose}/>
+          <FormEdit
+            recoveredData={recoveredData}
+            handleClose={handleClose}
+            user={user}
+            handleUserChange={handleUserChange}
+            handleDataRole={handleDataRole}
+            editUser={editUser}
+          />
         </ContentModal>
       ) : (
         <ContentModal open={open} handleClose={handleClose}>

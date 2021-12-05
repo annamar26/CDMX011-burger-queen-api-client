@@ -83,9 +83,3 @@ function Admin() {
 }
 
 export default Admin;
-
-/*{!open ? (
-          <button onClick={() => handleOpen()}>Registro</button>
-        ) : (
-          <button onClick={() => handleClose()}>Registro</button>
-        )} <button>Lista de empleados</button>*/

@@ -1,6 +1,7 @@
 import { dataApi } from "./dataApi";
 import Cookies from "universal-cookie";
 
+
 const LoginJSON = () => {
   const cookies = new Cookies();
 
@@ -20,8 +21,7 @@ const LoginJSON = () => {
           cookies.set("role", res.role, { path: "/" });
           cookies.set("email", res.email, { path: "/" });
           cookies.set("password", res.password, { path: "/" });
-          alert(`Bienvenido ${res.name.firstName}`);
-          if (res.role.kitchen) {
+        if(res.role.kitchen) {
             window.location.href = "./kitchen";
           } else if (res.role.waiter) {
             window.location.href = "./home";
@@ -29,7 +29,7 @@ const LoginJSON = () => {
             window.location.href = "./admin";
           }
         } else {
-          alert("Tas mal carnal");
+          alert("No");
         }
       })
       .catch((err) => {

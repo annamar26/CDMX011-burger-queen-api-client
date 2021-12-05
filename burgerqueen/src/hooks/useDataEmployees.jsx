@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { dataApi } from "../api/dataApi";
-
 export const useDataEmployees = () => {
-  const [dataUsers, setDataUsers] = useState([]); //<-----Hacer post
+  const [dataUsers, setDataUsers] = useState([]);
   const [user, setUser] = useState({
-    firstName: "",
+   firstName: "",
     lastName: "",
     email: "",
     password: "",
@@ -34,8 +33,18 @@ export const useDataEmployees = () => {
     });
   };
 
- 
-  const handleUserChange = (event) => {
+ useEffect(() => {
+   getUsers()
+ }, [dataUsers])
+ const handleUserChange = (event) => {
+  /*console.log(event.target.defaultValue)
+  if(event.target.value===""){
+    setUser({
+      ...user,
+    [event.target.value]: event.target.defaultValue, 
+    
+  });
+  } */
     setUser({
       ...user,
       [event.target.name]: event.target.value,
@@ -46,7 +55,6 @@ export const useDataEmployees = () => {
   };
 
   const handleDataRole = (event) => {
-    //console.log(event.target.value)
     setDataRole({
       [event.target.value]: true,
       [event.target.value]: true,
@@ -55,10 +63,7 @@ export const useDataEmployees = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
       getUsers();
-    }, 1000);
-    return () => clearInterval(interval);
   }, []);
 
   const getUsers = async () => {
@@ -68,7 +73,6 @@ export const useDataEmployees = () => {
 
   const deleteUser = async (id) => {
     await dataApi.delete(`http://localhost:3001/users/${id}`);
-    console.log("Eliminar empleado funcionando en json api");
   };
 
   const editUser = async (id) => {

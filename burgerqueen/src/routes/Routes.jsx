@@ -14,7 +14,7 @@ function RoutesPath() {
   //Enrutado
   return (
     <>
-      <Banner />
+     {/* <Banner />*/}
       <Router>
         <Routes>
           <Route exact path="/" element={<Login />} />

@@ -32,12 +32,12 @@ function Kitchen() {
   return (
     <div className="cards-kitchen">
       {dataKitchen.map((item, i) => (
-        <Card key={i} sx={{ width: 370, margin: 2 }}>
+        <Card key={i} sx={{minWidth: 350  ,margin: 1, }}>
           <CardContent>
             <span>{item.id}</span>
             <h1 align="center">Cliente: {item.client}</h1>
             <TableContainer>
-              <Table>
+              <Table  sx={{ minWidth: 300 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
                     <TableCell>Producto</TableCell>

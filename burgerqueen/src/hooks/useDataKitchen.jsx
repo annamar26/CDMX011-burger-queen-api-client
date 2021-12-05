@@ -8,9 +8,8 @@ export const useDataKitchen = () => {
   const [ready, setReady] = useState([])
   const { time } = usePostProducts();
   const [timeInMinutes, setTimeInMinutes] = useState(0);
-  
-  
   const [id, setId] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       getOrders();
@@ -52,8 +51,8 @@ export const useDataKitchen = () => {
     setTimeInMinutes(timeElapsed);
   };
 
-  const recoverID = (idOrder) => {
-    setId(idOrder);
+  const recoverID = (idOrder, client) => {
+    setId(idOrder, client);
   };
  
   return {

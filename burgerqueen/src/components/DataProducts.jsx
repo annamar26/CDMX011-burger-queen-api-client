@@ -7,7 +7,7 @@ import FormAddProducts from "./FormAddProducts";
 import ContentModal from "./Modal";
 
 function DataProducts() {
-  const { desayunos, comidas, recoverIdProduct, recoveredIdProduct, deleteProduct } = useProducts();
+  const { desayunos, comidas, recoverDataProduct, recoveredDataProduct, deleteProduct } = useProducts();
   const {
     open,
     handleOpen,
@@ -18,7 +18,7 @@ function DataProducts() {
   } = useShowHooks();
   return (
     <div>
-      <table>
+     <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -38,13 +38,13 @@ function DataProducts() {
               <td>
                 <FontAwesomeIcon icon={faEdit} onClick={()=>{
                     conditionalRenderTrue();
-                    recoverIdProduct(item.id);
+                    recoverDataProduct(item.id, item.name);
                     handleOpen();
                 }}></FontAwesomeIcon>
                 <br />
                 <FontAwesomeIcon icon={faTrashAlt} onClick={()=>{
                     conditionalRenderFalse();
-                    recoverIdProduct(item.id, item.name);
+                    recoverDataProduct(item.id, item.name);
                     handleOpen();
                 }}></FontAwesomeIcon>
               </td>
@@ -59,13 +59,13 @@ function DataProducts() {
               <td>
                 <FontAwesomeIcon icon={faEdit} onClick={()=>{
                     conditionalRenderTrue();
-                    recoverIdProduct(item.id);
+                    recoverDataProduct(item.id, item.name);
                     handleOpen();
                 }}></FontAwesomeIcon>
                 <br />
                 <FontAwesomeIcon icon={faTrashAlt} onClick={()=>{
                     conditionalRenderFalse();
-                    recoverIdProduct(item.id, item.name);
+                    recoverDataProduct(item.id, item.name);
                     handleOpen();
                 }}></FontAwesomeIcon>
               </td>
@@ -75,15 +75,15 @@ function DataProducts() {
       </table>
       {conditionalButtonModal ? (
         <ContentModal open={open} handleClose={handleClose}>
-          <h1>Editar información de {recoveredIdProduct.name}</h1>
+          <h1>Editar información de {recoveredDataProduct.name}</h1>
           <FormAddProducts/>
         </ContentModal>
       ) : (
         <ContentModal open={open} handleClose={handleClose}>
-          <h1>¿Estas seguro de eliminar "{recoveredIdProduct.name}"?</h1>
+          <h1>¿Estas seguro de eliminar "{recoveredDataProduct.name}" </h1>
           <button
             onClick={(e) => {
-              deleteProduct(recoveredIdProduct.id);
+              deleteProduct(recoveredDataProduct.id);
               handleClose();
             }}
           >

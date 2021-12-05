@@ -1,13 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExclamationTriangle, faMinusCircle, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExclamationTriangle,
+  faMinusCircle,
+  faPlusCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { usePostProducts } from "../hooks/usePostProduct";
 import { Fragment } from "react";
 import ContentModal from "./Modal";
 import { useShowHooks } from "../hooks/useShowHooks";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
 
 function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
   const { postProducts, clientName, clientNameFn } = usePostProducts(1);
-  const { open, handleOpen, handleClose } = useShowHooks();
+  const {
+    open,
+    handleOpen,
+    handleClose,
+    conditionalButtonModal,
+    conditionalRenderTrue,
+    conditionalRenderFalse,
+  } = useShowHooks();
 
   return (
     <Fragment>
@@ -20,70 +39,91 @@ function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
           }}
         />
       </section>
-      <table>
-        <thead>
-          <tr>
-            <th>Cant</th>
-            <th>Producto</th>
-            <th>Acciones</th>
-            <th>Precio</th>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          {order.map((product, i) => (
-            <tr key={i}>
-              <td>
-                <span>{product.quantity}</span>
-              </td>
-              <td>{product.name}</td>
-              <td>
-                <FontAwesomeIcon
-                  icon={faPlusCircle}
-                  onClick={() => {
-                    product.quantity++;
-                    plusButton(product.price, product.quantity);
-                  }}
-                />
-                <br />
-                <FontAwesomeIcon
-                  icon={faMinusCircle}
-                  onClick={(e) => {
-                    product.quantity--;
-                    minusButton(product.price, product.quantity);
-                    if (product.quantity === 0) {
-                      deleteRow(i, e);
-                      minusButton(product.price, product.quantity);
-                    }
-                  }}
-                />
-              </td>
-              <td>${product.price}</td>
-              <td>${product.price * product.quantity}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <TableContainer style={{maxHeight: 350}}>
+        <Table >
+          <TableHead>
+            <TableRow>
+              <TableCell>Cant</TableCell>
+              <TableCell>Producto</TableCell>
+              <TableCell>Accs</TableCell>
+              <TableCell>Precio</TableCell>
+              <TableCell>Subtotal</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {order.map((product, i) => (
+              <TableRow key={i}>
+                <TableCell>
+                  <span>{product.quantity}</span>
+                </TableCell>
+                <TableCell>{product.name}</TableCell>
+                <TableCell>
+                  <FontAwesomeIcon
+                    icon={faPlusCircle}
+                    onClick={() => {
+                      product.quantity++;
+                      plusButton(parseInt(product.price), product.quantity);
+                    }}
+                  />
+                  <br />
+                  <FontAwesomeIcon
+                    icon={faMinusCircle}
+                    onClick={(e) => {
+                      product.quantity--;
+                      minusButton(parseInt(product.price), product.quantity);
+                      if (product.quantity === 0) {
+                        deleteRow(i, e);
+                        minusButton(parseInt(product.price), product.quantity);
+                      }
+                    }}
+                  />
+                </TableCell>
+                <td>${parseInt(product.price)}</td>
+                <td>${parseInt(product.price) * product.quantity}</td>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
       <section id="total">
         <span>Total ${total}</span>
       </section>
-      <button
-        id="send"
-        onClick={() => {
-          if (clientName === "" || total === 0) {
-            handleOpen();
-          } else {
-            postProducts(order, clientName, );
-            window.location.reload();
-          }
-        }}
-      >
-        Enviar
-      </button>
-      <ContentModal open={open} handleClose={handleClose}>
-        <FontAwesomeIcon icon={faExclamationTriangle}></FontAwesomeIcon>
-        <p>Agrega nombre del cliente o producto</p>
-      </ContentModal>
+      <section id="btn-send-section">
+        <button
+          id="send"
+          onClick={() => {
+            if (clientName === "" || total === 0) {
+              conditionalRenderTrue();
+              handleOpen();
+            } else {
+              conditionalRenderFalse();
+              handleOpen();
+            }
+          }}
+        >
+          Ordenar
+        </button>
+      </section>
+      {conditionalButtonModal ? (
+        <ContentModal open={open} handleClose={handleClose}>
+          <FontAwesomeIcon icon={faExclamationTriangle}></FontAwesomeIcon>
+          <span>Agrega nombre del cliente o producto</span>
+        </ContentModal>
+      ) : (
+        <ContentModal open={open} handleClose={handleClose}>
+          <FontAwesomeIcon icon={faExclamationTriangle}></FontAwesomeIcon>
+          <span>¿Estás seguro de enviar la orden a cocina?</span>
+          <br />
+          <button
+            onClick={() => {
+              postProducts(order, clientName);
+              window.location.reload();
+            }}
+          >
+            Enviar
+          </button>
+        </ContentModal>
+      )}
     </Fragment>
   );
 }
