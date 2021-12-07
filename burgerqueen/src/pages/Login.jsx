@@ -8,12 +8,14 @@ import gerente from "../images/gerente.png";
 function Login() {
   return (
     <Fragment>
-      <Banner/>
+      <Banner>
+        <p>POS system</p>
+      </Banner>
       <main>
         <div className="images">
-          <img src={gerente} alt="Error al cargar imagen" />
-          <img src={camarera} alt="Error al cargar imagen" />
-          <img src={cocinero} alt="Error al cargar imagen" />
+          <img src={gerente} alt="gerente" />
+          <img src={camarera} alt="camarera" />
+          <img src={cocinero} alt="cocinero" />
         </div>
         <FormLogin/>
       </main>

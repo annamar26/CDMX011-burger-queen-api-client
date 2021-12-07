@@ -105,7 +105,7 @@
       "price": "10",
       "image": "",
       "type": "Comida",
-      "dateEntry": "2021-12-01",
+      "dateEntry": "2021-12-07",
       "quantity": 1
     }
   ],
@@ -265,6 +265,28 @@
       "exit": "16:16",
       "status": "Lista",
       "time": 7
+    },
+    {
+      "id": 9,
+      "client": "Nay",
+      "products": [
+        {
+          "name": "Café americano",
+          "quantity": 1
+        },
+        {
+          "name": "Cafe con leche",
+          "quantity": 1
+        },
+        {
+          "name": "Sandwich de jamón y queso",
+          "quantity": 2
+        }
+      ],
+      "entry": "10:04",
+      "exit": "",
+      "status": "Pendiente",
+      "time": ""
     }
   ],
   "users": [
@@ -275,9 +297,9 @@
         "lastName": "Olvera Domínguez"
       },
       "role": {
-        "waiter": true
+        "kitchen": true
       },
-      "email": "mesero@ejemplo.com",
+      "email": "cocina4@ejemplo.com",
       "password": "123456"
     },
     {
@@ -290,30 +312,30 @@
         "admin": true
       },
       "email": "admin@ejemplo.com",
-      "password": "123456894"
+      "password": "123456"
     },
     {
-      "id": 3,
+      "id": 7,
       "name": {
-        "firstName": "Guillermo",
-        "lastName": "Olvera"
+        "firstName": "Carlos",
+        "lastName": "Prueba"
       },
       "role": {
         "kitchen": true
       },
-      "email": "cocina4@ejemplo.com",
-      "password": "123456"
+      "email": "admin2@ejemplo.com",
+      "password": "123456894"
     },
     {
-      "id": 5,
+      "id": 8,
       "name": {
-        "firstName": "Carlos",
-        "lastName": "Hernández"
+        "firstName": "Nayelli Guadalupe",
+        "lastName": "Olvera Domínguez"
       },
       "role": {
         "waiter": true
       },
-      "email": "mesero6@ejemplo.com",
+      "email": "mesero@ejemplo.com",
       "password": "123456"
     }
   ]

@@ -106,13 +106,13 @@ function Comanda({ order, total, minusButton, deleteRow, plusButton }) {
       </section>
       {conditionalButtonModal ? (
         <ContentModal open={open} handleClose={handleClose}>
-          <FontAwesomeIcon icon={faExclamationTriangle}></FontAwesomeIcon>
-          <span>Agrega nombre del cliente o producto</span>
+          <FontAwesomeIcon icon={faExclamationTriangle} style={{ color: '#F87F55' }}></FontAwesomeIcon>
+          <h3>Agrega nombre del cliente o producto</h3>
         </ContentModal>
       ) : (
         <ContentModal open={open} handleClose={handleClose}>
-          <FontAwesomeIcon icon={faExclamationTriangle}></FontAwesomeIcon>
-          <span>¿Estás seguro de enviar la orden a cocina?</span>
+          <FontAwesomeIcon icon={faExclamationTriangle} style={{ color: '#F87F55' }}></FontAwesomeIcon>
+          <p>¿Estás seguro de enviar la orden a cocina?</p>
           <br />
           <button
             onClick={() => {

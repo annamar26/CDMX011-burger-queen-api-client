@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { Fragment } from "react";
 import Comanda from "../components/Comanda";
 import GoBack from "../components/GoBack";
+import Reminder from "../components/Reminder";
 import { useOrder } from "../hooks/useOrder";
 import { useProducts } from "../hooks/useProducts";
 
@@ -13,6 +14,7 @@ function Lunch() {
 
   return (
     <Fragment>
+      <Reminder />
       <div className="comanda-div">
         <section>
           <Comanda

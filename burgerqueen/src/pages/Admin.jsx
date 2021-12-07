@@ -1,12 +1,20 @@
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
+import Cookies from "universal-cookie";
+import LoginJSON from "../api/LoginJSON";
+import Banner from "../components/Banner";
 import DataEmployees from "../components/DataEmployees";
 import DataProducts from "../components/DataProducts";
 import FormAddProducts from "../components/FormAddProducts";
 import { FormRegister } from "../components/FormRegister";
 import ContentModal from "../components/Modal";
 import { useShowHooks } from "../hooks/useShowHooks";
+import gerente from "../images/gerente.png";
 
+const cookies = new Cookies();
 function Admin() {
+ const { removeCookies } = LoginJSON();
   const {
     open,
     handleOpen,
@@ -21,9 +29,33 @@ function Admin() {
     conditionalRenderTrue,
     conditionalRenderFalse,
   } = useShowHooks();
-
+  const userName = cookies.get("name").firstName;
+ 
+  
   return (
     <Fragment>
+      <Banner>
+        <p>
+          {userName}
+          <img src={gerente} alt="mesero" />
+        </p>
+        <section id="logout-principal">
+          <span
+            onClick={() => {
+              removeCookies();
+            }}
+          >
+            Salir
+          </span>
+          <FontAwesomeIcon
+            id="icon-signout"
+            icon={faSignOutAlt}
+            onClick={() => {
+              removeCookies();
+            }}
+          ></FontAwesomeIcon>
+        </section>
+      </Banner>
       <section id="nav-admin-menu">
         <button
           onClick={() => {
@@ -71,7 +103,7 @@ function Admin() {
         ) : (
           <ContentModal open={open} handleClose={handleClose}>
             <h1>Agregar producto</h1>
-            <FormAddProducts />
+            <FormAddProducts handleClose={handleClose} />
           </ContentModal>
         )}
 

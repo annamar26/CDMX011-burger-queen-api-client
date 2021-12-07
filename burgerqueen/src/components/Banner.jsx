@@ -9,7 +9,6 @@ function Banner({children}) {
       <header>
         <img src={logo} alt="Error al cargar imagen" id="logo" />
         <section>
-          {/*<p id="header-text">POS System</p>*/}
           {children}
           <section id="time">
             <p>{moment().format('l')}</p>

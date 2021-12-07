@@ -6,7 +6,7 @@ export const usePostProducts = () => {
   const [dataPost, setDataPost] = useState([]);
   const [clientName, setClientName] = useState("");
   const [time, setTime] = useState(Date.now());
-  
+
   useEffect(() => {
     const interval = setInterval(() => setTime(Date.now()), 1000);
     return () => {
@@ -17,32 +17,32 @@ export const usePostProducts = () => {
   const clientNameFn = (value) => {
     setClientName(value);
   };
-  
-  const postProducts = ((order, client) => {
+
+  const postProducts = (order, client) => {
     const product = [];
-    order.map((item) => (
-      product.push({ name: item.name, quantity: item.quantity})
-  ));
+    order.map((item) =>
+      product.push({ name: item.name, quantity: item.quantity })
+    );
     dataApi
       .post("http://localhost:3001/orders", {
-        id:"",
+        id: "",
         client: client,
         products: product,
-        entry: moment(time).format('HH:mm'),
-        exit:"",
+        entry: moment(time).format("HH:mm"),
+        exit: "",
         status: "Pendiente",
-        time: ""
+        time: "",
       })
       .then((res) => {
         setDataPost(res.data);
       });
-  });
+  };
 
   return {
     postProducts,
     dataPost,
     clientNameFn,
     clientName,
-    time, 
+    time,
   };
 };

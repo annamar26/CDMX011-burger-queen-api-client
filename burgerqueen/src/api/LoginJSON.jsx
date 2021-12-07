@@ -37,25 +37,8 @@ const LoginJSON = () => {
       });
   };
 
- /* useEffect(() => {
-    returnPage()
-  }, []);
-
-  const returnPage = ()=>{
-    console.log(cookies.get("role"))
-    if(cookies.get("role") === "Cocinero"){
-      console.log("Aqui estoy")
-     window.location.href = "./kitchen";
-    };
-  }*/
-
   const getCookies = () => {
-    /*console.log("id: " + cookies.get("id"));
-    console.log("name: " + cookies.get("name"));
-    console.log("email: " + cookies.get("email"));
-    console.log("password: " + cookies.get("password"));
-*/
-    if (!cookies.get("email")) {
+  if (!cookies.get("email")) {
       window.location.href = "./";
     }
   };

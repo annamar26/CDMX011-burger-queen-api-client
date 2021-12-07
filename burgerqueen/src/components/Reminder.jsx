@@ -23,17 +23,14 @@ function Reminder() {
   const { removeCookies } = LoginJSON();
   const { open, handleOpen, handleClose } = useShowHooks();
   const { ready } = useDataKitchen();
-  let userLoggged = [];
-  const cook = cookies.get("name");
-  for (const [key, value] of Object.entries(cook)) {
-    userLoggged.push(value);
-  }
+  const userName = cookies.get("name").firstName;
+ 
   return (
     <>
       <Banner>
         <section id="reminder"></section>
         <p>
-          {userLoggged[0]}
+          {userName}
           <img src={camarera} alt="Error al cargar imagen" />
         </p>
 

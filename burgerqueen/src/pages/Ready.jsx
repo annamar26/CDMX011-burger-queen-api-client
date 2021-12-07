@@ -1,3 +1,8 @@
+import {
+  faExclamationTriangle,
+  faUndo,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Table from "@mui/material/Table";
@@ -15,79 +20,95 @@ import camarera from "../images/camarera.png";
 const cookies = new Cookies();
 
 function Ready() {
-   const {ready, updateApiReady, recoverID, id } = useDataKitchen();
-   const { open, handleOpen, handleClose } = useShowHooks();
-   let userLoggged =[];
-   const cook = cookies.get("name");
-   for(const [key, value] of Object.entries(cook)){
-     userLoggged.push(value);
-   }
-    return (
-      <>
+  const { ready, updateApiReady, recoverID, id } = useDataKitchen();
+  const { open, handleOpen, handleClose } = useShowHooks();
+  const userName = cookies.get("name").firstName;
+  
+  return (
+    <>
       <Banner>
-        <p>{userLoggged[0]}<img src={camarera} alt="mesera" /></p>
-      </Banner><div className="cards-kitchen">
-          {ready.map((item, i) => (
-            <Card key={i} sx={{ width: 370, margin: 2 }}>
-              <CardContent>
-                <span>{item.id}</span>
-                <h1 align="center">Cliente: {item.client}</h1>
-                <TableContainer>
-                  <Table>
-                    <TableHead>
+        <p>
+          {userName}
+          <img src={camarera} alt="mesera" />
+        </p>
+      </Banner>
+      <div className="cards-kitchen">
+        {ready.map((item, i) => (
+          <Card key={i} sx={{ width: 370, margin: 2 }}>
+            <CardContent>
+              <span>{item.id}</span>
+              <h1 align="center">Cliente: {item.client}</h1>
+              <TableContainer>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Producto</TableCell>
+                      <TableCell>Cantidad</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  {item.products.map((elem, j) => (
+                    <TableBody key={j}>
                       <TableRow>
-                        <TableCell>Producto</TableCell>
-                        <TableCell>Cantidad</TableCell>
+                        <TableCell>{elem.name}</TableCell>
+                        <TableCell align="center">{elem.quantity}</TableCell>
                       </TableRow>
-                    </TableHead>
-                    {item.products.map((elem, j) => (
-                      <TableBody key={j}>
-                        <TableRow>
-                          <TableCell>{elem.name}</TableCell>
-                          <TableCell align="center">{elem.quantity}</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    ))}
-                  </Table>
-                </TableContainer>
-                <p>Entrada: {item.entry}</p>
-                <p>Salida: {item.exit}</p>
-                <button
-                  id="kitchen-btn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleOpen();
-                    recoverID(item.id);
-                  } }
-                >
-                  Entregar orden
-                </button>
-              </CardContent>
-            </Card>
+                    </TableBody>
+                  ))}
+                </Table>
+              </TableContainer>
+              <p>Entrada: {item.entry}</p>
+              <p>Salida: {item.exit}</p>
+              <button
+                id="kitchen-btn"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleOpen();
+                  recoverID(item.id);
+                }}
+              >
+                Entregar orden
+              </button>
+            </CardContent>
+          </Card>
+        ))}
 
-          ))}
-          <ContentModal key="modalReady" open={open} handleClose={handleClose}>
-            <h1>Entregar orden {" "} {"no." + id}</h1>
-            <p>¿Quieres continuar?</p>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                handleClose();
-                updateApiReady(id);
-              } }
-            >
-              Enviar
-            </button>
-            <button
-              onClick={(e) => {
-                handleClose();
-              } }
-            >
-              Cancelar
-            </button>
-          </ContentModal>
-        </div></>
-    )
+        <section id="regresar-btn">
+          <FontAwesomeIcon
+            icon={faUndo}
+            onClick={() => {
+              window.history.back();
+            }}
+          ></FontAwesomeIcon>
+          <span
+            onClick={() => {
+              window.history.back();
+            }}
+          >
+            Regresar
+          </span>
+        </section>
+
+        <ContentModal key="modalReady" open={open} handleClose={handleClose}>
+          <FontAwesomeIcon
+            icon={faExclamationTriangle}
+            style={{ color: "#F87F55" }}
+          ></FontAwesomeIcon>
+          <h1>Entregar orden {"no." + id}</h1>
+          <p>¿Quieres continuar?</p>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              handleClose();
+              updateApiReady(id);
+            }}
+          >
+            Enviar
+          </button>
+        
+        </ContentModal>
+      </div>
+    </>
+  );
 }
 
-export default Ready
+export default Ready;

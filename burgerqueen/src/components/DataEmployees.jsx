@@ -1,5 +1,7 @@
 import { faEdit, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { TableBody, TableCell, TableContainer, TableHead, TableRow } from "@mui/material";
+import { Table } from "react-bootstrap";
 import { useDataEmployees } from "../hooks/useDataEmployees";
 import { useShowHooks } from "../hooks/useShowHooks";
 import { FormEdit } from "./FormEdit";
@@ -15,6 +17,8 @@ const DataEmployees = () => {
     handleUserChange,
     handleDataRole,
     editUser,
+    defaultData,
+    dataEdit,
   } = useDataEmployees();
   const {
     open,
@@ -27,32 +31,33 @@ const DataEmployees = () => {
 
   return (
     <div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Puesto</th>
-            <th>Correo</th>
-            <th>Contraseña</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
+      <TableContainer style={{ maxHeight: 500 }}>
+        <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>ID</TableCell>
+            <TableCell>Nombre</TableCell>
+            <TableCell>Puesto</TableCell>
+            <TableCell>Correo</TableCell>
+            <TableCell>Contraseña</TableCell>
+            <TableCell>Acc</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
           {dataUsers.map((item, i) => (
-            <tr key={i}>
-              <td>{item.id}</td>
-              <td>
+            <TableRow key={i}>
+              <TableCell>{item.id}</TableCell>
+              <TableCell>
                 {item.name.firstName}
                 <br />
                 {item.name.lastName}
-              </td>
-              {item.role.admin ? <td>Administrador</td> : null}
-              {item.role.kitchen ? <td>Cocinero</td> : null}
-              {item.role.waiter ? <td>Mesero</td> : null}
-              <td>{item.email}</td>
-              <td>{item.password}</td>
-              <td>
+              </TableCell>
+              {item.role.admin ? <TableCell>Administrador</TableCell> : null}
+              {item.role.kitchen ? <TableCell>Cocinero</TableCell> : null}
+              {item.role.waiter ? <TableCell>Mesero</TableCell> : null}
+              <TableCell>{item.email}</TableCell>
+              <TableCell>{item.password}</TableCell>
+              <TableCell>
                 <FontAwesomeIcon
                   onClick={() => {
                     conditionalRenderTrue();
@@ -82,11 +87,12 @@ const DataEmployees = () => {
                     handleOpen();
                   }}
                 ></FontAwesomeIcon>
-              </td>
-            </tr>
+              </TableCell>
+            </TableRow>
           ))}
-        </tbody>
-      </table>
+        </TableBody>
+        </Table>
+      </TableContainer>
       {conditionalButtonModal ? (
         <ContentModal open={open} handleClose={handleClose}>
           <h1>Editar información de empleado</h1>
@@ -97,6 +103,7 @@ const DataEmployees = () => {
             handleUserChange={handleUserChange}
             handleDataRole={handleDataRole}
             editUser={editUser}
+            defaultData={defaultData}
           />
         </ContentModal>
       ) : (
