@@ -27,7 +27,7 @@ export const useProducts = () => {
   };
   const postDataProducts = async () => {
     console.log(product.name);
-    await dataApi.post("http://localhost:3001/products", {
+    await dataApi.post("https://fake-api-burgerqueen.herokuapp.com/products", {
       id: "",
       name: product.name,
       price: product.price,
@@ -50,7 +50,7 @@ export const useProducts = () => {
   });
 
   const getProducts = async () => {
-    const resp = await dataApi.get("http://localhost:3001/products");
+    const resp = await dataApi.get("https://fake-api-burgerqueen.herokuapp.com/products");
     setDesayunos(resp.data.filter((prod) => prod.type === "Desayuno"));
     setComidas(resp.data.filter((prod) => prod.type === "Comida"));
   };
@@ -75,7 +75,7 @@ export const useProducts = () => {
   };
 
   const editProduct = async (idProduct) => {
-    await dataApi.patch(`http://localhost:3001/products/${idProduct}`, {
+    await dataApi.patch(`https://fake-api-burgerqueen.herokuapp.com/products/${idProduct}`, {
       name: dataEditProduct.name,
       price: dataEditProduct.price,
       image: product.image,
@@ -86,7 +86,7 @@ export const useProducts = () => {
   };
 
   const deleteProduct = async (idProduct) => {
-    await dataApi.delete(`http://localhost:3001/products/${idProduct}`);
+    await dataApi.delete(`https://fake-api-burgerqueen.herokuapp.com/products/${idProduct}`);
   };
 
   return {

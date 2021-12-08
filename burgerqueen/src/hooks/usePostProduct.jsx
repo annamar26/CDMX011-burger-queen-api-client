@@ -24,7 +24,7 @@ export const usePostProducts = () => {
       product.push({ name: item.name, quantity: item.quantity })
     );
     dataApi
-      .post("http://localhost:3001/orders", {
+      .post("https://fake-api-burgerqueen.herokuapp.com/orders", {
         id: "",
         client: client,
         products: product,

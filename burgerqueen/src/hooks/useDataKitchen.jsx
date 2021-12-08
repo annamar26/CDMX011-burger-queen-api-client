@@ -18,7 +18,7 @@ export const useDataKitchen = () => {
   }, []);
 
   const getOrders = async () => {
-    const resp = await dataApi.get("http://localhost:3001/orders");
+    const resp = await dataApi.get("https://fake-api-burgerqueen.herokuapp.com/orders");
     const pendingOrder = resp.data.filter((i) => i.status === "Pendiente");
     setDataKitchen(pendingOrder);
     const readyOrder =  resp.data.filter((i) => i.status === "Lista");
@@ -26,7 +26,7 @@ export const useDataKitchen = () => {
   };
 
   const updateApiKitchen = async (id) => {
-      await dataApi.patch(`http://localhost:3001/orders/${id}`, {
+      await dataApi.patch(`https://fake-api-burgerqueen.herokuapp.com/orders/${id}`, {
         status: "Lista",
         exit: moment(time).format("HH:mm"),
         time: timeInMinutes,
@@ -34,7 +34,7 @@ export const useDataKitchen = () => {
   };
 
   const updateApiReady = async (id) => {
-  await dataApi.patch(`http://localhost:3001/orders/${id}`, {
+  await dataApi.patch(`https://fake-api-burgerqueen.herokuapp.com/orders/${id}`, {
         status: "Entregada",
       });
   }

@@ -7,7 +7,7 @@ const LoginJSON = () => {
 
   const getUsers = async (email, password) => {
     await dataApi
-      .get("http://localhost:3001/users", {
+      .get("https://fake-api-burgerqueen.herokuapp.com/users", {
         params: { email: email, password: password },
       })
       .then((response) => {

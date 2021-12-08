@@ -71,17 +71,17 @@ export const useDataEmployees = () => {
   };
 
   const getUsers = async () => {
-    const resp = await dataApi.get("http://localhost:3001/users");
+    const resp = await dataApi.get("https://fake-api-burgerqueen.herokuapp.com/users");
     setDataUsers(resp.data);
   };
 
   const deleteUser = async (id) => {
-    await dataApi.delete(`http://localhost:3001/users/${id}`);
+    await dataApi.delete(`https://fake-api-burgerqueen.herokuapp.com/users/${id}`);
   };
 
   
   const editUser = async (id) => {
-    await dataApi.patch(`http://localhost:3001/users/${id}`, {
+    await dataApi.patch(`https://fake-api-burgerqueen.herokuapp.com/users/${id}`, {
       name: {
         firstName: dataEdit.firstName,
         lastName: dataEdit.lastName,
@@ -97,7 +97,7 @@ export const useDataEmployees = () => {
   };
 
   const postDataUsers = async () => {
-    await dataApi.post("http://localhost:3001/users", {
+    await dataApi.post("https://fake-api-burgerqueen.herokuapp.com/users", {
       id: "",
       name: {
         firstName: user.firstName,
